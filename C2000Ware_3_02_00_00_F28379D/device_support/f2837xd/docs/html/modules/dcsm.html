@@ -1,0 +1,981 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DCSM Module &mdash; F2837xd API Guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tiicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="F2837xd API Guide" href="../index.html"/>
+        <link rel="up" title="Modules" href="index.html"/>
+        <link rel="next" title="DMA Module" href="dma.html"/>
+        <link rel="prev" title="DAC Module" href="dac.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> F2837xd API Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.02.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model.html">Programming Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Driver Library Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">ADC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asysctl.html">ASysCtl Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="can.html">CAN Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cla.html">CLA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html">CLB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmpss.html">CMPSS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cputimer.html">CPU Timer Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">DAC Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DCSM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dma.html">DMA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecap.html">ECAP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emif.html">EMIF Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="epwm.html">EPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hrpwm.html">HRPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqep.html">EQEP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash.html">FLASH Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html">I2C Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupt Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcbsp.html">MCBSP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memcfg.html">MEMCFG Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sci.html">SCI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdfm.html">SDFM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysctl.html">SYSCTL Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html">USB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upp.html">UPP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbar.html">XBAR Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">F2837xd API Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Modules</a> &raquo;</li>
+        
+      <li>DCSM Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dcsm-module">
+<span id="dcsm"></span><h1>DCSM Module<a class="headerlink" href="#dcsm-module" title="Permalink to this headline">¶</a></h1>
+<p>The DCSM driver accesses the DCSM COMMON registers. In order to configure the
+Dual Code Security Module, the user must program the Linkpointer in DCSM OTP as
+well as the security configuration registers of the Zone Select Blocks in DCSM
+OTP. The DCSM driver provides functions which secure and unsecure each zone
+and return the ownership, security status, EXEONLY status of specific RAM
+modules or Flash sectors. Included are two functions which can claim and
+release the Flash pump to operate on a specific zone.</p>
+<dl class="group">
+<dt>
+<span class="target" id="group__dcsm__api"></span><em>group</em> <code class="sig-name descname">dcsm_api</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z1_CSMPSWD0">
+<span class="target" id="group__dcsm__api_1ga0fb98f594a5b829c141ed9ff9fb719e"></span><code class="sig-name descname">DCSM_O_Z1_CSMPSWD0</code><a class="headerlink" href="#c.DCSM_O_Z1_CSMPSWD0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z1 CSMPSWD0 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z1_CSMPSWD1">
+<span class="target" id="group__dcsm__api_1gb2430cf3159d5bf4830b5f215d74f898"></span><code class="sig-name descname">DCSM_O_Z1_CSMPSWD1</code><a class="headerlink" href="#c.DCSM_O_Z1_CSMPSWD1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z1 CSMPSWD1 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z1_CSMPSWD2">
+<span class="target" id="group__dcsm__api_1gab2b187954bd625a0d61fc83e8190522"></span><code class="sig-name descname">DCSM_O_Z1_CSMPSWD2</code><a class="headerlink" href="#c.DCSM_O_Z1_CSMPSWD2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z1 CSMPSWD2 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z1_CSMPSWD3">
+<span class="target" id="group__dcsm__api_1gcd4bf2a7c525c0caf664c78534fcd81d"></span><code class="sig-name descname">DCSM_O_Z1_CSMPSWD3</code><a class="headerlink" href="#c.DCSM_O_Z1_CSMPSWD3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z1 CSMPSWD3 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z2_CSMPSWD0">
+<span class="target" id="group__dcsm__api_1ge45c8dcc29fafc4c4614f6f60e657972"></span><code class="sig-name descname">DCSM_O_Z2_CSMPSWD0</code><a class="headerlink" href="#c.DCSM_O_Z2_CSMPSWD0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z2 CSMPSWD0 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z2_CSMPSWD1">
+<span class="target" id="group__dcsm__api_1g9429784b47ac1630b61db2e039c65b74"></span><code class="sig-name descname">DCSM_O_Z2_CSMPSWD1</code><a class="headerlink" href="#c.DCSM_O_Z2_CSMPSWD1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z2 CSMPSWD1 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z2_CSMPSWD2">
+<span class="target" id="group__dcsm__api_1g6da306ac0ed9183fd76cb330e5ac2b34"></span><code class="sig-name descname">DCSM_O_Z2_CSMPSWD2</code><a class="headerlink" href="#c.DCSM_O_Z2_CSMPSWD2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z2 CSMPSWD2 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_O_Z2_CSMPSWD3">
+<span class="target" id="group__dcsm__api_1ga488e21fc49c58a3f0a5634c9caf3fc4"></span><code class="sig-name descname">DCSM_O_Z2_CSMPSWD3</code><a class="headerlink" href="#c.DCSM_O_Z2_CSMPSWD3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Z2 CSMPSWD3 offset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLSEM_KEY">
+<span class="target" id="group__dcsm__api_1gcc17286e7868f6e21aca003d217893ee"></span><code class="sig-name descname">FLSEM_KEY</code><a class="headerlink" href="#c.FLSEM_KEY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Zone semaphore key. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_ALLZERO">
+<span class="target" id="group__dcsm__api_1g141898319762e2295a9be952a77d7eda"></span><code class="sig-name descname">DCSM_ALLZERO</code><a class="headerlink" href="#c.DCSM_ALLZERO" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CSM Passwords all zeros. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_ALLONE">
+<span class="target" id="group__dcsm__api_1g9eb0698454f892723d10371d79c752e9"></span><code class="sig-name descname">DCSM_ALLONE</code><a class="headerlink" href="#c.DCSM_ALLONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CSM Passwords all ones. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_UNSECURE">
+<span class="target" id="group__dcsm__api_1g21dc1a1e284120b6d3004963baf7c1c2"></span><code class="sig-name descname">DCSM_UNSECURE</code><a class="headerlink" href="#c.DCSM_UNSECURE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Zone is secure/unsecure. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DCSM_ARMED">
+<span class="target" id="group__dcsm__api_1gd7cd49f2c5b0eb47b92f591a8bc62d93"></span><code class="sig-name descname">DCSM_ARMED</code><a class="headerlink" href="#c.DCSM_ARMED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CSM is armed. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv417DCSM_MemoryStatus">
+<span id="_CPPv317DCSM_MemoryStatus"></span><span id="_CPPv217DCSM_MemoryStatus"></span><span class="target" id="group__dcsm__api_1gd751d45a326b94ea5e6ac5c34d3741e3"></span><em class="property">enum </em><code class="sig-name descname">DCSM_MemoryStatus</code><a class="headerlink" href="#_CPPv417DCSM_MemoryStatus" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values to distinguish the status of RAM or FLASH sectors. These values describe which zone the memory location belongs too. These values can be returned from <a class="reference internal" href="#group__dcsm__api_1ge3ce6e58a10507972f7b1cfa91939503"><span class="std std-ref">DCSM_getRAMZone()</span></a>, <a class="reference internal" href="#group__dcsm__api_1gc463b88dc1b853547b09010660602b19"><span class="std std-ref">DCSM_getFlashSectorZone()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv424DCSM_MEMORY_INACCESSIBLE">
+<span id="_CPPv324DCSM_MEMORY_INACCESSIBLE"></span><span id="_CPPv224DCSM_MEMORY_INACCESSIBLE"></span><span class="target" id="group__dcsm__api_1ggd751d45a326b94ea5e6ac5c34d3741e3cc080baedd1c0f1d54a63d862c72cda6"></span><code class="sig-name descname">DCSM_MEMORY_INACCESSIBLE</code><a class="headerlink" href="#_CPPv424DCSM_MEMORY_INACCESSIBLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Inaccessible. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv417DCSM_MEMORY_ZONE1">
+<span id="_CPPv317DCSM_MEMORY_ZONE1"></span><span id="_CPPv217DCSM_MEMORY_ZONE1"></span><span class="target" id="group__dcsm__api_1ggd751d45a326b94ea5e6ac5c34d3741e3ad671ee43d7e1696ca77e24f32e6ea49"></span><code class="sig-name descname">DCSM_MEMORY_ZONE1</code><a class="headerlink" href="#_CPPv417DCSM_MEMORY_ZONE1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Zone 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv417DCSM_MEMORY_ZONE2">
+<span id="_CPPv317DCSM_MEMORY_ZONE2"></span><span id="_CPPv217DCSM_MEMORY_ZONE2"></span><span class="target" id="group__dcsm__api_1ggd751d45a326b94ea5e6ac5c34d3741e3da57187d13f11cb52bb00c6ecb688425"></span><code class="sig-name descname">DCSM_MEMORY_ZONE2</code><a class="headerlink" href="#_CPPv417DCSM_MEMORY_ZONE2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Zone 2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423DCSM_MEMORY_FULL_ACCESS">
+<span id="_CPPv323DCSM_MEMORY_FULL_ACCESS"></span><span id="_CPPv223DCSM_MEMORY_FULL_ACCESS"></span><span class="target" id="group__dcsm__api_1ggd751d45a326b94ea5e6ac5c34d3741e316529935ff7b0c8863bb103160f0d109"></span><code class="sig-name descname">DCSM_MEMORY_FULL_ACCESS</code><a class="headerlink" href="#_CPPv423DCSM_MEMORY_FULL_ACCESS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Full access. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv418DCSM_SemaphoreZone">
+<span id="_CPPv318DCSM_SemaphoreZone"></span><span id="_CPPv218DCSM_SemaphoreZone"></span><span class="target" id="group__dcsm__api_1g83bb11b8a4fc12bb78e70b648ab7dcdc"></span><em class="property">enum </em><code class="sig-name descname">DCSM_SemaphoreZone</code><a class="headerlink" href="#_CPPv418DCSM_SemaphoreZone" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values to pass to <a class="reference internal" href="#group__dcsm__api_1gbc2ff4538a5c57740cdb51e7343c0fbb"><span class="std std-ref">DCSM_claimZoneSemaphore()</span></a>. These values are used to describe the zone that can write to Flash Wrapper registers. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv416DCSM_FLSEM_ZONE1">
+<span id="_CPPv316DCSM_FLSEM_ZONE1"></span><span id="_CPPv216DCSM_FLSEM_ZONE1"></span><span class="target" id="group__dcsm__api_1gg83bb11b8a4fc12bb78e70b648ab7dcdc444fef97c05648fc69e05727f061cfbf"></span><code class="sig-name descname">DCSM_FLSEM_ZONE1</code> = 0x01U<a class="headerlink" href="#_CPPv416DCSM_FLSEM_ZONE1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flash semaphore Zone 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416DCSM_FLSEM_ZONE2">
+<span id="_CPPv316DCSM_FLSEM_ZONE2"></span><span id="_CPPv216DCSM_FLSEM_ZONE2"></span><span class="target" id="group__dcsm__api_1gg83bb11b8a4fc12bb78e70b648ab7dcdcb1f35f85f843c5b34ea2c25c6a0e431d"></span><code class="sig-name descname">DCSM_FLSEM_ZONE2</code> = 0x02U<a class="headerlink" href="#_CPPv416DCSM_FLSEM_ZONE2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flash semaphore Zone 2. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv419DCSM_SecurityStatus">
+<span id="_CPPv319DCSM_SecurityStatus"></span><span id="_CPPv219DCSM_SecurityStatus"></span><span class="target" id="group__dcsm__api_1g912325888824567153c57d3152b9f530"></span><em class="property">enum </em><code class="sig-name descname">DCSM_SecurityStatus</code><a class="headerlink" href="#_CPPv419DCSM_SecurityStatus" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values to distinguish the security status of the zones. These values can be returned from <a class="reference internal" href="#group__dcsm__api_1g73f82e485f71bec6cf3620c585daca82"><span class="std std-ref">DCSM_getZone1CSMSecurityStatus()</span></a>, <a class="reference internal" href="#group__dcsm__api_1g473fb218f126a5b0df38c9e9722445a7"><span class="std std-ref">DCSM_getZone2CSMSecurityStatus()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv418DCSM_STATUS_SECURE">
+<span id="_CPPv318DCSM_STATUS_SECURE"></span><span id="_CPPv218DCSM_STATUS_SECURE"></span><span class="target" id="group__dcsm__api_1gg912325888824567153c57d3152b9f53050755508a67fa7e39d7db2f5d0a13aef"></span><code class="sig-name descname">DCSM_STATUS_SECURE</code><a class="headerlink" href="#_CPPv418DCSM_STATUS_SECURE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Secure. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420DCSM_STATUS_UNSECURE">
+<span id="_CPPv320DCSM_STATUS_UNSECURE"></span><span id="_CPPv220DCSM_STATUS_UNSECURE"></span><span class="target" id="group__dcsm__api_1gg912325888824567153c57d3152b9f53006bca4514cd4682401cc91d8624789fa"></span><code class="sig-name descname">DCSM_STATUS_UNSECURE</code><a class="headerlink" href="#_CPPv420DCSM_STATUS_UNSECURE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unsecure. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv418DCSM_STATUS_LOCKED">
+<span id="_CPPv318DCSM_STATUS_LOCKED"></span><span id="_CPPv218DCSM_STATUS_LOCKED"></span><span class="target" id="group__dcsm__api_1gg912325888824567153c57d3152b9f530ff3dd4c263cdf1ffed79e7bc1d2d2069"></span><code class="sig-name descname">DCSM_STATUS_LOCKED</code><a class="headerlink" href="#_CPPv418DCSM_STATUS_LOCKED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Locked. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv418DCSM_EXEOnlyStatus">
+<span id="_CPPv318DCSM_EXEOnlyStatus"></span><span id="_CPPv218DCSM_EXEOnlyStatus"></span><span class="target" id="group__dcsm__api_1g9a045e8ea21cc8997da2d1841525cb06"></span><em class="property">enum </em><code class="sig-name descname">DCSM_EXEOnlyStatus</code><a class="headerlink" href="#_CPPv418DCSM_EXEOnlyStatus" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values to decribe the EXEONLY Status. These values are returned from to <a class="reference internal" href="#group__dcsm__api_1g4d9aafb2bb53c8fcbdad0849bd871845"><span class="std std-ref">DCSM_getZone1RAMEXEStatus()</span></a>, <a class="reference internal" href="#group__dcsm__api_1g87872ceec71ac5c983df94a760b2e382"><span class="std std-ref">DCSM_getZone2RAMEXEStatus()</span></a>, <a class="reference internal" href="#group__dcsm__api_1gc68d46dfdd0d623364baf78c29d5ab16"><span class="std std-ref">DCSM_getZone1FlashEXEStatus()</span></a>, <a class="reference internal" href="#group__dcsm__api_1gedc952b06a29d8b65ce51d29daa1e92f"><span class="std std-ref">DCSM_getZone2FlashEXEStatus()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv414DCSM_PROTECTED">
+<span id="_CPPv314DCSM_PROTECTED"></span><span id="_CPPv214DCSM_PROTECTED"></span><span class="target" id="group__dcsm__api_1gg9a045e8ea21cc8997da2d1841525cb064b58a97c5a13c2968a158c417fbf93d5"></span><code class="sig-name descname">DCSM_PROTECTED</code><a class="headerlink" href="#_CPPv414DCSM_PROTECTED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Protected. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416DCSM_UNPROTECTED">
+<span id="_CPPv316DCSM_UNPROTECTED"></span><span id="_CPPv216DCSM_UNPROTECTED"></span><span class="target" id="group__dcsm__api_1gg9a045e8ea21cc8997da2d1841525cb06aa0c49f2c8589793fc2609c551bcb374"></span><code class="sig-name descname">DCSM_UNPROTECTED</code><a class="headerlink" href="#_CPPv416DCSM_UNPROTECTED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unprotected. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv419DCSM_INCORRECT_ZONE">
+<span id="_CPPv319DCSM_INCORRECT_ZONE"></span><span id="_CPPv219DCSM_INCORRECT_ZONE"></span><span class="target" id="group__dcsm__api_1gg9a045e8ea21cc8997da2d1841525cb06f975c6971af951006e8fd8c09b7ba638"></span><code class="sig-name descname">DCSM_INCORRECT_ZONE</code><a class="headerlink" href="#_CPPv419DCSM_INCORRECT_ZONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Incorrect Zone. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv414DCSM_RAMModule">
+<span id="_CPPv314DCSM_RAMModule"></span><span id="_CPPv214DCSM_RAMModule"></span><span class="target" id="group__dcsm__api_1g905ad1fe20ef4ff4545b5c2514db17a3"></span><em class="property">enum </em><code class="sig-name descname">DCSM_RAMModule</code><a class="headerlink" href="#_CPPv414DCSM_RAMModule" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values to distinguish RAM Module. These values can be passed to <a class="reference internal" href="#group__dcsm__api_1g4d9aafb2bb53c8fcbdad0849bd871845"><span class="std std-ref">DCSM_getZone1RAMEXEStatus()</span></a> <a class="reference internal" href="#group__dcsm__api_1g87872ceec71ac5c983df94a760b2e382"><span class="std std-ref">DCSM_getZone2RAMEXEStatus()</span></a>, <a class="reference internal" href="#group__dcsm__api_1ge3ce6e58a10507972f7b1cfa91939503"><span class="std std-ref">DCSM_getRAMZone()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv411DCSM_RAMLS0">
+<span id="_CPPv311DCSM_RAMLS0"></span><span id="_CPPv211DCSM_RAMLS0"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a36f3556a3e7f79ba0e72d278a77e31e44"></span><code class="sig-name descname">DCSM_RAMLS0</code><a class="headerlink" href="#_CPPv411DCSM_RAMLS0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMLS0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv411DCSM_RAMLS1">
+<span id="_CPPv311DCSM_RAMLS1"></span><span id="_CPPv211DCSM_RAMLS1"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a31e263d84647ea2e4e967af96620baa2b"></span><code class="sig-name descname">DCSM_RAMLS1</code><a class="headerlink" href="#_CPPv411DCSM_RAMLS1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMLS1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv411DCSM_RAMLS2">
+<span id="_CPPv311DCSM_RAMLS2"></span><span id="_CPPv211DCSM_RAMLS2"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a31b6ba19babd48b2ebcd2142811898e20"></span><code class="sig-name descname">DCSM_RAMLS2</code><a class="headerlink" href="#_CPPv411DCSM_RAMLS2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMLS2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv411DCSM_RAMLS3">
+<span id="_CPPv311DCSM_RAMLS3"></span><span id="_CPPv211DCSM_RAMLS3"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a382a6f0b29dc1c0f0bcfabf9e607cb7a9"></span><code class="sig-name descname">DCSM_RAMLS3</code><a class="headerlink" href="#_CPPv411DCSM_RAMLS3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMLS3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv411DCSM_RAMLS4">
+<span id="_CPPv311DCSM_RAMLS4"></span><span id="_CPPv211DCSM_RAMLS4"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a3edb32987925b0e4d3cd8349cea9d3416"></span><code class="sig-name descname">DCSM_RAMLS4</code><a class="headerlink" href="#_CPPv411DCSM_RAMLS4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMLS4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv411DCSM_RAMLS5">
+<span id="_CPPv311DCSM_RAMLS5"></span><span id="_CPPv211DCSM_RAMLS5"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a31694025edce14f12f9b43fbdbcbadfb5"></span><code class="sig-name descname">DCSM_RAMLS5</code><a class="headerlink" href="#_CPPv411DCSM_RAMLS5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMLS5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv410DCSM_RAMD0">
+<span id="_CPPv310DCSM_RAMD0"></span><span id="_CPPv210DCSM_RAMD0"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a3567fccbbe3eb47439dea2241cab0b764"></span><code class="sig-name descname">DCSM_RAMD0</code><a class="headerlink" href="#_CPPv410DCSM_RAMD0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMD0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv410DCSM_RAMD1">
+<span id="_CPPv310DCSM_RAMD1"></span><span id="_CPPv210DCSM_RAMD1"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a3cce8f76ae139bb155250c50b8066640b"></span><code class="sig-name descname">DCSM_RAMD1</code><a class="headerlink" href="#_CPPv410DCSM_RAMD1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAMD1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv48DCSM_CLA">
+<span id="_CPPv38DCSM_CLA"></span><span id="_CPPv28DCSM_CLA"></span><span class="target" id="group__dcsm__api_1gg905ad1fe20ef4ff4545b5c2514db17a3e23009a8eadb37c9b0e47b82f41ff47b"></span><code class="sig-name descname">DCSM_CLA</code> = 14U<a class="headerlink" href="#_CPPv48DCSM_CLA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Offset of CLA field in in RAMSTAT divided by two. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv411DCSM_Sector">
+<span id="_CPPv311DCSM_Sector"></span><span id="_CPPv211DCSM_Sector"></span><span class="target" id="group__dcsm__api_1g692ac98570321d1eb28a2691871bf40d"></span><em class="property">enum </em><code class="sig-name descname">DCSM_Sector</code><a class="headerlink" href="#_CPPv411DCSM_Sector" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values to distinguish Flash Sector. These values can be passed to <a class="reference internal" href="#group__dcsm__api_1gc68d46dfdd0d623364baf78c29d5ab16"><span class="std std-ref">DCSM_getZone1FlashEXEStatus()</span></a> <a class="reference internal" href="#group__dcsm__api_1gedc952b06a29d8b65ce51d29daa1e92f"><span class="std std-ref">DCSM_getZone2FlashEXEStatus()</span></a>, <a class="reference internal" href="#group__dcsm__api_1gc463b88dc1b853547b09010660602b19"><span class="std std-ref">DCSM_getFlashSectorZone()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_A">
+<span id="_CPPv313DCSM_SECTOR_A"></span><span id="_CPPv213DCSM_SECTOR_A"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40da3cd17e0ca18758929d1e95c2beb7388"></span><code class="sig-name descname">DCSM_SECTOR_A</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_A" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector A. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_B">
+<span id="_CPPv313DCSM_SECTOR_B"></span><span id="_CPPv213DCSM_SECTOR_B"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d9c4d875ca2b4efe26b2cf0ac425c7475"></span><code class="sig-name descname">DCSM_SECTOR_B</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_B" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector B. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_C">
+<span id="_CPPv313DCSM_SECTOR_C"></span><span id="_CPPv213DCSM_SECTOR_C"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d37719830d70fd614c6cdfc41a65278d2"></span><code class="sig-name descname">DCSM_SECTOR_C</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_C" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector C. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_D">
+<span id="_CPPv313DCSM_SECTOR_D"></span><span id="_CPPv213DCSM_SECTOR_D"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40dcd6a05f35a1ee39e53d9eb4ae192aa6a"></span><code class="sig-name descname">DCSM_SECTOR_D</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_D" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector D. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_E">
+<span id="_CPPv313DCSM_SECTOR_E"></span><span id="_CPPv213DCSM_SECTOR_E"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40dc67b25808cca79f386f205adbbe8b024"></span><code class="sig-name descname">DCSM_SECTOR_E</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector E. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_F">
+<span id="_CPPv313DCSM_SECTOR_F"></span><span id="_CPPv213DCSM_SECTOR_F"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d2b4748b001c0bfa919d19f9f8678e057"></span><code class="sig-name descname">DCSM_SECTOR_F</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_F" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector F. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_G">
+<span id="_CPPv313DCSM_SECTOR_G"></span><span id="_CPPv213DCSM_SECTOR_G"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d032a18158006819aa52efd45dff700be"></span><code class="sig-name descname">DCSM_SECTOR_G</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_G" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector G. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_H">
+<span id="_CPPv313DCSM_SECTOR_H"></span><span id="_CPPv213DCSM_SECTOR_H"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d846b75c5a305ac6d7a652eb128c6a06d"></span><code class="sig-name descname">DCSM_SECTOR_H</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_H" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector H. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_I">
+<span id="_CPPv313DCSM_SECTOR_I"></span><span id="_CPPv213DCSM_SECTOR_I"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d29ec120f386e278f4bf1663debca5eb5"></span><code class="sig-name descname">DCSM_SECTOR_I</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_I" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector I. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_J">
+<span id="_CPPv313DCSM_SECTOR_J"></span><span id="_CPPv213DCSM_SECTOR_J"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40ddbcd31be22b10cd9e14eb3ea77ec9e66"></span><code class="sig-name descname">DCSM_SECTOR_J</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_J" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector J. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_K">
+<span id="_CPPv313DCSM_SECTOR_K"></span><span id="_CPPv213DCSM_SECTOR_K"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d5a95a7364fa1ebb66afd3227b5837adf"></span><code class="sig-name descname">DCSM_SECTOR_K</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_K" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector K. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_L">
+<span id="_CPPv313DCSM_SECTOR_L"></span><span id="_CPPv213DCSM_SECTOR_L"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d2b162a6b4c2f63f65e7257a62c27cf5d"></span><code class="sig-name descname">DCSM_SECTOR_L</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_L" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector L. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_M">
+<span id="_CPPv313DCSM_SECTOR_M"></span><span id="_CPPv213DCSM_SECTOR_M"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40da22350fbbbacb41f52d96bc929c12b84"></span><code class="sig-name descname">DCSM_SECTOR_M</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_M" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector M. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413DCSM_SECTOR_N">
+<span id="_CPPv313DCSM_SECTOR_N"></span><span id="_CPPv213DCSM_SECTOR_N"></span><span class="target" id="group__dcsm__api_1gg692ac98570321d1eb28a2691871bf40d7a861a86834b9f37dcbdaa06e8b7a62e"></span><code class="sig-name descname">DCSM_SECTOR_N</code><a class="headerlink" href="#_CPPv413DCSM_SECTOR_N" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sector N. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv416DCSM_secureZone1v">
+<span id="_CPPv316DCSM_secureZone1v"></span><span id="_CPPv216DCSM_secureZone1v"></span><span id="DCSM_secureZone1__void"></span><span class="target" id="group__dcsm__api_1g261b3cd841470cf155e6ffb95d8c2074"></span><em class="property">static</em> void <code class="sig-name descname">DCSM_secureZone1</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416DCSM_secureZone1v" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Secures zone 1 by setting the FORCESEC bit of Z1_CR register</p>
+<p>This function resets the state of the zone. If the zone is unlocked, it will lock(secure) the zone and also reset all the bits in the Control Register.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416DCSM_secureZone2v">
+<span id="_CPPv316DCSM_secureZone2v"></span><span id="_CPPv216DCSM_secureZone2v"></span><span id="DCSM_secureZone2__void"></span><span class="target" id="group__dcsm__api_1g8c930bc68b75c13f1adbc809d6ff7391"></span><em class="property">static</em> void <code class="sig-name descname">DCSM_secureZone2</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416DCSM_secureZone2v" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Secures zone 2 by setting the FORCESEC bit of Z2_CR register</p>
+<p>This function resets the state of the zone. If the zone is unlocked, it will lock(secure) the zone and also reset all the bits in the Control Register.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430DCSM_getZone1CSMSecurityStatusv">
+<span id="_CPPv330DCSM_getZone1CSMSecurityStatusv"></span><span id="_CPPv230DCSM_getZone1CSMSecurityStatusv"></span><span id="DCSM_getZone1CSMSecurityStatus__void"></span><span class="target" id="group__dcsm__api_1g73f82e485f71bec6cf3620c585daca82"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv419DCSM_SecurityStatus" title="DCSM_SecurityStatus">DCSM_SecurityStatus</a> <code class="sig-name descname">DCSM_getZone1CSMSecurityStatus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430DCSM_getZone1CSMSecurityStatusv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the CSM security status of zone 1</p>
+<p>This function returns the security status of zone 1 CSM</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns security status as an enumerated type DCSM_SecurityStatus. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430DCSM_getZone2CSMSecurityStatusv">
+<span id="_CPPv330DCSM_getZone2CSMSecurityStatusv"></span><span id="_CPPv230DCSM_getZone2CSMSecurityStatusv"></span><span id="DCSM_getZone2CSMSecurityStatus__void"></span><span class="target" id="group__dcsm__api_1g473fb218f126a5b0df38c9e9722445a7"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv419DCSM_SecurityStatus" title="DCSM_SecurityStatus">DCSM_SecurityStatus</a> <code class="sig-name descname">DCSM_getZone2CSMSecurityStatus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430DCSM_getZone2CSMSecurityStatusv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the CSM security status of zone 2</p>
+<p>This function returns the security status of zone 2 CSM</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns security status as an enumerated type DCSM_SecurityStatus. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426DCSM_getZone1ControlStatusv">
+<span id="_CPPv326DCSM_getZone1ControlStatusv"></span><span id="_CPPv226DCSM_getZone1ControlStatusv"></span><span id="DCSM_getZone1ControlStatus__void"></span><span class="target" id="group__dcsm__api_1gd3a7e59f4593f111f87674673f5b0884"></span><em class="property">static</em> uint16_t <code class="sig-name descname">DCSM_getZone1ControlStatus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426DCSM_getZone1ControlStatusv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the Control Status of zone 1</p>
+<p>This function returns the Control Status of zone 1 CSM</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the contents of the Control Register which can be used with provided defines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426DCSM_getZone2ControlStatusv">
+<span id="_CPPv326DCSM_getZone2ControlStatusv"></span><span id="_CPPv226DCSM_getZone2ControlStatusv"></span><span id="DCSM_getZone2ControlStatus__void"></span><span class="target" id="group__dcsm__api_1g9bd1bb208fcf5cab390a3276ba7ecfa2"></span><em class="property">static</em> uint16_t <code class="sig-name descname">DCSM_getZone2ControlStatus</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426DCSM_getZone2ControlStatusv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the Control Status of zone 2</p>
+<p>This function returns the Control Status of zone 2 CSM</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the contents of the Control Register which can be used with the provided defines. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415DCSM_getRAMZone14DCSM_RAMModule">
+<span id="_CPPv315DCSM_getRAMZone14DCSM_RAMModule"></span><span id="_CPPv215DCSM_getRAMZone14DCSM_RAMModule"></span><span id="DCSM_getRAMZone__DCSM_RAMModule"></span><span class="target" id="group__dcsm__api_1ge3ce6e58a10507972f7b1cfa91939503"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv417DCSM_MemoryStatus" title="DCSM_MemoryStatus">DCSM_MemoryStatus</a> <code class="sig-name descname">DCSM_getRAMZone</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414DCSM_RAMModule" title="DCSM_RAMModule">DCSM_RAMModule</a> <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415DCSM_getRAMZone14DCSM_RAMModule" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the security zone a RAM section belongs to</p>
+<p><p>This function returns the security zone a RAM section belongs to.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span></code>: is the RAM module value. Valid values are type DCSM_RAMModule C28x RAMs :<ul>
+<li><p><strong>DCSM_RAMLS0</strong> </p></li>
+<li><p><strong>DCSM_RAMLS1</strong> </p></li>
+<li><p><strong>DCSM_RAMLS2</strong> </p></li>
+<li><p><strong>DCSM_RAMLS3</strong> </p></li>
+<li><p><strong>DCSM_RAMLS4</strong> </p></li>
+<li><p><strong>DCSM_RAMLS5</strong> </p></li>
+<li><p><strong>DCSM_RAMD0</strong> </p></li>
+<li><p><strong>DCSM_RAMD1</strong> </p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns DCSM_MEMORY_INACCESSIBLE if the section is inaccessible, DCSM_MEMORY_ZONE1 if the section belongs to zone 1, DCSM_MEMORY_ZONE2 if the section belongs to zone 2 and DCSM_MEMORY_FULL_ACCESS if the section doesn’t belong to any zone (or if the section is unsecure). </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423DCSM_getFlashSectorZone11DCSM_Sector">
+<span id="_CPPv323DCSM_getFlashSectorZone11DCSM_Sector"></span><span id="_CPPv223DCSM_getFlashSectorZone11DCSM_Sector"></span><span id="DCSM_getFlashSectorZone__DCSM_Sector"></span><span class="target" id="group__dcsm__api_1gc463b88dc1b853547b09010660602b19"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv417DCSM_MemoryStatus" title="DCSM_MemoryStatus">DCSM_MemoryStatus</a> <code class="sig-name descname">DCSM_getFlashSectorZone</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411DCSM_Sector" title="DCSM_Sector">DCSM_Sector</a> <em>sector</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423DCSM_getFlashSectorZone11DCSM_Sector" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the security zone a flash sector belongs to</p>
+<p><p>This function returns the security zone a flash sector belongs to.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sector</span></code>: is the flash sector value. Use DCSM_Sector type.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns DCSM_MEMORY_INACCESSIBLE if the section is inaccessible , DCSM_MEMORY_ZONE1 if the section belongs to zone 1, DCSM_MEMORY_ZONE2 if the section belongs to zone 2 and DCSM_MEMORY_FULL_ACCESS if the section doesn’t belong to any zone (or if the section is unsecure).. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv429DCSM_getZone1LinkPointerErrorv">
+<span id="_CPPv329DCSM_getZone1LinkPointerErrorv"></span><span id="_CPPv229DCSM_getZone1LinkPointerErrorv"></span><span id="DCSM_getZone1LinkPointerError__void"></span><span class="target" id="group__dcsm__api_1g23f17e2bccf538044f0637b55e1dbb33"></span><em class="property">static</em> uint32_t <code class="sig-name descname">DCSM_getZone1LinkPointerError</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429DCSM_getZone1LinkPointerErrorv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read Zone 1 Link Pointer Error</p>
+<p>A non-zero value indicates an error on the bit position that is set to 1.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the value of the Zone 1 Link Pointer error. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv429DCSM_getZone2LinkPointerErrorv">
+<span id="_CPPv329DCSM_getZone2LinkPointerErrorv"></span><span id="_CPPv229DCSM_getZone2LinkPointerErrorv"></span><span id="DCSM_getZone2LinkPointerError__void"></span><span class="target" id="group__dcsm__api_1ga7de151482d2e100f1dbecca62b4f206"></span><em class="property">static</em> uint32_t <code class="sig-name descname">DCSM_getZone2LinkPointerError</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429DCSM_getZone2LinkPointerErrorv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read Zone 2 Link Pointer Error</p>
+<p>A non-zero value indicates an error on the bit position that is set to 1.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the value of the Zone 2 Link Pointer error. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419DCSM_unlockZone1CSMPCK19DCSM_CSMPasswordKey">
+<span id="_CPPv319DCSM_unlockZone1CSMPCK19DCSM_CSMPasswordKey"></span><span id="_CPPv219DCSM_unlockZone1CSMPCK19DCSM_CSMPasswordKey"></span><span id="DCSM_unlockZone1CSM__DCSM_CSMPasswordKeyCPC"></span><span class="target" id="group__dcsm__api_1gc2dbc6775d5e06dab296cb56a1036aef"></span>void <code class="sig-name descname">DCSM_unlockZone1CSM</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv419DCSM_CSMPasswordKey" title="DCSM_CSMPasswordKey">DCSM_CSMPasswordKey</a> *<em class="property">const</em> <em>psCMDKey</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419DCSM_unlockZone1CSMPCK19DCSM_CSMPasswordKey" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unlocks Zone 1 CSM.</p>
+<p><p>This function unlocks the CSM password. It first reads the four password locations in the User OTP. If any of the password values is different from 0xFFFFFFFF, it unlocks the device by writing the provided passwords into CSM Key registers</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">psCMDKey</span></code>: is a pointer to the <a class="reference internal" href="#struct_d_c_s_m___c_s_m_password_key"><span class="std std-ref">DCSM_CSMPasswordKey</span></a> struct that has the CSM password for zone 1.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419DCSM_unlockZone2CSMPCK19DCSM_CSMPasswordKey">
+<span id="_CPPv319DCSM_unlockZone2CSMPCK19DCSM_CSMPasswordKey"></span><span id="_CPPv219DCSM_unlockZone2CSMPCK19DCSM_CSMPasswordKey"></span><span id="DCSM_unlockZone2CSM__DCSM_CSMPasswordKeyCPC"></span><span class="target" id="group__dcsm__api_1gc42499f51108a4d1fde40c09db22650a"></span>void <code class="sig-name descname">DCSM_unlockZone2CSM</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv419DCSM_CSMPasswordKey" title="DCSM_CSMPasswordKey">DCSM_CSMPasswordKey</a> *<em class="property">const</em> <em>psCMDKey</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419DCSM_unlockZone2CSMPCK19DCSM_CSMPasswordKey" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unlocks Zone 2 CSM.</p>
+<p><p>This function unlocks the CSM password. It first reads the four password locations in the User OTP. If any of the password values is different from 0xFFFFFFFF, it unlocks the device by writing the provided passwords into CSM Key registers</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">psCMDKey</span></code>: is a pointer to the CSMPSWDKEY that has the CSM password for zone 2.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427DCSM_getZone1FlashEXEStatus11DCSM_Sector">
+<span id="_CPPv327DCSM_getZone1FlashEXEStatus11DCSM_Sector"></span><span id="_CPPv227DCSM_getZone1FlashEXEStatus11DCSM_Sector"></span><span id="DCSM_getZone1FlashEXEStatus__DCSM_Sector"></span><span class="target" id="group__dcsm__api_1gc68d46dfdd0d623364baf78c29d5ab16"></span><a class="reference internal" href="#_CPPv418DCSM_EXEOnlyStatus" title="DCSM_EXEOnlyStatus">DCSM_EXEOnlyStatus</a> <code class="sig-name descname">DCSM_getZone1FlashEXEStatus</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411DCSM_Sector" title="DCSM_Sector">DCSM_Sector</a> <em>sector</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427DCSM_getZone1FlashEXEStatus11DCSM_Sector" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the EXE-ONLY status of zone 1 for a flash sector</p>
+<p><p>This function takes in a valid sector value and returns the status of EXE ONLY security protection for the sector.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sector</span></code>: is the flash sector value. Use DCSM_Sector type.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns DCSM_PROTECTED if the sector is EXE-ONLY protected, DCSM_UNPROTECTED if the sector is not EXE-ONLY protected, DCSM_INCORRECT_ZONE if sector does not belong to this zone. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425DCSM_getZone1RAMEXEStatus14DCSM_RAMModule">
+<span id="_CPPv325DCSM_getZone1RAMEXEStatus14DCSM_RAMModule"></span><span id="_CPPv225DCSM_getZone1RAMEXEStatus14DCSM_RAMModule"></span><span id="DCSM_getZone1RAMEXEStatus__DCSM_RAMModule"></span><span class="target" id="group__dcsm__api_1g4d9aafb2bb53c8fcbdad0849bd871845"></span><a class="reference internal" href="#_CPPv418DCSM_EXEOnlyStatus" title="DCSM_EXEOnlyStatus">DCSM_EXEOnlyStatus</a> <code class="sig-name descname">DCSM_getZone1RAMEXEStatus</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414DCSM_RAMModule" title="DCSM_RAMModule">DCSM_RAMModule</a> <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425DCSM_getZone1RAMEXEStatus14DCSM_RAMModule" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the EXE-ONLY status of zone 1 for a RAM module</p>
+<p><p>This function takes in a valid module value and returns the status of EXE ONLY security protection for that module. DCSM_CLA is an invalid module value. There is no EXE-ONLY available for DCSM_CLA.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span></code>: is the RAM module value. Valid values are type DCSM_RAMModule C28x RAMs :<ul>
+<li><p><strong>DCSM_RAMLS0</strong> </p></li>
+<li><p><strong>DCSM_RAMLS1</strong> </p></li>
+<li><p><strong>DCSM_RAMLS2</strong> </p></li>
+<li><p><strong>DCSM_RAMLS3</strong> </p></li>
+<li><p><strong>DCSM_RAMLS4</strong> </p></li>
+<li><p><strong>DCSM_RAMLS5</strong> </p></li>
+<li><p><strong>DCSM_RAMD0</strong> </p></li>
+<li><p><strong>DCSM_RAMD1</strong> </p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns DCSM_PROTECTED if the module is EXE-ONLY protected, DCSM_UNPROTECTED if the module is not EXE-ONLY protected, DCSM_INCORRECT_ZONE if module does not belong to this zone. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427DCSM_getZone2FlashEXEStatus11DCSM_Sector">
+<span id="_CPPv327DCSM_getZone2FlashEXEStatus11DCSM_Sector"></span><span id="_CPPv227DCSM_getZone2FlashEXEStatus11DCSM_Sector"></span><span id="DCSM_getZone2FlashEXEStatus__DCSM_Sector"></span><span class="target" id="group__dcsm__api_1gedc952b06a29d8b65ce51d29daa1e92f"></span><a class="reference internal" href="#_CPPv418DCSM_EXEOnlyStatus" title="DCSM_EXEOnlyStatus">DCSM_EXEOnlyStatus</a> <code class="sig-name descname">DCSM_getZone2FlashEXEStatus</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411DCSM_Sector" title="DCSM_Sector">DCSM_Sector</a> <em>sector</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427DCSM_getZone2FlashEXEStatus11DCSM_Sector" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the EXE-ONLY status of zone 2 for a flash sector</p>
+<p><p>This function takes in a valid sector value and returns the status of EXE ONLY security protection for the sector.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sector</span></code>: is the flash sector value. Use DCSM_Sector type.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns DCSM_PROTECTED if the sector is EXE-ONLY protected, DCSM_UNPROTECTED if the sector is not EXE-ONLY protected, DCSM_INCORRECT_ZONE if sector does not belong to this zone. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425DCSM_getZone2RAMEXEStatus14DCSM_RAMModule">
+<span id="_CPPv325DCSM_getZone2RAMEXEStatus14DCSM_RAMModule"></span><span id="_CPPv225DCSM_getZone2RAMEXEStatus14DCSM_RAMModule"></span><span id="DCSM_getZone2RAMEXEStatus__DCSM_RAMModule"></span><span class="target" id="group__dcsm__api_1g87872ceec71ac5c983df94a760b2e382"></span><a class="reference internal" href="#_CPPv418DCSM_EXEOnlyStatus" title="DCSM_EXEOnlyStatus">DCSM_EXEOnlyStatus</a> <code class="sig-name descname">DCSM_getZone2RAMEXEStatus</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414DCSM_RAMModule" title="DCSM_RAMModule">DCSM_RAMModule</a> <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425DCSM_getZone2RAMEXEStatus14DCSM_RAMModule" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the EXE-ONLY status of zone 2 for a RAM module</p>
+<p><p>This function takes in a valid module value and returns the status of EXE ONLY security protection for that module. DCSM_CLA is an invalid module value. There is no EXE-ONLY available for DCSM_CLA.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span></code>: is the RAM module value. Valid values are type DCSM_RAMModule C28x RAMs :<ul>
+<li><p><strong>DCSM_RAMLS0</strong> </p></li>
+<li><p><strong>DCSM_RAMLS1</strong> </p></li>
+<li><p><strong>DCSM_RAMLS2</strong> </p></li>
+<li><p><strong>DCSM_RAMLS3</strong> </p></li>
+<li><p><strong>DCSM_RAMLS4</strong> </p></li>
+<li><p><strong>DCSM_RAMLS5</strong> </p></li>
+<li><p><strong>DCSM_RAMD0</strong> </p></li>
+<li><p><strong>DCSM_RAMD1</strong> </p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns DCSM_PROTECTED if the module is EXE-ONLY protected, DCSM_UNPROTECTED if the module is not EXE-ONLY protected, DCSM_INCORRECT_ZONE if module does not belong to this zone. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423DCSM_claimZoneSemaphore18DCSM_SemaphoreZone">
+<span id="_CPPv323DCSM_claimZoneSemaphore18DCSM_SemaphoreZone"></span><span id="_CPPv223DCSM_claimZoneSemaphore18DCSM_SemaphoreZone"></span><span id="DCSM_claimZoneSemaphore__DCSM_SemaphoreZone"></span><span class="target" id="group__dcsm__api_1gbc2ff4538a5c57740cdb51e7343c0fbb"></span>bool <code class="sig-name descname">DCSM_claimZoneSemaphore</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv418DCSM_SemaphoreZone" title="DCSM_SemaphoreZone">DCSM_SemaphoreZone</a> <em>zone</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423DCSM_claimZoneSemaphore18DCSM_SemaphoreZone" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Claims the zone semaphore which allows access to the Flash Wrapper register for that zone.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns true for a successful semaphore capture, false if it was unable to capture the semaphore. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zone</span></code>: is the zone which is trying to claim the semaphore which allows access to the Flash Wrapper registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425DCSM_releaseZoneSemaphorev">
+<span id="_CPPv325DCSM_releaseZoneSemaphorev"></span><span id="_CPPv225DCSM_releaseZoneSemaphorev"></span><span id="DCSM_releaseZoneSemaphore__void"></span><span class="target" id="group__dcsm__api_1gce31ea945a24def0b29a60d301f835fb"></span>bool <code class="sig-name descname">DCSM_releaseZoneSemaphore</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425DCSM_releaseZoneSemaphorev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Releases the zone semaphore.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns true if it was successful in releasing the zone semaphore and false if it was unsuccessful in releasing the zone semaphore.</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>If the calling function is not in the right zone to be able to access this register, it will return a false. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv419DCSM_CSMPasswordKey">
+<span id="_CPPv319DCSM_CSMPasswordKey"></span><span id="_CPPv219DCSM_CSMPasswordKey"></span><span id="DCSM_CSMPasswordKey"></span><span class="target" id="struct_d_c_s_m___c_s_m_password_key"></span><em class="property">struct </em><code class="sig-name descname">DCSM_CSMPasswordKey</code><a class="headerlink" href="#_CPPv419DCSM_CSMPasswordKey" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;dcsm.h&gt;</em><p>Data structures to hold password keys. </p>
+</dd></dl>
+
+</dd></dl>
+
+<p>The code for this module is contained in driverlib/dcsm.c, with driverlib/dcsm.h containing the API declarations for use by applications.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dma.html" class="btn btn-neutral float-right" title="DMA Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dac.html" class="btn btn-neutral float-left" title="DAC Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2020, Texas Instruments Incorporated</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+      <span class="lastupdated">
+        Last updated on May 26, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v3.02.00.00',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+
+        $('body').on("mousewheel", function () {
+            // Remove default behavior
+            event.preventDefault();
+            // Scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

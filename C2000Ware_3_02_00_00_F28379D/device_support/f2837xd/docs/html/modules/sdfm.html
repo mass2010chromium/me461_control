@@ -1,0 +1,1240 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SDFM Module &mdash; F2837xd API Guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tiicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="F2837xd API Guide" href="../index.html"/>
+        <link rel="up" title="Modules" href="index.html"/>
+        <link rel="next" title="SPI Module" href="spi.html"/>
+        <link rel="prev" title="SCI Module" href="sci.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> F2837xd API Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.02.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model.html">Programming Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Driver Library Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">ADC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asysctl.html">ASysCtl Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="can.html">CAN Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cla.html">CLA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html">CLB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmpss.html">CMPSS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cputimer.html">CPU Timer Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">DAC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcsm.html">DCSM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dma.html">DMA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecap.html">ECAP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emif.html">EMIF Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="epwm.html">EPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hrpwm.html">HRPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqep.html">EQEP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash.html">FLASH Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html">I2C Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupt Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcbsp.html">MCBSP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memcfg.html">MEMCFG Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sci.html">SCI Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SDFM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysctl.html">SYSCTL Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html">USB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upp.html">UPP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbar.html">XBAR Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">F2837xd API Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Modules</a> &raquo;</li>
+        
+      <li>SDFM Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sdfm-module">
+<span id="sdfm"></span><h1>SDFM Module<a class="headerlink" href="#sdfm-module" title="Permalink to this headline">¶</a></h1>
+<p>The Sigma-Delta Filter Module (SDFM) API provides a set of functions for
+configuring and using the SDFM module.
+The functions provided allow the user to setup and configure the Input data
+type to SDFM filters, the Primary (data) and Secondary (comparator) filters,
+Data FIFO, the PWM - SDFM sync signals, comparator threshold values and
+interrupt sources.
+Functions are also provided to read the filter data and the status of
+the SDFM module components.</p>
+<p>Note that the Secondary (comparator) Filter configuration APIs have the “Comp”
+key word embedded to represent access to the Comparator sub-module. For
+example the function SDFM_setComparatorFilterType() sets the comparator filter
+type while SDFM_setFilterType() sets the primary filter type.</p>
+<p>APIs providing higher level abstraction are also available in the sdfm.c source
+file. These APIs can be used to configure the Comparator, Data Filter  and the
+Data filter FIFO.</p>
+<dl class="group">
+<dt>
+<span class="target" id="group__sdfm__api"></span><em>group</em> <code class="sig-name descname">sdfm_api</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.SDFM_GET_LOW_THRESHOLD">
+<span class="target" id="group__sdfm__api_1g40f0c42e36807e71962b58ab5d1d8a53"></span><code class="sig-name descname">SDFM_GET_LOW_THRESHOLD</code><span class="sig-paren">(</span><em>C</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_GET_LOW_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to get the low threshold </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_GET_HIGH_THRESHOLD">
+<span class="target" id="group__sdfm__api_1g0779c229975f1e32c22ddd6954659e7b"></span><code class="sig-name descname">SDFM_GET_HIGH_THRESHOLD</code><span class="sig-paren">(</span><em>C</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_GET_HIGH_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to get the high threshold </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_SET_OSR">
+<span class="target" id="group__sdfm__api_1g6c3a8fdc83f9bc8ccb7fe835e1186845"></span><code class="sig-name descname">SDFM_SET_OSR</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_SET_OSR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to convert comparator over sampling ratio to acceptable bit location </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_SHIFT_VALUE">
+<span class="target" id="group__sdfm__api_1gcebd6469590e327be4523024cb6dd08b"></span><code class="sig-name descname">SDFM_SHIFT_VALUE</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_SHIFT_VALUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to convert the data shift bit values to acceptable bit location </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_THRESHOLD">
+<span class="target" id="group__sdfm__api_1g68f72dd53559080bcefeeb76dd26997c"></span><code class="sig-name descname">SDFM_THRESHOLD</code><span class="sig-paren">(</span><em>H</em>, <em>L</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to combine high threshold and low threshold values </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_SET_FIFO_LEVEL">
+<span class="target" id="group__sdfm__api_1g47766a2240a497ded257d68be625568b"></span><code class="sig-name descname">SDFM_SET_FIFO_LEVEL</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_SET_FIFO_LEVEL" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to set the FIFO level to acceptable bit location </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_SET_ZERO_CROSS_THRESH_VALUE">
+<span class="target" id="group__sdfm__api_1g71e76e260e4b7f36dfce9c1f33f437a8"></span><code class="sig-name descname">SDFM_SET_ZERO_CROSS_THRESH_VALUE</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#c.SDFM_SET_ZERO_CROSS_THRESH_VALUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macro to set and enable the zero cross threshold value. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_DISABLE">
+<span class="target" id="group__sdfm__api_1g63a58cd9ba502c40faa4616963d56de1"></span><code class="sig-name descname">SDFM_FILTER_DISABLE</code><a class="headerlink" href="#c.SDFM_FILTER_DISABLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Macros to enable or disable filter. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_ENABLE">
+<span class="target" id="group__sdfm__api_1g793cb6e907e042565259da57d753a25f"></span><code class="sig-name descname">SDFM_FILTER_ENABLE</code><a class="headerlink" href="#c.SDFM_FILTER_ENABLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_MODULATOR_FAILURE_INTERRUPT">
+<span class="target" id="group__sdfm__api_1g910984bd9e33da3d8d59e0d358598ea3"></span><code class="sig-name descname">SDFM_MODULATOR_FAILURE_INTERRUPT</code><a class="headerlink" href="#c.SDFM_MODULATOR_FAILURE_INTERRUPT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Interrupt is generated if Modulator fails. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_LOW_LEVEL_THRESHOLD_INTERRUPT">
+<span class="target" id="group__sdfm__api_1gbfc5e563e0043d0cd02b6e059bb93979"></span><code class="sig-name descname">SDFM_LOW_LEVEL_THRESHOLD_INTERRUPT</code><a class="headerlink" href="#c.SDFM_LOW_LEVEL_THRESHOLD_INTERRUPT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Interrupt on Comparator low-level threshold. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_HIGH_LEVEL_THRESHOLD_INTERRUPT">
+<span class="target" id="group__sdfm__api_1ge6b7ce65b72a55c9f4a29e7dc952a842"></span><code class="sig-name descname">SDFM_HIGH_LEVEL_THRESHOLD_INTERRUPT</code><a class="headerlink" href="#c.SDFM_HIGH_LEVEL_THRESHOLD_INTERRUPT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Interrupt on Comparator high-level threshold. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_DATA_FILTER_ACKNOWLEDGE_INTERRUPT">
+<span class="target" id="group__sdfm__api_1g49f10deb7bf566e455d19090af6e5a91"></span><code class="sig-name descname">SDFM_DATA_FILTER_ACKNOWLEDGE_INTERRUPT</code><a class="headerlink" href="#c.SDFM_DATA_FILTER_ACKNOWLEDGE_INTERRUPT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Interrupt on Acknowledge flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_MASTER_INTERRUPT_FLAG">
+<span class="target" id="group__sdfm__api_1gd329fff31f1193e3cde09990f9ac275c"></span><code class="sig-name descname">SDFM_MASTER_INTERRUPT_FLAG</code><a class="headerlink" href="#c.SDFM_MASTER_INTERRUPT_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Master interrupt flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_1_HIGH_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1g0f9578fc50e08346ffdada1667d3639a"></span><code class="sig-name descname">SDFM_FILTER_1_HIGH_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_1_HIGH_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 1 high -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_1_LOW_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1g459704879c9773b95769c8d89846308c"></span><code class="sig-name descname">SDFM_FILTER_1_LOW_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_1_LOW_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 1 low -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_2_HIGH_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1g08c6054e80630a598548b322f28299a3"></span><code class="sig-name descname">SDFM_FILTER_2_HIGH_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_2_HIGH_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 2 high -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_2_LOW_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1ge924e2c9849ccac8493401b8f530dee5"></span><code class="sig-name descname">SDFM_FILTER_2_LOW_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_2_LOW_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 2 low -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_3_HIGH_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1gaad32d08119fa08a448aa149d7cdcc68"></span><code class="sig-name descname">SDFM_FILTER_3_HIGH_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_3_HIGH_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 3 high -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_3_LOW_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1g94709b45978ccf11add415ed401b671a"></span><code class="sig-name descname">SDFM_FILTER_3_LOW_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_3_LOW_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 3 low -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_4_HIGH_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1g21910f45af9b96e20eed49344f3f5eac"></span><code class="sig-name descname">SDFM_FILTER_4_HIGH_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_4_HIGH_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 4 high -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_4_LOW_THRESHOLD_FLAG">
+<span class="target" id="group__sdfm__api_1gbba97da1d17ed345cb0b80277b0822e7"></span><code class="sig-name descname">SDFM_FILTER_4_LOW_THRESHOLD_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_4_LOW_THRESHOLD_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 4 low -level threshold flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_1_MOD_FAILED_FLAG">
+<span class="target" id="group__sdfm__api_1geeb68a426b00409865b992a436cc0b60"></span><code class="sig-name descname">SDFM_FILTER_1_MOD_FAILED_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_1_MOD_FAILED_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 1 modulator failed flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_2_MOD_FAILED_FLAG">
+<span class="target" id="group__sdfm__api_1g871dd8e869f6a1f2f1c1a42bbab6b1f9"></span><code class="sig-name descname">SDFM_FILTER_2_MOD_FAILED_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_2_MOD_FAILED_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 2 modulator failed flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_3_MOD_FAILED_FLAG">
+<span class="target" id="group__sdfm__api_1g5789ff78a35ef895b4b7594f542e54ec"></span><code class="sig-name descname">SDFM_FILTER_3_MOD_FAILED_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_3_MOD_FAILED_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 3 modulator failed flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_4_MOD_FAILED_FLAG">
+<span class="target" id="group__sdfm__api_1g4425b832ba27dc852cf129afebd1aa39"></span><code class="sig-name descname">SDFM_FILTER_4_MOD_FAILED_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_4_MOD_FAILED_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 4 modulator failed flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_1_NEW_DATA_FLAG">
+<span class="target" id="group__sdfm__api_1ga08b1e9e693f2afb82e95b7c502af704"></span><code class="sig-name descname">SDFM_FILTER_1_NEW_DATA_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_1_NEW_DATA_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 1 new data flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_2_NEW_DATA_FLAG">
+<span class="target" id="group__sdfm__api_1g446cb4291a745c2cc44a5b78e9474d40"></span><code class="sig-name descname">SDFM_FILTER_2_NEW_DATA_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_2_NEW_DATA_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 2 new data flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_3_NEW_DATA_FLAG">
+<span class="target" id="group__sdfm__api_1g23488e72ef60cf09f8596427ed52fae0"></span><code class="sig-name descname">SDFM_FILTER_3_NEW_DATA_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_3_NEW_DATA_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 3 new data flag </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.SDFM_FILTER_4_NEW_DATA_FLAG">
+<span class="target" id="group__sdfm__api_1ge4b68c0b8810d3953693f1ae3a997606"></span><code class="sig-name descname">SDFM_FILTER_4_NEW_DATA_FLAG</code><a class="headerlink" href="#c.SDFM_FILTER_4_NEW_DATA_FLAG" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter 4 new data flag </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv426SDFM_OutputThresholdStatus">
+<span id="_CPPv326SDFM_OutputThresholdStatus"></span><span id="_CPPv226SDFM_OutputThresholdStatus"></span><span class="target" id="group__sdfm__api_1g1f97575067d2c59376d3847f70be1cf9"></span><em class="property">enum </em><code class="sig-name descname">SDFM_OutputThresholdStatus</code><a class="headerlink" href="#_CPPv426SDFM_OutputThresholdStatus" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be returned from <a class="reference internal" href="#group__sdfm__api_1gb6448b426dd798e85d6c042110d0a5ed"><span class="std std-ref">SDFM_getThresholdStatus()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv428SDFM_OUTPUT_WITHIN_THRESHOLD">
+<span id="_CPPv328SDFM_OUTPUT_WITHIN_THRESHOLD"></span><span id="_CPPv228SDFM_OUTPUT_WITHIN_THRESHOLD"></span><span class="target" id="group__sdfm__api_1gg1f97575067d2c59376d3847f70be1cf98e81e8aacfafcaf52b18e16a31898ce7"></span><code class="sig-name descname">SDFM_OUTPUT_WITHIN_THRESHOLD</code> = 0<a class="headerlink" href="#_CPPv428SDFM_OUTPUT_WITHIN_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SDFM output is within threshold. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv427SDFM_OUTPUT_ABOVE_THRESHOLD">
+<span id="_CPPv327SDFM_OUTPUT_ABOVE_THRESHOLD"></span><span id="_CPPv227SDFM_OUTPUT_ABOVE_THRESHOLD"></span><span class="target" id="group__sdfm__api_1gg1f97575067d2c59376d3847f70be1cf9981813ae28ae4bfe44d2e75d14de6a05"></span><code class="sig-name descname">SDFM_OUTPUT_ABOVE_THRESHOLD</code> = 1<a class="headerlink" href="#_CPPv427SDFM_OUTPUT_ABOVE_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SDFM output is above threshold. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv427SDFM_OUTPUT_BELOW_THRESHOLD">
+<span id="_CPPv327SDFM_OUTPUT_BELOW_THRESHOLD"></span><span id="_CPPv227SDFM_OUTPUT_BELOW_THRESHOLD"></span><span class="target" id="group__sdfm__api_1gg1f97575067d2c59376d3847f70be1cf9cd7b388ccea4d27fbbaae45fd4a89ddf"></span><code class="sig-name descname">SDFM_OUTPUT_BELOW_THRESHOLD</code> = 2<a class="headerlink" href="#_CPPv427SDFM_OUTPUT_BELOW_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SDFM output is below threshold. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv417SDFM_FilterNumber">
+<span id="_CPPv317SDFM_FilterNumber"></span><span id="_CPPv217SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g0eea6aa5a51fd3a59fd7d9aefc19543e"></span><em class="property">enum </em><code class="sig-name descname">SDFM_FilterNumber</code><a class="headerlink" href="#_CPPv417SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to all functions as the <em>filterNumber</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv413SDFM_FILTER_1">
+<span id="_CPPv313SDFM_FILTER_1"></span><span id="_CPPv213SDFM_FILTER_1"></span><span class="target" id="group__sdfm__api_1gg0eea6aa5a51fd3a59fd7d9aefc19543e9031bf4b8534314e926aacfbfd1196f4"></span><code class="sig-name descname">SDFM_FILTER_1</code> = 0<a class="headerlink" href="#_CPPv413SDFM_FILTER_1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413SDFM_FILTER_2">
+<span id="_CPPv313SDFM_FILTER_2"></span><span id="_CPPv213SDFM_FILTER_2"></span><span class="target" id="group__sdfm__api_1gg0eea6aa5a51fd3a59fd7d9aefc19543ed27e82e64f0f9cbdefa723cf3c2e6347"></span><code class="sig-name descname">SDFM_FILTER_2</code> = 1<a class="headerlink" href="#_CPPv413SDFM_FILTER_2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter 2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413SDFM_FILTER_3">
+<span id="_CPPv313SDFM_FILTER_3"></span><span id="_CPPv213SDFM_FILTER_3"></span><span class="target" id="group__sdfm__api_1gg0eea6aa5a51fd3a59fd7d9aefc19543e3255e25d21cfb6fa4c13b7c36c046f96"></span><code class="sig-name descname">SDFM_FILTER_3</code> = 2<a class="headerlink" href="#_CPPv413SDFM_FILTER_3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter 3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413SDFM_FILTER_4">
+<span id="_CPPv313SDFM_FILTER_4"></span><span id="_CPPv213SDFM_FILTER_4"></span><span class="target" id="group__sdfm__api_1gg0eea6aa5a51fd3a59fd7d9aefc19543efb5146143e604f739cca93ec536023eb"></span><code class="sig-name descname">SDFM_FILTER_4</code> = 3<a class="headerlink" href="#_CPPv413SDFM_FILTER_4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter 4. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv415SDFM_FilterType">
+<span id="_CPPv315SDFM_FilterType"></span><span id="_CPPv215SDFM_FilterType"></span><span class="target" id="group__sdfm__api_1ge3799c6a93fd732f42b5bd046e9776fe"></span><em class="property">enum </em><code class="sig-name descname">SDFM_FilterType</code><a class="headerlink" href="#_CPPv415SDFM_FilterType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__sdfm__api_1gace9698315c444978244dda6d5b6da32"><span class="std std-ref">SDFM_setFilterType()</span></a>, <a class="reference internal" href="#group__sdfm__api_1gc191a002f4db56a8f7ec20e416803392"><span class="std std-ref">SDFM_setComparatorFilterType()</span></a> as the <em>filterType</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv421SDFM_FILTER_SINC_FAST">
+<span id="_CPPv321SDFM_FILTER_SINC_FAST"></span><span id="_CPPv221SDFM_FILTER_SINC_FAST"></span><span class="target" id="group__sdfm__api_1gge3799c6a93fd732f42b5bd046e9776fe6ff8a779fe059beb32d61bb80d899311"></span><code class="sig-name descname">SDFM_FILTER_SINC_FAST</code> = 0x00<a class="headerlink" href="#_CPPv421SDFM_FILTER_SINC_FAST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter with SincFast structure. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv418SDFM_FILTER_SINC_1">
+<span id="_CPPv318SDFM_FILTER_SINC_1"></span><span id="_CPPv218SDFM_FILTER_SINC_1"></span><span class="target" id="group__sdfm__api_1gge3799c6a93fd732f42b5bd046e9776feeb610b1d98939412ea915ecc278cd845"></span><code class="sig-name descname">SDFM_FILTER_SINC_1</code> = 0x10<a class="headerlink" href="#_CPPv418SDFM_FILTER_SINC_1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter with Sinc1 structure. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv418SDFM_FILTER_SINC_2">
+<span id="_CPPv318SDFM_FILTER_SINC_2"></span><span id="_CPPv218SDFM_FILTER_SINC_2"></span><span class="target" id="group__sdfm__api_1gge3799c6a93fd732f42b5bd046e9776fe56c66ff2ce88f96a7296bc34b8373c35"></span><code class="sig-name descname">SDFM_FILTER_SINC_2</code> = 0x20<a class="headerlink" href="#_CPPv418SDFM_FILTER_SINC_2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter with Sinc3 structure. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv418SDFM_FILTER_SINC_3">
+<span id="_CPPv318SDFM_FILTER_SINC_3"></span><span id="_CPPv218SDFM_FILTER_SINC_3"></span><span class="target" id="group__sdfm__api_1gge3799c6a93fd732f42b5bd046e9776fed751d48905d75e52575a50ff4db8b062"></span><code class="sig-name descname">SDFM_FILTER_SINC_3</code> = 0x30<a class="headerlink" href="#_CPPv418SDFM_FILTER_SINC_3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Digital filter with Sinc4 structure. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv423SDFM_ModulatorClockMode">
+<span id="_CPPv323SDFM_ModulatorClockMode"></span><span id="_CPPv223SDFM_ModulatorClockMode"></span><span class="target" id="group__sdfm__api_1gb10931bca1c0bd531e4fc800630f60cc"></span><em class="property">enum </em><code class="sig-name descname">SDFM_ModulatorClockMode</code><a class="headerlink" href="#_CPPv423SDFM_ModulatorClockMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__sdfm__api_1g91a05c3ab7781314524198cfa6fdb191"><span class="std std-ref">SDFM_setupModulatorClock()</span></a>,as the <em>clockMode</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv434SDFM_MODULATOR_CLK_EQUAL_DATA_RATE">
+<span id="_CPPv334SDFM_MODULATOR_CLK_EQUAL_DATA_RATE"></span><span id="_CPPv234SDFM_MODULATOR_CLK_EQUAL_DATA_RATE"></span><span class="target" id="group__sdfm__api_1ggb10931bca1c0bd531e4fc800630f60cca7beb0a89da3320ce28fd214e083c2a6"></span><code class="sig-name descname">SDFM_MODULATOR_CLK_EQUAL_DATA_RATE</code> = 0<a class="headerlink" href="#_CPPv434SDFM_MODULATOR_CLK_EQUAL_DATA_RATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Modulator clock is identical to the data rate. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv433SDFM_MODULATOR_CLK_HALF_DATA_RATE">
+<span id="_CPPv333SDFM_MODULATOR_CLK_HALF_DATA_RATE"></span><span id="_CPPv233SDFM_MODULATOR_CLK_HALF_DATA_RATE"></span><span class="target" id="group__sdfm__api_1ggb10931bca1c0bd531e4fc800630f60cc2892c9f769ae6411fc1101c159b0f86b"></span><code class="sig-name descname">SDFM_MODULATOR_CLK_HALF_DATA_RATE</code> = 1<a class="headerlink" href="#_CPPv433SDFM_MODULATOR_CLK_HALF_DATA_RATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Modulator clock is half the data rate. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422SDFM_MODULATOR_CLK_OFF">
+<span id="_CPPv322SDFM_MODULATOR_CLK_OFF"></span><span id="_CPPv222SDFM_MODULATOR_CLK_OFF"></span><span class="target" id="group__sdfm__api_1ggb10931bca1c0bd531e4fc800630f60cca233c8826566dbf5f780e7f2f0ce73eb"></span><code class="sig-name descname">SDFM_MODULATOR_CLK_OFF</code> = 2<a class="headerlink" href="#_CPPv422SDFM_MODULATOR_CLK_OFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Modulator clock is off. Data is Manchester coded. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv435SDFM_MODULATOR_CLK_DOUBLE_DATA_RATE">
+<span id="_CPPv335SDFM_MODULATOR_CLK_DOUBLE_DATA_RATE"></span><span id="_CPPv235SDFM_MODULATOR_CLK_DOUBLE_DATA_RATE"></span><span class="target" id="group__sdfm__api_1ggb10931bca1c0bd531e4fc800630f60cc63e53685c64f1447ae0f5af61f0ec800"></span><code class="sig-name descname">SDFM_MODULATOR_CLK_DOUBLE_DATA_RATE</code> = 3<a class="headerlink" href="#_CPPv435SDFM_MODULATOR_CLK_DOUBLE_DATA_RATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Modulator clock is double the data rate. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv421SDFM_OutputDataFormat">
+<span id="_CPPv321SDFM_OutputDataFormat"></span><span id="_CPPv221SDFM_OutputDataFormat"></span><span class="target" id="group__sdfm__api_1gcd47cd235daf8012d8a8b73f7f26f8c1"></span><em class="property">enum </em><code class="sig-name descname">SDFM_OutputDataFormat</code><a class="headerlink" href="#_CPPv421SDFM_OutputDataFormat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__sdfm__api_1gea41340159b39b49ea55f8e6c45d5ffb"><span class="std std-ref">SDFM_setOutputDataFormat()</span></a>,as the <em>dataFormat</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv423SDFM_DATA_FORMAT_16_BIT">
+<span id="_CPPv323SDFM_DATA_FORMAT_16_BIT"></span><span id="_CPPv223SDFM_DATA_FORMAT_16_BIT"></span><span class="target" id="group__sdfm__api_1ggcd47cd235daf8012d8a8b73f7f26f8c1e76cb506faf329ff298319b2007a98a9"></span><code class="sig-name descname">SDFM_DATA_FORMAT_16_BIT</code> = 0<a class="headerlink" href="#_CPPv423SDFM_DATA_FORMAT_16_BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter output is in 16 bits 2’s complement format. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423SDFM_DATA_FORMAT_32_BIT">
+<span id="_CPPv323SDFM_DATA_FORMAT_32_BIT"></span><span id="_CPPv223SDFM_DATA_FORMAT_32_BIT"></span><span class="target" id="group__sdfm__api_1ggcd47cd235daf8012d8a8b73f7f26f8c14e714394df778ab27e3e92b0591fee2a"></span><code class="sig-name descname">SDFM_DATA_FORMAT_32_BIT</code> = 1<a class="headerlink" href="#_CPPv423SDFM_DATA_FORMAT_32_BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Filter output is in 32 bits 2’s complement format. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv424SDFM_enableExternalReset8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv324SDFM_enableExternalReset8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv224SDFM_enableExternalReset8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_enableExternalReset__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g9dfa6bb01e1c892b55e71e0d8c5f4c0d"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_enableExternalReset</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424SDFM_enableExternalReset8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable external reset</p>
+<p><p>This function enables data filter to be reset by an external source (PWM compare output).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425SDFM_disableExternalReset8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv325SDFM_disableExternalReset8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv225SDFM_disableExternalReset8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_disableExternalReset__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g1341f5a725ef1d9ccf1e305e4010d9ee"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_disableExternalReset</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425SDFM_disableExternalReset8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable external reset</p>
+<p><p>This function disables data filter from being reset by an external source (PWM compare output).</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417SDFM_enableFilter8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv317SDFM_enableFilter8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv217SDFM_enableFilter8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_enableFilter__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g79cdfd3fde02173b4c3d2e32ad19eadc"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_enableFilter</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417SDFM_enableFilter8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable filter</p>
+<p><p>This function enables the filter specified by the </p>
+<em>filterNumber</em> variable.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418SDFM_disableFilter8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv318SDFM_disableFilter8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv218SDFM_disableFilter8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_disableFilter__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g9878538c87e59149b02bbe290fa3170c"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_disableFilter</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418SDFM_disableFilter8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable filter</p>
+<p><p>This function disables the filter specified by the </p>
+<em>filterNumber</em> variable.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418SDFM_setFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType">
+<span id="_CPPv318SDFM_setFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType"></span><span id="_CPPv218SDFM_setFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType"></span><span id="SDFM_setFilterType__uint32_t.SDFM_FilterNumber.SDFM_FilterType"></span><span class="target" id="group__sdfm__api_1gace9698315c444978244dda6d5b6da32"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setFilterType</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, <a class="reference internal" href="#_CPPv415SDFM_FilterType" title="SDFM_FilterType">SDFM_FilterType</a> <em>filterType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418SDFM_setFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set filter type.</p>
+<p><p>This function sets the filter type or structure to be used as specified by filterType for the selected filter number as specified by filterNumber.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterType</span></code>: is the filter type or structure.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv431SDFM_setFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv331SDFM_setFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv231SDFM_setFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_setFilterOverSamplingRatio__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1gbfe3805c14cdbadff2c3894d741f5dd9"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setFilterOverSamplingRatio</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>overSamplingRatio</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv431SDFM_setFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set data filter over sampling ratio.</p>
+<p><p>This function sets the filter oversampling ratio for the filter specified by the filterNumber variable.Valid values for the variable overSamplingRatio are 0 to 255 inclusive. The actual oversampling ratio will be this value plus one.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overSamplingRatio</span></code>: is the data filter over sampling ratio.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424SDFM_setupModulatorClock8uint32_t17SDFM_FilterNumber23SDFM_ModulatorClockMode">
+<span id="_CPPv324SDFM_setupModulatorClock8uint32_t17SDFM_FilterNumber23SDFM_ModulatorClockMode"></span><span id="_CPPv224SDFM_setupModulatorClock8uint32_t17SDFM_FilterNumber23SDFM_ModulatorClockMode"></span><span id="SDFM_setupModulatorClock__uint32_t.SDFM_FilterNumber.SDFM_ModulatorClockMode"></span><span class="target" id="group__sdfm__api_1g91a05c3ab7781314524198cfa6fdb191"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setupModulatorClock</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, <a class="reference internal" href="#_CPPv423SDFM_ModulatorClockMode" title="SDFM_ModulatorClockMode">SDFM_ModulatorClockMode</a> <em>clockMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424SDFM_setupModulatorClock8uint32_t17SDFM_FilterNumber23SDFM_ModulatorClockMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set modulator clock mode.</p>
+<p><p>This function sets the modulator clock mode specified by clockMode for the filter specified by filterNumber.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clockMode</span></code>: is the modulator clock mode.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424SDFM_setOutputDataFormat8uint32_t17SDFM_FilterNumber21SDFM_OutputDataFormat">
+<span id="_CPPv324SDFM_setOutputDataFormat8uint32_t17SDFM_FilterNumber21SDFM_OutputDataFormat"></span><span id="_CPPv224SDFM_setOutputDataFormat8uint32_t17SDFM_FilterNumber21SDFM_OutputDataFormat"></span><span id="SDFM_setOutputDataFormat__uint32_t.SDFM_FilterNumber.SDFM_OutputDataFormat"></span><span class="target" id="group__sdfm__api_1gea41340159b39b49ea55f8e6c45d5ffb"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setOutputDataFormat</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, <a class="reference internal" href="#_CPPv421SDFM_OutputDataFormat" title="SDFM_OutputDataFormat">SDFM_OutputDataFormat</a> <em>dataFormat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424SDFM_setOutputDataFormat8uint32_t17SDFM_FilterNumber21SDFM_OutputDataFormat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the output data format</p>
+<p><p>This function sets the output data format for the filter specified by filterNumber.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataFormat</span></code>: is the output data format.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422SDFM_setDataShiftValue8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv322SDFM_setDataShiftValue8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv222SDFM_setDataShiftValue8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_setDataShiftValue__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1gcc20f93c11ce19effdc931bd78494704"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setDataShiftValue</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>shiftValue</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422SDFM_setDataShiftValue8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set data shift value.</p>
+<p><p>This function sets the shift value for the 16 bit 2’s complement data format. The valid maximum value for shiftValue is 31.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shiftValue</span></code>: is the data shift value.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><strong>Note:</strong> Use this function with 16 bit 2’s complement data format only.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv431SDFM_setCompFilterHighThreshold8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv331SDFM_setCompFilterHighThreshold8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv231SDFM_setCompFilterHighThreshold8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_setCompFilterHighThreshold__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1gbcc1c41d2e46a380c940e905a8c9fd1b"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setCompFilterHighThreshold</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>highThreshold</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv431SDFM_setCompFilterHighThreshold8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set Filter output high-level threshold.</p>
+<p><p>This function sets the unsigned high-level threshold value for the Comparator filter output. If the output value of the filter exceeds highThreshold and interrupt generation is enabled, an interrupt will be issued.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">highThreshold</span></code>: is the high-level threshold.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430SDFM_setCompFilterLowThreshold8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv330SDFM_setCompFilterLowThreshold8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv230SDFM_setCompFilterLowThreshold8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_setCompFilterLowThreshold__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1g084f1910e55b4794bee16c06859b7ce9"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setCompFilterLowThreshold</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>lowThreshold</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430SDFM_setCompFilterLowThreshold8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set Filter output low-level threshold.</p>
+<p><p>This function sets the unsigned low-level threshold value for the Comparator filter output. If the output value of the filter gets below lowThreshold and interrupt generation is enabled, an interrupt will be issued.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lowThreshold</span></code>: is the low-level threshold.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420SDFM_enableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv320SDFM_enableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv220SDFM_enableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_enableInterrupt__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1g5454c36114085ab1b6c48ed2fadba8f5"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_enableInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420SDFM_enableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable SDFM interrupts.</p>
+<p><p>This function enables the low threshold , high threshold or modulator failure interrupt as determined by intFlags for the filter specified by filterNumber. Valid values for intFlags are: SDFM_MODULATOR_FAILURE_INTERRUPT , SDFM_LOW_LEVEL_THRESHOLD_INTERRUPT, SDFM_HIGH_LEVEL_THRESHOLD_INTERRUPT,SDFM_DATA_FILTER_ACKNOWLEDGE_INTERRUPT</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is the interrupt source.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421SDFM_disableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv321SDFM_disableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv221SDFM_disableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_disableInterrupt__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1g4e678cdba38636cc65e62b03b635274f"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_disableInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421SDFM_disableInterrupt8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable SDFM interrupts.</p>
+<p><p>This function disables the low threshold , high threshold or modulator failure interrupt as determined by intFlags for the filter specified by filterNumber. Valid values for intFlags are: SDFM_MODULATOR_FAILURE_INTERRUPT , SDFM_LOW_LEVEL_THRESHOLD_INTERRUPT, SDFM_HIGH_LEVEL_THRESHOLD_INTERRUPT,SDFM_DATA_FILTER_ACKNOWLEDGE_INTERRUPT</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is the interrupt source.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428SDFM_setComparatorFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType">
+<span id="_CPPv328SDFM_setComparatorFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType"></span><span id="_CPPv228SDFM_setComparatorFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType"></span><span id="SDFM_setComparatorFilterType__uint32_t.SDFM_FilterNumber.SDFM_FilterType"></span><span class="target" id="group__sdfm__api_1gc191a002f4db56a8f7ec20e416803392"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setComparatorFilterType</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, <a class="reference internal" href="#_CPPv415SDFM_FilterType" title="SDFM_FilterType">SDFM_FilterType</a> <em>filterType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428SDFM_setComparatorFilterType8uint32_t17SDFM_FilterNumber15SDFM_FilterType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the comparator filter type.</p>
+<p><p>This function sets the Comparator filter type or structure to be used as specified by filterType for the selected filter number as specified by filterNumber.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterType</span></code>: is the comparator filter type or structure.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv435SDFM_setCompFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t">
+<span id="_CPPv335SDFM_setCompFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="_CPPv235SDFM_setCompFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t"></span><span id="SDFM_setCompFilterOverSamplingRatio__uint32_t.SDFM_FilterNumber.uint16_t"></span><span class="target" id="group__sdfm__api_1gf8453f7656f9385820ab8b3eff1975fb"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_setCompFilterOverSamplingRatio</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em>, uint16_t <em>overSamplingRatio</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435SDFM_setCompFilterOverSamplingRatio8uint32_t17SDFM_FilterNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set Comparator filter over sampling ratio.</p>
+<p><p>This function sets the comparator filter oversampling ratio for the filter specified by the filterNumber.Valid values for the variable overSamplingRatio are 0 to 31 inclusive. The actual oversampling ratio will be this value plus one.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overSamplingRatio</span></code>: is the comparator filter over sampling ration.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418SDFM_getFilterData8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv318SDFM_getFilterData8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv218SDFM_getFilterData8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_getFilterData__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1gd0bc8fc8f3e51f334c6669434d086c4a"></span><em class="property">static</em> uint32_t <code class="sig-name descname">SDFM_getFilterData</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418SDFM_getFilterData8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the filter data output.</p>
+<p><p>This function returns the latest data filter output. Depending on the filter data output format selected, the valid value will be the lower 16 bits or the whole 32 bits of the returned value.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the latest data filter output. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423SDFM_getThresholdStatus8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv323SDFM_getThresholdStatus8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv223SDFM_getThresholdStatus8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_getThresholdStatus__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1gb6448b426dd798e85d6c042110d0a5ed"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv426SDFM_OutputThresholdStatus" title="SDFM_OutputThresholdStatus">SDFM_OutputThresholdStatus</a> <code class="sig-name descname">SDFM_getThresholdStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423SDFM_getThresholdStatus8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the Comparator threshold status.</p>
+<p><p>This function returns the Comparator output threshold status for the given filterNumber.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the following status flags.<ul class="simple">
+<li><p><strong>SDFM_OUTPUT_WITHIN_THRESHOLD</strong> if the output is within the specified threshold.</p></li>
+<li><p><strong>SDFM_OUTPUT_ABOVE_THRESHOLD</strong> if the output is above the high threshold</p></li>
+<li><p><strong>SDFM_OUTPUT_BELOW_THRESHOLD</strong> if the output is below the low threshold. </p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423SDFM_getModulatorStatus8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv323SDFM_getModulatorStatus8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv223SDFM_getModulatorStatus8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_getModulatorStatus__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g5250f9b751042baaf0bd9bd9ee9b6259"></span><em class="property">static</em> bool <code class="sig-name descname">SDFM_getModulatorStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423SDFM_getModulatorStatus8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the Modulator status.</p>
+<p><p>This function returns the Modulator status.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns true if the Modulator is operating normally Returns false if the Modulator has failed </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427SDFM_getNewFilterDataStatus8uint32_t17SDFM_FilterNumber">
+<span id="_CPPv327SDFM_getNewFilterDataStatus8uint32_t17SDFM_FilterNumber"></span><span id="_CPPv227SDFM_getNewFilterDataStatus8uint32_t17SDFM_FilterNumber"></span><span id="SDFM_getNewFilterDataStatus__uint32_t.SDFM_FilterNumber"></span><span class="target" id="group__sdfm__api_1g8065d0d16ebb5e19f32c56e793b2666e"></span><em class="property">static</em> bool <code class="sig-name descname">SDFM_getNewFilterDataStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417SDFM_FilterNumber" title="SDFM_FilterNumber">SDFM_FilterNumber</a> <em>filterNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427SDFM_getNewFilterDataStatus8uint32_t17SDFM_FilterNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if new Filter data is available.</p>
+<p><p>This function returns new filter data status.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filterNumber</span></code>: is the filter number.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if new filter data is available Returns <strong>false</strong> if no new filter data is available </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417SDFM_getIsrStatus8uint32_t">
+<span id="_CPPv317SDFM_getIsrStatus8uint32_t"></span><span id="_CPPv217SDFM_getIsrStatus8uint32_t"></span><span id="SDFM_getIsrStatus__uint32_t"></span><span class="target" id="group__sdfm__api_1g2839027f39e09447519c1743ff09c9fa"></span><em class="property">static</em> bool <code class="sig-name descname">SDFM_getIsrStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417SDFM_getIsrStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get pending interrupt.</p>
+<p><p>This function returns any pending interrupt status.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if there is a pending interrupt. Returns <strong>false</strong> if no interrupt is pending. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423SDFM_clearInterruptFlag8uint32_t8uint32_t">
+<span id="_CPPv323SDFM_clearInterruptFlag8uint32_t8uint32_t"></span><span id="_CPPv223SDFM_clearInterruptFlag8uint32_t8uint32_t"></span><span id="SDFM_clearInterruptFlag__uint32_t.uint32_t"></span><span class="target" id="group__sdfm__api_1g7098f69273bad4269a9c093a477af932"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_clearInterruptFlag</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint32_t <em>flag</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423SDFM_clearInterruptFlag8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clear pending flags.</p>
+<p><p>This function clears the specified pending interrupt flag. Valid values are SDFM_MASTER_INTERRUPT_FLAG,SDFM_FILTER_1_NEW_DATA_FLAG, SDFM_FILTER_2_NEW_DATA_FLAG,SDFM_FILTER_3_NEW_DATA_FLAG, SDFM_FILTER_4_NEW_DATA_FLAG,SDFM_FILTER_1_MOD_FAILED_FLAG, SDFM_FILTER_2_MOD_FAILED_FLAG,SDFM_FILTER_3_MOD_FAILED_FLAG, SDFM_FILTER_4_MOD_FAILED_FLAG,SDFM_FILTER_1_HIGH_THRESHOLD_FLAG, SDFM_FILTER_1_LOW_THRESHOLD_FLAG,SDFM_FILTER_2_HIGH_THRESHOLD_FLAG, SDFM_FILTER_2_LOW_THRESHOLD_FLAG,SDFM_FILTER_3_HIGH_THRESHOLD_FLAG, SDFM_FILTER_3_LOW_THRESHOLD_FLAG,SDFM_FILTER_4_HIGH_THRESHOLD_FLAG, SDFM_FILTER_4_LOW_THRESHOLD_FLAG or any combination of the above flags.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flag</span></code>: is the SDFM status</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426SDFM_enableMasterInterrupt8uint32_t">
+<span id="_CPPv326SDFM_enableMasterInterrupt8uint32_t"></span><span id="_CPPv226SDFM_enableMasterInterrupt8uint32_t"></span><span id="SDFM_enableMasterInterrupt__uint32_t"></span><span class="target" id="group__sdfm__api_1g9c59a63ce3cc6bac69932177746a5ef4"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_enableMasterInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426SDFM_enableMasterInterrupt8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable master interrupt.</p>
+<p><p>This function enables the master SDFM interrupt.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427SDFM_disableMasterInterrupt8uint32_t">
+<span id="_CPPv327SDFM_disableMasterInterrupt8uint32_t"></span><span id="_CPPv227SDFM_disableMasterInterrupt8uint32_t"></span><span id="SDFM_disableMasterInterrupt__uint32_t"></span><span class="target" id="group__sdfm__api_1g17b70afa6dd874593f5c8c94c13909b1"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_disableMasterInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427SDFM_disableMasterInterrupt8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable master interrupt.</p>
+<p><p>This function disables the master SDFM interrupt.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423SDFM_enableMasterFilter8uint32_t">
+<span id="_CPPv323SDFM_enableMasterFilter8uint32_t"></span><span id="_CPPv223SDFM_enableMasterFilter8uint32_t"></span><span id="SDFM_enableMasterFilter__uint32_t"></span><span class="target" id="group__sdfm__api_1gea71e2ac5499d917d8510207f3822094"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_enableMasterFilter</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423SDFM_enableMasterFilter8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable master filter.</p>
+<p><p>This function enables master filter.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424SDFM_disableMasterFilter8uint32_t">
+<span id="_CPPv324SDFM_disableMasterFilter8uint32_t"></span><span id="_CPPv224SDFM_disableMasterFilter8uint32_t"></span><span id="SDFM_disableMasterFilter__uint32_t"></span><span class="target" id="group__sdfm__api_1gdc2934ff3b7a4c303d9e6519d938ee94"></span><em class="property">static</em> void <code class="sig-name descname">SDFM_disableMasterFilter</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424SDFM_disableMasterFilter8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable master filter.</p>
+<p><p>This function disables master filter.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421SDFM_configComparator8uint32_t8uint16_t8uint32_t">
+<span id="_CPPv321SDFM_configComparator8uint32_t8uint16_t8uint32_t"></span><span id="_CPPv221SDFM_configComparator8uint32_t8uint16_t8uint32_t"></span><span id="SDFM_configComparator__uint32_t.uint16_t.uint32_t"></span><span class="target" id="group__sdfm__api_1g7350f23e8a2456758404e3338a2e63df"></span>void <code class="sig-name descname">SDFM_configComparator</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>config1</em>, uint32_t <em>config2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421SDFM_configComparator8uint32_t8uint16_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configures SDFM comparator for filter config &amp; threshold values</p>
+<p><p>This function configures the comparator filter for filter config and threshold values based on provided inputs.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config1</span></code>: is the filter number, filter type and over sampling ratio. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config2</span></code>: is high-level and low-level threshold values.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The config1 parameter is the logical OR of the filter number, filter type and oversampling ratio. The bit definitions for config1 are as follow:<ul class="simple">
+<li><p>config1.[3:0] filter number</p></li>
+<li><p>config1.[7:4] filter type</p></li>
+<li><p>config1.[15:8] Over sampling Ratio Valid values for filter number and filter type are defined in SDFM_FilterNumber and SDFM_FilterType enumerations respectively. <a class="reference internal" href="#group__sdfm__api_1g6c3a8fdc83f9bc8ccb7fe835e1186845"><span class="std std-ref">SDFM_SET_OSR(X)</span></a> macro can be used to set the value of the oversampling ratio ,which ranges [1,32] inclusive, in the appropriate bit location. For example the value (SDFM_FILTER_1 | SDFM_FILTER_SINC_2 | <a class="reference internal" href="#group__sdfm__api_1g6c3a8fdc83f9bc8ccb7fe835e1186845"><span class="std std-ref">SDFM_SET_OSR(16)</span></a>) will select Filter 1, SINC 2 type with an oversampling ratio of 16.</p></li>
+</ul>
+</p>
+<p>The config2 parameter is the logical OR of the filter high and low threshold values. The bit definitions for config2 are as follow:<ul class="simple">
+<li><p>config2.[15:0] low threshold</p></li>
+<li><p>config2.[31:16] high threshold The upper 16 bits define the high threshold and the lower 16 bits define the low threshold. <a class="reference internal" href="#group__sdfm__api_1g68f72dd53559080bcefeeb76dd26997c"><span class="std std-ref">SDFM_THRESHOLD(H,L)</span></a> can be used to combine the high and low thresholds.</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421SDFM_configDataFilter8uint32_t8uint16_t8uint16_t">
+<span id="_CPPv321SDFM_configDataFilter8uint32_t8uint16_t8uint16_t"></span><span id="_CPPv221SDFM_configDataFilter8uint32_t8uint16_t8uint16_t"></span><span id="SDFM_configDataFilter__uint32_t.uint16_t.uint16_t"></span><span class="target" id="group__sdfm__api_1g5572b41def9608cc3d30c4c73a0d9cc1"></span>void <code class="sig-name descname">SDFM_configDataFilter</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>config1</em>, uint16_t <em>config2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421SDFM_configDataFilter8uint32_t8uint16_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configure SDFM data filter</p>
+<p><p>This function configures the data filter based on configurations config1 and config2.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the SDFM module </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config1</span></code>: is the filter number, filter type and over sampling ratio configuration. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config2</span></code>: is filter switch, data representation and data shift values configuration.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The config1 parameter is the logical OR of the filter number, filter type and oversampling ratio. The bit definitions for config1 are as follow:<ul class="simple">
+<li><p>config1.[3:0] Filter number</p></li>
+<li><p>config1.[7:4] Filter type</p></li>
+<li><p>config1.[15:8] Over sampling Ratio Valid values for filter number and filter type are defined in SDFM_FilterNumber and SDFM_FilterType enumerations respectively. <a class="reference internal" href="#group__sdfm__api_1g6c3a8fdc83f9bc8ccb7fe835e1186845"><span class="std std-ref">SDFM_SET_OSR(X)</span></a> macro can be used to set the value of the oversampling ratio , which ranges [1,256] inclusive , in the appropriate bit location for config1. For example the value (SDFM_FILTER_2 | SDFM_FILTER_SINC_3 | <a class="reference internal" href="#group__sdfm__api_1g6c3a8fdc83f9bc8ccb7fe835e1186845"><span class="std std-ref">SDFM_SET_OSR(64)</span></a>) will select Filter 2 , SINC 3 type with an oversampling ratio of 64.</p></li>
+</ul>
+</p>
+<p>The config2 parameter is the logical OR of data representation, filter switch, and data shift values The bit definitions for config2 are as follow:<ul class="simple">
+<li><p>config2.[0] Data representation</p></li>
+<li><p>config2.[1] Filter switch</p></li>
+<li><p>config2.[15:2] Shift values Valid values for data representation are given in SDFM_OutputDataFormat enumeration. SDFM_FILTER_DISABLE or SDFM_FILTER_ENABLE will define the filter switch <a class="reference internal" href="#group__sdfm__api_1gcebd6469590e327be4523024cb6dd08b"><span class="std std-ref">values.SDFM_SHIFT_VALUE(X)</span></a> macro can be used to set the value of the data shift value,which ranges [0,31] inclusive, in the appropriate bit location for config2. The shift value is valid only in SDFM_DATA_FORMAT_16_BIT data representation format.</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>The code for this module is contained in driverlib/sdfm.c, with driverlib/sdfm.h containing the API declarations for use by applications.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spi.html" class="btn btn-neutral float-right" title="SPI Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sci.html" class="btn btn-neutral float-left" title="SCI Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2020, Texas Instruments Incorporated</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+      <span class="lastupdated">
+        Last updated on May 26, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v3.02.00.00',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+
+        $('body').on("mousewheel", function () {
+            // Remove default behavior
+            event.preventDefault();
+            // Scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

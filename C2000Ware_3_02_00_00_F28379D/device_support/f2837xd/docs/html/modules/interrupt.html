@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Interrupt Module &mdash; F2837xd API Guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tiicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="F2837xd API Guide" href="../index.html"/>
+        <link rel="up" title="Modules" href="index.html"/>
+        <link rel="next" title="MCBSP Module" href="mcbsp.html"/>
+        <link rel="prev" title="I2C Module" href="i2c.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> F2837xd API Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.02.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model.html">Programming Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Driver Library Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">ADC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asysctl.html">ASysCtl Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="can.html">CAN Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cla.html">CLA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html">CLB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmpss.html">CMPSS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cputimer.html">CPU Timer Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">DAC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcsm.html">DCSM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dma.html">DMA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecap.html">ECAP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emif.html">EMIF Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="epwm.html">EPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hrpwm.html">HRPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqep.html">EQEP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash.html">FLASH Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html">I2C Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Interrupt Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcbsp.html">MCBSP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memcfg.html">MEMCFG Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sci.html">SCI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdfm.html">SDFM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysctl.html">SYSCTL Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html">USB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upp.html">UPP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbar.html">XBAR Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">F2837xd API Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Modules</a> &raquo;</li>
+        
+      <li>Interrupt Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="interrupt-module">
+<span id="interrupt"></span><h1>Interrupt Module<a class="headerlink" href="#interrupt-module" title="Permalink to this headline">¶</a></h1>
+<p>The Interrupt API provides a set of functions for dealing with the Peripheral
+Interrupt Expansion (PIE) Controller as well as CPU-level interrupt
+configuration. Functions are provided to initialize interrupt-related
+registers, enable and disable interrupts, and register interrupt handlers.</p>
+<p>Interrupt API functions rely on an interrupt number defined to specify which
+interrupt is being configured. These interrupt numbers are found in
+inc/hw_ints.h and are in the format  INT_X. For example,
+INT_EPWM2_TZ would be used to specify the trip zone interrupt for EPWM2
+wherever a function has an e interruptNumber parameter.</p>
+<dl class="group">
+<dt>
+<span class="target" id="group__interrupt__api"></span><em>group</em> <code class="sig-name descname">interrupt_api</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT1">
+<span class="target" id="group__interrupt__api_1g46d67131ff9941d22e63d9a463675980"></span><code class="sig-name descname">INTERRUPT_CPU_INT1</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 1. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT2">
+<span class="target" id="group__interrupt__api_1gad64a0cbc49e4b4102148bf22a510972"></span><code class="sig-name descname">INTERRUPT_CPU_INT2</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 2. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT3">
+<span class="target" id="group__interrupt__api_1g116fe07ba5a7440feda035c0ac5fb5a3"></span><code class="sig-name descname">INTERRUPT_CPU_INT3</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 3. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT4">
+<span class="target" id="group__interrupt__api_1geaa25e817a3b201566383050b4d2cbdd"></span><code class="sig-name descname">INTERRUPT_CPU_INT4</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 4. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT5">
+<span class="target" id="group__interrupt__api_1g871eb49b41a8410f86a5f5c9784e20c2"></span><code class="sig-name descname">INTERRUPT_CPU_INT5</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 5. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT6">
+<span class="target" id="group__interrupt__api_1geeacee329448522c4f0e50e1edd6c7b8"></span><code class="sig-name descname">INTERRUPT_CPU_INT6</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 6. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT7">
+<span class="target" id="group__interrupt__api_1gfdd5aad9afee4f1d89364ce6b7f8ce5d"></span><code class="sig-name descname">INTERRUPT_CPU_INT7</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 7. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT8">
+<span class="target" id="group__interrupt__api_1g033e0845d1fac94cb5d5cdf5964e5ded"></span><code class="sig-name descname">INTERRUPT_CPU_INT8</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 8. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT9">
+<span class="target" id="group__interrupt__api_1g2aec0e23a72723ef86fb53e4c2d2cbab"></span><code class="sig-name descname">INTERRUPT_CPU_INT9</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 9. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT10">
+<span class="target" id="group__interrupt__api_1g6b96e1c6d0172160c50d25937aa3ae6b"></span><code class="sig-name descname">INTERRUPT_CPU_INT10</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 10. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT11">
+<span class="target" id="group__interrupt__api_1gb9b99310640ba3d3a909b094e4872859"></span><code class="sig-name descname">INTERRUPT_CPU_INT11</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 11. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT12">
+<span class="target" id="group__interrupt__api_1ge93544c468692267d74c2ff107e627a9"></span><code class="sig-name descname">INTERRUPT_CPU_INT12</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 12. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT13">
+<span class="target" id="group__interrupt__api_1gc978d2b3e3c4f10b1d3a3ec57e26bedc"></span><code class="sig-name descname">INTERRUPT_CPU_INT13</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 13. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_INT14">
+<span class="target" id="group__interrupt__api_1gc47fd99259be924fc5d9eafbf0aa7233"></span><code class="sig-name descname">INTERRUPT_CPU_INT14</code><a class="headerlink" href="#c.INTERRUPT_CPU_INT14" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Interrupt Number 14. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_DLOGINT">
+<span class="target" id="group__interrupt__api_1g7a486aa8d3ca79eae5329509b4691701"></span><code class="sig-name descname">INTERRUPT_CPU_DLOGINT</code><a class="headerlink" href="#c.INTERRUPT_CPU_DLOGINT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU Data Log Interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_CPU_RTOSINT">
+<span class="target" id="group__interrupt__api_1g0223a1890680b9ccfa8a3c7aaad08412"></span><code class="sig-name descname">INTERRUPT_CPU_RTOSINT</code><a class="headerlink" href="#c.INTERRUPT_CPU_RTOSINT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU RTOS Interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP1">
+<span class="target" id="group__interrupt__api_1gd074df0fe92f7d937869bf3cf754bbb8"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP1</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 1. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP2">
+<span class="target" id="group__interrupt__api_1g970e2d5ef2bfeb71d25daa3fb4fea9fa"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP2</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 2. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP3">
+<span class="target" id="group__interrupt__api_1gbcad225df9a5a060a5edd5277dcd4fc5"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP3</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 3. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP4">
+<span class="target" id="group__interrupt__api_1gf66627c59dc25be10372302bcc54caa4"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP4</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 4. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP5">
+<span class="target" id="group__interrupt__api_1g48d743641a347618738a65d5a308ed0c"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP5</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 5. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP6">
+<span class="target" id="group__interrupt__api_1g4c9519a4530f7b2117c9855ad7bc659c"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP6</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 6. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP7">
+<span class="target" id="group__interrupt__api_1gc690f5244266fa6bcd7f29953cfbe00d"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP7</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 7. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP8">
+<span class="target" id="group__interrupt__api_1gffea29befdefc12dd1ccbdda8958f6df"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP8</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 8. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP9">
+<span class="target" id="group__interrupt__api_1gae1516057b8af3ae83d3f8e5aa13b12d"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP9</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 9. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP10">
+<span class="target" id="group__interrupt__api_1g010a0ad1ec96d23498227a6094f8f169"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP10</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 10. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP11">
+<span class="target" id="group__interrupt__api_1g3889465518f09d6a06a41a44639a32bd"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP11</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 11. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.INTERRUPT_ACK_GROUP12">
+<span class="target" id="group__interrupt__api_1g32697a657173a6ac780bfe75bc17f78d"></span><code class="sig-name descname">INTERRUPT_ACK_GROUP12</code><a class="headerlink" href="#c.INTERRUPT_ACK_GROUP12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledge PIE Interrupt Group 12. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv424Interrupt_defaultHandlerv">
+<span id="_CPPv324Interrupt_defaultHandlerv"></span><span id="_CPPv224Interrupt_defaultHandlerv"></span><span id="Interrupt_defaultHandler__void"></span><span class="target" id="group__interrupt__api_1g290ae09d42c59d712bb10e76e0b789ae"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_defaultHandler</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Interrupt_defaultHandlerv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv433Interrupt_illegalOperationHandlerv">
+<span id="_CPPv333Interrupt_illegalOperationHandlerv"></span><span id="_CPPv233Interrupt_illegalOperationHandlerv"></span><span id="Interrupt_illegalOperationHandler__void"></span><span class="target" id="group__interrupt__api_1gae823ed552f9c624c7ec4d5a15b2e6e1"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_illegalOperationHandler</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433Interrupt_illegalOperationHandlerv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420Interrupt_nmiHandlerv">
+<span id="_CPPv320Interrupt_nmiHandlerv"></span><span id="_CPPv220Interrupt_nmiHandlerv"></span><span id="Interrupt_nmiHandler__void"></span><span class="target" id="group__interrupt__api_1gc3f247445ff124e150460b73840ffef2"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_nmiHandler</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Interrupt_nmiHandlerv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Interrupt_enableMasterv">
+<span id="_CPPv322Interrupt_enableMasterv"></span><span id="_CPPv222Interrupt_enableMasterv"></span><span id="Interrupt_enableMaster__void"></span><span class="target" id="group__interrupt__api_1g34dfe4556dcdb531bede5eb2ef69bdbc"></span><em class="property">static</em> bool <code class="sig-name descname">Interrupt_enableMaster</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Interrupt_enableMasterv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allows the CPU to process interrupts.</p>
+<p>This function clears the global interrupt mask bit (INTM) in the CPU, allowing the processor to respond to interrupts.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if interrupts were disabled when the function was called or <strong>false</strong> if they were initially enabled. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Interrupt_disableMasterv">
+<span id="_CPPv323Interrupt_disableMasterv"></span><span id="_CPPv223Interrupt_disableMasterv"></span><span id="Interrupt_disableMaster__void"></span><span class="target" id="group__interrupt__api_1g0e98fd4d92e5b596ed591d893e2a2725"></span><em class="property">static</em> bool <code class="sig-name descname">Interrupt_disableMaster</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Interrupt_disableMasterv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stops the CPU from processing interrupts.</p>
+<p>This function sets the global interrupt mask bit (INTM) in the CPU, preventing the processor from receiving maskable interrupts.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if interrupts were already disabled when the function was called or <strong>false</strong> if they were initially enabled. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418Interrupt_register8uint32_tPFvvE">
+<span id="_CPPv318Interrupt_register8uint32_tPFvvE"></span><span id="_CPPv218Interrupt_register8uint32_tPFvvE"></span><span class="target" id="group__interrupt__api_1g3fb99dab021c610a768b575358e13a4b"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_register</code><span class="sig-paren">(</span>uint32_t <em>interruptNumber</em>, void (*<em>handler</em>)<span class="sig-paren">(</span>void<span class="sig-paren">)</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418Interrupt_register8uint32_tPFvvE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Registers a function to be called when an interrupt occurs.</p>
+<p><p>This function is used to specify the handler function to be called when the given interrupt is asserted to the processor. When the interrupt occurs, if it is enabled (via </p>
+<a class="reference internal" href="#group__interrupt__api_1g97a90d3a8cb80ef5d656ab370f073711"><span class="std std-ref">Interrupt_enable()</span></a>), the handler function will be called in interrupt context. Since the handler function can preempt other code, care must be taken to protect memory or peripherals that are accessed by the handler and other non-handler code.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">interruptNumber</span></code>: specifies the interrupt in question. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">handler</span></code>: is a pointer to the function to be called.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The available <em>interruptNumber</em> values are supplied in <code class="docutils literal notranslate"><span class="pre">inc/hw_ints.h</span></code>.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>This function assumes that the PIE has been enabled. See <a class="reference internal" href="#group__interrupt__api_1gcc3d48a3872f7cf98ed07a00f844fd49"><span class="std std-ref">Interrupt_initModule()</span></a>.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420Interrupt_unregister8uint32_t">
+<span id="_CPPv320Interrupt_unregister8uint32_t"></span><span id="_CPPv220Interrupt_unregister8uint32_t"></span><span id="Interrupt_unregister__uint32_t"></span><span class="target" id="group__interrupt__api_1gb43cfd4cf478a363c853ff8fb3f28471"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_unregister</code><span class="sig-paren">(</span>uint32_t <em>interruptNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Interrupt_unregister8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unregisters the function to be called when an interrupt occurs.</p>
+<p><p>This function is used to indicate that a default handler </p>
+<a class="reference internal" href="#group__interrupt__api_1g290ae09d42c59d712bb10e76e0b789ae"><span class="std std-ref">Interrupt_defaultHandler()</span></a> should be called when the given interrupt is asserted to the processor. Call <a class="reference internal" href="#group__interrupt__api_1g9ca7f38ebbd33cd411917d51e402fe11"><span class="std std-ref">Interrupt_disable()</span></a> to disable the interrupt before calling this function.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">interruptNumber</span></code>: specifies the interrupt in question.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The available <em>interruptNumber</em> values are supplied in <code class="docutils literal notranslate"><span class="pre">inc/hw_ints.h</span></code>.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p><a class="reference internal" href="#group__interrupt__api_1g3fb99dab021c610a768b575358e13a4b"><span class="std std-ref">Interrupt_register()</span></a> for important information about registering interrupt handlers.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421Interrupt_enableInCPU8uint16_t">
+<span id="_CPPv321Interrupt_enableInCPU8uint16_t"></span><span id="_CPPv221Interrupt_enableInCPU8uint16_t"></span><span id="Interrupt_enableInCPU__uint16_t"></span><span class="target" id="group__interrupt__api_1ge3ae042b52d87adfced5799d546b676d"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_enableInCPU</code><span class="sig-paren">(</span>uint16_t <em>cpuInterrupt</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421Interrupt_enableInCPU8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables CPU interrupt channels</p>
+<p><p>This function enables the specified interrupts in the CPU. The </p>
+<em>cpuInterrupt</em> parameter is a logical OR of the values <strong>INTERRUPT_CPU_INTx</strong> where x is the interrupt number between 1 and 14, <strong>INTERRUPT_CPU_DLOGINT</strong>, and <strong>INTERRUPT_CPU_RTOSINT</strong>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cpuInterrupt</span></code>: specifies the CPU interrupts to be enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Note that interrupts 1-12 correspond to the PIE groups with those same numbers.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Interrupt_disableInCPU8uint16_t">
+<span id="_CPPv322Interrupt_disableInCPU8uint16_t"></span><span id="_CPPv222Interrupt_disableInCPU8uint16_t"></span><span id="Interrupt_disableInCPU__uint16_t"></span><span class="target" id="group__interrupt__api_1g4d056ad1d1f2ae7bdf9e9a76e3909446"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_disableInCPU</code><span class="sig-paren">(</span>uint16_t <em>cpuInterrupt</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Interrupt_disableInCPU8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables CPU interrupt channels</p>
+<p><p>This function disables the specified interrupts in the CPU. The </p>
+<em>cpuInterrupt</em> parameter is a logical OR of the values <strong>INTERRUPT_CPU_INTx</strong> where x is the interrupt number between 1 and 14, <strong>INTERRUPT_CPU_DLOGINT</strong>, and <strong>INTERRUPT_CPU_RTOSINT</strong>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cpuInterrupt</span></code>: specifies the CPU interrupts to be disabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Note that interrupts 1-12 correspond to the PIE groups with those same numbers.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Interrupt_clearACKGroup8uint16_t">
+<span id="_CPPv323Interrupt_clearACKGroup8uint16_t"></span><span id="_CPPv223Interrupt_clearACKGroup8uint16_t"></span><span id="Interrupt_clearACKGroup__uint16_t"></span><span class="target" id="group__interrupt__api_1g4d2b9661d1860355324413c6dc56c9fc"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_clearACKGroup</code><span class="sig-paren">(</span>uint16_t <em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Interrupt_clearACKGroup8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Acknowledges PIE Interrupt Group</p>
+<p><p>The specified interrupt group is acknowledged and clears any interrupt flag within that respective group.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code>: specifies the interrupt group to be acknowledged.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>group</em> parameter must be a logical OR of the following: <strong>INTERRUPT_ACK_GROUP1</strong>, <strong>INTERRUPT_ACK_GROUP2</strong>, <strong>INTERRUPT_ACK_GROUP3</strong> <strong>INTERRUPT_ACK_GROUP4</strong>, <strong>INTERRUPT_ACK_GROUP5</strong>, <strong>INTERRUPT_ACK_GROUP6</strong> <strong>INTERRUPT_ACK_GROUP7</strong>, <strong>INTERRUPT_ACK_GROUP8</strong>, <strong>INTERRUPT_ACK_GROUP9</strong> <strong>INTERRUPT_ACK_GROUP10</strong>, <strong>INTERRUPT_ACK_GROUP11</strong>, <strong>INTERRUPT_ACK_GROUP12</strong>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419Interrupt_enablePIEv">
+<span id="_CPPv319Interrupt_enablePIEv"></span><span id="_CPPv219Interrupt_enablePIEv"></span><span id="Interrupt_enablePIE__void"></span><span class="target" id="group__interrupt__api_1g7676c18b294c16ea228c5833d2ad59ac"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_enablePIE</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419Interrupt_enablePIEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables the PIE block.</p>
+<p>This function enables the vector fetching for the peripheral interrupts by enabling the PIE block.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420Interrupt_disablePIEv">
+<span id="_CPPv320Interrupt_disablePIEv"></span><span id="_CPPv220Interrupt_disablePIEv"></span><span id="Interrupt_disablePIE__void"></span><span class="target" id="group__interrupt__api_1g3b63167c4c168c7b6f8f207e32d07d7c"></span><em class="property">static</em> void <code class="sig-name descname">Interrupt_disablePIE</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Interrupt_disablePIEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables the PIE block.</p>
+<p>This function disables the vector fetching for the peripheral interrupts by disabling the PIE block. PIEACK, PIEIFR, and PIEIER registers can be accessed even when the PIE block is disabled.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420Interrupt_initModulev">
+<span id="_CPPv320Interrupt_initModulev"></span><span id="_CPPv220Interrupt_initModulev"></span><span id="Interrupt_initModule__void"></span><span class="target" id="group__interrupt__api_1gcc3d48a3872f7cf98ed07a00f844fd49"></span>void <code class="sig-name descname">Interrupt_initModule</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Interrupt_initModulev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the PIE control registers by setting them to a known state.</p>
+<p>This function initializes the PIE control registers. After globally disabling interrupts and enabling the PIE, it clears all of the PIE interrupt enable bits and interrupt flags.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425Interrupt_initVectorTablev">
+<span id="_CPPv325Interrupt_initVectorTablev"></span><span id="_CPPv225Interrupt_initVectorTablev"></span><span id="Interrupt_initVectorTable__void"></span><span class="target" id="group__interrupt__api_1g1b80d824abc5ef80b9802512de9a38ea"></span>void <code class="sig-name descname">Interrupt_initVectorTable</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425Interrupt_initVectorTablev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the PIE vector table by setting all vectors to a default handler function.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416Interrupt_enable8uint32_t">
+<span id="_CPPv316Interrupt_enable8uint32_t"></span><span id="_CPPv216Interrupt_enable8uint32_t"></span><span id="Interrupt_enable__uint32_t"></span><span class="target" id="group__interrupt__api_1g97a90d3a8cb80ef5d656ab370f073711"></span>void <code class="sig-name descname">Interrupt_enable</code><span class="sig-paren">(</span>uint32_t <em>interruptNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416Interrupt_enable8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables an interrupt.</p>
+<p><p>The specified interrupt is enabled in the interrupt controller. Other enables for the interrupt (such as at the peripheral level) are unaffected by this function.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">interruptNumber</span></code>: specifies the interrupt to be enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The available <em>interruptNumber</em> values are supplied in <code class="docutils literal notranslate"><span class="pre">inc/hw_ints.h</span></code>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417Interrupt_disable8uint32_t">
+<span id="_CPPv317Interrupt_disable8uint32_t"></span><span id="_CPPv217Interrupt_disable8uint32_t"></span><span id="Interrupt_disable__uint32_t"></span><span class="target" id="group__interrupt__api_1g9ca7f38ebbd33cd411917d51e402fe11"></span>void <code class="sig-name descname">Interrupt_disable</code><span class="sig-paren">(</span>uint32_t <em>interruptNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417Interrupt_disable8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables an interrupt.</p>
+<p><p>The specified interrupt is disabled in the interrupt controller. Other enables for the interrupt (such as at the peripheral level) are unaffected by this function.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">interruptNumber</span></code>: specifies the interrupt to be disabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The available <em>interruptNumber</em> values are supplied in <code class="docutils literal notranslate"><span class="pre">inc/hw_ints.h</span></code>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420__disable_interruptsv">
+<span id="_CPPv320__disable_interruptsv"></span><span id="_CPPv220__disable_interruptsv"></span><span id="__disable_interrupts__void"></span><span class="target" id="group__interrupt__api_1gab2b73ce3bd7be7b21bebc84ba5b2015"></span>uint16_t <code class="sig-name descname">__disable_interrupts</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420__disable_interruptsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419__enable_interruptsv">
+<span id="_CPPv319__enable_interruptsv"></span><span id="_CPPv219__enable_interruptsv"></span><span id="__enable_interrupts__void"></span><span class="target" id="group__interrupt__api_1g5991013d345f7a4fc4ab76f9e1408da5"></span>uint16_t <code class="sig-name descname">__enable_interrupts</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419__enable_interruptsv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<p>The <a class="reference internal" href="#interrupt">Interrupt</a> API provides two functions to initialize the module,
+Interrupt_initModule() and Interrupt_initVectorTable(). The former puts the
+PIE registers and the interrupt-related registers in the CPU into a known
+state. It clears all flags, disables interrupts at all levels, and enables
+vector fetching from the PIE. The latter initializes the PIE Vector Table to a
+set of default handlers–Interrupt_nmiHandler() for non-maskable interrupts,
+Interrupt_illegalOperationHandler() for an ITRAP interrupt, and
+Interrupt_defaultHandler() for all others. These defaults are intended to
+help with debugging. They should be modified or replaced more appropriate ISRs
+by the user.</p>
+<p>Each interrupt source can be individually enabled and disabled via
+Interrupt_enable() and Interrupt_disable(). These affect the interrupt both
+on the PIE and on the CPU’s IER register. The processor interrupt can be
+enabled and disabled via Interrupt_enableMaster() and
+Interrupt_disableMaster(); this does not affect the individual interrupt
+enable states. Masking of the processor interrupt can be utilized as a simple
+critical section (only NMI will interrupt the processor while the processor
+interrupt is disabled), though this will have adverse effects on the interrupt
+response time.</p>
+<p>When an interrupt occurs, in order for further interrupts on its PIE group to
+be received, Interrupt_clearACKGroup() must be called. This is typically done
+at the end of the ISR.</p>
+<p>The code for this module is contained in driverlib/interrupt.c, with driverlib/interrupt.h containing the API declarations for use by applications.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mcbsp.html" class="btn btn-neutral float-right" title="MCBSP Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="i2c.html" class="btn btn-neutral float-left" title="I2C Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2020, Texas Instruments Incorporated</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+      <span class="lastupdated">
+        Last updated on May 26, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v3.02.00.00',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+
+        $('body').on("mousewheel", function () {
+            // Remove default behavior
+            event.preventDefault();
+            // Scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

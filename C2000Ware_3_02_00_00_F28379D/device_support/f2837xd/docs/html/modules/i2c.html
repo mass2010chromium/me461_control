@@ -1,0 +1,1668 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>I2C Module &mdash; F2837xd API Guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tiicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="F2837xd API Guide" href="../index.html"/>
+        <link rel="up" title="Modules" href="index.html"/>
+        <link rel="next" title="Interrupt Module" href="interrupt.html"/>
+        <link rel="prev" title="GPIO Module" href="gpio.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> F2837xd API Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.02.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model.html">Programming Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Driver Library Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">ADC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asysctl.html">ASysCtl Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="can.html">CAN Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cla.html">CLA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html">CLB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmpss.html">CMPSS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cputimer.html">CPU Timer Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">DAC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcsm.html">DCSM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dma.html">DMA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecap.html">ECAP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emif.html">EMIF Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="epwm.html">EPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hrpwm.html">HRPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqep.html">EQEP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash.html">FLASH Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">I2C Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupt Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcbsp.html">MCBSP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memcfg.html">MEMCFG Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sci.html">SCI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdfm.html">SDFM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysctl.html">SYSCTL Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html">USB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upp.html">UPP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbar.html">XBAR Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">F2837xd API Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Modules</a> &raquo;</li>
+        
+      <li>I2C Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="i2c-module">
+<span id="i2c"></span><h1>I2C Module<a class="headerlink" href="#i2c-module" title="Permalink to this headline">¶</a></h1>
+<p>The inter-integrated circuit (I2C) API provides a set of functions to configure
+the device’s I2C module. The driver supports operation in both master and slave
+mode and provides functions to initialize the module, to send and receive data,
+to obtain status information, and to manage interrupts.</p>
+<dl class="group">
+<dt>
+<span class="target" id="group__i2c__api"></span><em>group</em> <code class="sig-name descname">i2c_api</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.I2C_MASTER_SEND_MODE">
+<span class="target" id="group__i2c__api_1gb7ff56f605a9d1353b05260719f0b596"></span><code class="sig-name descname">I2C_MASTER_SEND_MODE</code><a class="headerlink" href="#c.I2C_MASTER_SEND_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Master-transmitter mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_MASTER_RECEIVE_MODE">
+<span class="target" id="group__i2c__api_1g097eec83bf65d004659743b34bc7d32a"></span><code class="sig-name descname">I2C_MASTER_RECEIVE_MODE</code><a class="headerlink" href="#c.I2C_MASTER_RECEIVE_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Master-receiver mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_SLAVE_SEND_MODE">
+<span class="target" id="group__i2c__api_1gf6e887cfe3593967cbe9ac10ec973470"></span><code class="sig-name descname">I2C_SLAVE_SEND_MODE</code><a class="headerlink" href="#c.I2C_SLAVE_SEND_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Slave-transmitter mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_SLAVE_RECEIVE_MODE">
+<span class="target" id="group__i2c__api_1g3f0240c17aa713a695302571c22aa9f9"></span><code class="sig-name descname">I2C_SLAVE_RECEIVE_MODE</code><a class="headerlink" href="#c.I2C_SLAVE_RECEIVE_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Slave-receiver mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_REPEAT_MODE">
+<span class="target" id="group__i2c__api_1g9eae9621d38e22b1d32164a280dc03b2"></span><code class="sig-name descname">I2C_REPEAT_MODE</code><a class="headerlink" href="#c.I2C_REPEAT_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Only applies to master mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_START_BYTE_MODE">
+<span class="target" id="group__i2c__api_1g2b9dfdd215266da04b8f7509de12a996"></span><code class="sig-name descname">I2C_START_BYTE_MODE</code><a class="headerlink" href="#c.I2C_START_BYTE_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable start byte mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_FREE_DATA_FORMAT">
+<span class="target" id="group__i2c__api_1g3e86dab10b30b0c3d0562ebdb973c638"></span><code class="sig-name descname">I2C_FREE_DATA_FORMAT</code><a class="headerlink" href="#c.I2C_FREE_DATA_FORMAT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable free data (no addr) format. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_ARB_LOST">
+<span class="target" id="group__i2c__api_1g005b0e837ddbcf698ecacb172c807be8"></span><code class="sig-name descname">I2C_INT_ARB_LOST</code><a class="headerlink" href="#c.I2C_INT_ARB_LOST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Arbitration-lost interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_NO_ACK">
+<span class="target" id="group__i2c__api_1g3f0307459736296c5e82541da273cdab"></span><code class="sig-name descname">I2C_INT_NO_ACK</code><a class="headerlink" href="#c.I2C_INT_NO_ACK" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>NACK interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_REG_ACCESS_RDY">
+<span class="target" id="group__i2c__api_1gb7725a3378947e427b1c9cf835cd2570"></span><code class="sig-name descname">I2C_INT_REG_ACCESS_RDY</code><a class="headerlink" href="#c.I2C_INT_REG_ACCESS_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Register-access-ready interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_RX_DATA_RDY">
+<span class="target" id="group__i2c__api_1g3d6f7fd8766276e5b00d6c2f913e0c61"></span><code class="sig-name descname">I2C_INT_RX_DATA_RDY</code><a class="headerlink" href="#c.I2C_INT_RX_DATA_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive-data-ready interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_TX_DATA_RDY">
+<span class="target" id="group__i2c__api_1g40e3f11fe4d3d6e72d3e15d16814dec8"></span><code class="sig-name descname">I2C_INT_TX_DATA_RDY</code><a class="headerlink" href="#c.I2C_INT_TX_DATA_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit-data-ready interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_STOP_CONDITION">
+<span class="target" id="group__i2c__api_1g385a4d782d2177973a562265d207ba60"></span><code class="sig-name descname">I2C_INT_STOP_CONDITION</code><a class="headerlink" href="#c.I2C_INT_STOP_CONDITION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stop condition detected. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_ADDR_SLAVE">
+<span class="target" id="group__i2c__api_1gcb944ec982263f9ab9335fa3a4387b31"></span><code class="sig-name descname">I2C_INT_ADDR_SLAVE</code><a class="headerlink" href="#c.I2C_INT_ADDR_SLAVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Addressed as slave interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_RXFF">
+<span class="target" id="group__i2c__api_1g5711be1f33494543499479eeb6ff0247"></span><code class="sig-name descname">I2C_INT_RXFF</code><a class="headerlink" href="#c.I2C_INT_RXFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RX FIFO level interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_INT_TXFF">
+<span class="target" id="group__i2c__api_1g23f510fb6d4e39fc354540b6ed24be1d"></span><code class="sig-name descname">I2C_INT_TXFF</code><a class="headerlink" href="#c.I2C_INT_TXFF" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>TX FIFO level interrupt. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STR_INTMASK">
+<span class="target" id="group__i2c__api_1g6cae474bbc5c87a699397fafe9d8b7c1"></span><code class="sig-name descname">I2C_STR_INTMASK</code><a class="headerlink" href="#c.I2C_STR_INTMASK" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_ARB_LOST">
+<span class="target" id="group__i2c__api_1gbf1ccad55190261ed9671cc7c7bba677"></span><code class="sig-name descname">I2C_STS_ARB_LOST</code><a class="headerlink" href="#c.I2C_STS_ARB_LOST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Arbitration-lost. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_NO_ACK">
+<span class="target" id="group__i2c__api_1g48983cb600465a3d8866e366433f235f"></span><code class="sig-name descname">I2C_STS_NO_ACK</code><a class="headerlink" href="#c.I2C_STS_NO_ACK" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No-acknowledgment (NACK). </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_REG_ACCESS_RDY">
+<span class="target" id="group__i2c__api_1g1c8491f6db74b0d41ea6b67d3587fe39"></span><code class="sig-name descname">I2C_STS_REG_ACCESS_RDY</code><a class="headerlink" href="#c.I2C_STS_REG_ACCESS_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Register-access-ready (ARDY). </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_RX_DATA_RDY">
+<span class="target" id="group__i2c__api_1g94d23d61a17e29e75ad82c71b1fbc809"></span><code class="sig-name descname">I2C_STS_RX_DATA_RDY</code><a class="headerlink" href="#c.I2C_STS_RX_DATA_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive-data-ready. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_TX_DATA_RDY">
+<span class="target" id="group__i2c__api_1g586542dcf4ee2683e9fbad308b842b01"></span><code class="sig-name descname">I2C_STS_TX_DATA_RDY</code><a class="headerlink" href="#c.I2C_STS_TX_DATA_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit-data-ready. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_STOP_CONDITION">
+<span class="target" id="group__i2c__api_1g8a944e9f4206661149a76acc25b33244"></span><code class="sig-name descname">I2C_STS_STOP_CONDITION</code><a class="headerlink" href="#c.I2C_STS_STOP_CONDITION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stop condition detected. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_ADDR_ZERO">
+<span class="target" id="group__i2c__api_1gf71071ee7c75984bb95c8700003c197a"></span><code class="sig-name descname">I2C_STS_ADDR_ZERO</code><a class="headerlink" href="#c.I2C_STS_ADDR_ZERO" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Address of all zeros detected. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_ADDR_SLAVE">
+<span class="target" id="group__i2c__api_1gea69725fe8ebfd5e1330239073dade07"></span><code class="sig-name descname">I2C_STS_ADDR_SLAVE</code><a class="headerlink" href="#c.I2C_STS_ADDR_SLAVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Addressed as slave. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_TX_EMPTY">
+<span class="target" id="group__i2c__api_1ge73cc0aad986f617ee96f1c0808a3953"></span><code class="sig-name descname">I2C_STS_TX_EMPTY</code><a class="headerlink" href="#c.I2C_STS_TX_EMPTY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit shift register empty. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_RX_FULL">
+<span class="target" id="group__i2c__api_1gb9514b9b0293bd08411d88b3a341083f"></span><code class="sig-name descname">I2C_STS_RX_FULL</code><a class="headerlink" href="#c.I2C_STS_RX_FULL" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive shift register full. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_BUS_BUSY">
+<span class="target" id="group__i2c__api_1g458b41481ba60e6c7dab3655ab87aed0"></span><code class="sig-name descname">I2C_STS_BUS_BUSY</code><a class="headerlink" href="#c.I2C_STS_BUS_BUSY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bus busy, wait for STOP or reset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_NACK_SENT">
+<span class="target" id="group__i2c__api_1g4234f2c6f6295937832e9de5ec5d9f5f"></span><code class="sig-name descname">I2C_STS_NACK_SENT</code><a class="headerlink" href="#c.I2C_STS_NACK_SENT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>NACK was sent. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.I2C_STS_SLAVE_DIR">
+<span class="target" id="group__i2c__api_1gdbac0c3280548cedb164d716e57b598e"></span><code class="sig-name descname">I2C_STS_SLAVE_DIR</code><a class="headerlink" href="#c.I2C_STS_SLAVE_DIR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Addressed as slave transmitter. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv419I2C_InterruptSource">
+<span id="_CPPv319I2C_InterruptSource"></span><span id="_CPPv219I2C_InterruptSource"></span><span class="target" id="group__i2c__api_1gf9c0d5d0827a308f13f05e6210adfadb"></span><em class="property">enum </em><code class="sig-name descname">I2C_InterruptSource</code><a class="headerlink" href="#_CPPv419I2C_InterruptSource" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>I2C interrupts to be returned by <a class="reference internal" href="#group__i2c__api_1gd93fe9f0a012b442562eea7b785d9684"><span class="std std-ref">I2C_getInterruptSource()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv415I2C_INTSRC_NONE">
+<span id="_CPPv315I2C_INTSRC_NONE"></span><span id="_CPPv215I2C_INTSRC_NONE"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadb1c99ce9692eaa6c8a0f0a573adbf6837"></span><code class="sig-name descname">I2C_INTSRC_NONE</code><a class="headerlink" href="#_CPPv415I2C_INTSRC_NONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No interrupt pending. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv419I2C_INTSRC_ARB_LOST">
+<span id="_CPPv319I2C_INTSRC_ARB_LOST"></span><span id="_CPPv219I2C_INTSRC_ARB_LOST"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadb6097c0994d29bb945cc13d86ffc7bd1d"></span><code class="sig-name descname">I2C_INTSRC_ARB_LOST</code><a class="headerlink" href="#_CPPv419I2C_INTSRC_ARB_LOST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Arbitration-lost interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv417I2C_INTSRC_NO_ACK">
+<span id="_CPPv317I2C_INTSRC_NO_ACK"></span><span id="_CPPv217I2C_INTSRC_NO_ACK"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadb2ec08af2965b0cb1fccffa59520f739b"></span><code class="sig-name descname">I2C_INTSRC_NO_ACK</code><a class="headerlink" href="#_CPPv417I2C_INTSRC_NO_ACK" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>NACK interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv425I2C_INTSRC_REG_ACCESS_RDY">
+<span id="_CPPv325I2C_INTSRC_REG_ACCESS_RDY"></span><span id="_CPPv225I2C_INTSRC_REG_ACCESS_RDY"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadbd7f687522f7e9b751c4f9a265097b29f"></span><code class="sig-name descname">I2C_INTSRC_REG_ACCESS_RDY</code><a class="headerlink" href="#_CPPv425I2C_INTSRC_REG_ACCESS_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Register-access-ready interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422I2C_INTSRC_RX_DATA_RDY">
+<span id="_CPPv322I2C_INTSRC_RX_DATA_RDY"></span><span id="_CPPv222I2C_INTSRC_RX_DATA_RDY"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadbf83c211a08df80578661823011e409b3"></span><code class="sig-name descname">I2C_INTSRC_RX_DATA_RDY</code><a class="headerlink" href="#_CPPv422I2C_INTSRC_RX_DATA_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive-data-ready interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422I2C_INTSRC_TX_DATA_RDY">
+<span id="_CPPv322I2C_INTSRC_TX_DATA_RDY"></span><span id="_CPPv222I2C_INTSRC_TX_DATA_RDY"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadb516e769956e863c8f560857119e73ef8"></span><code class="sig-name descname">I2C_INTSRC_TX_DATA_RDY</code><a class="headerlink" href="#_CPPv422I2C_INTSRC_TX_DATA_RDY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit-data-ready interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv425I2C_INTSRC_STOP_CONDITION">
+<span id="_CPPv325I2C_INTSRC_STOP_CONDITION"></span><span id="_CPPv225I2C_INTSRC_STOP_CONDITION"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadb91541e4f5171d77a6b94e4738a049573"></span><code class="sig-name descname">I2C_INTSRC_STOP_CONDITION</code><a class="headerlink" href="#_CPPv425I2C_INTSRC_STOP_CONDITION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stop condition detected. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv421I2C_INTSRC_ADDR_SLAVE">
+<span id="_CPPv321I2C_INTSRC_ADDR_SLAVE"></span><span id="_CPPv221I2C_INTSRC_ADDR_SLAVE"></span><span class="target" id="group__i2c__api_1ggf9c0d5d0827a308f13f05e6210adfadbb7a1ba0c97e699e06750b29949cf9134"></span><code class="sig-name descname">I2C_INTSRC_ADDR_SLAVE</code><a class="headerlink" href="#_CPPv421I2C_INTSRC_ADDR_SLAVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Addressed as slave interrupt. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv415I2C_TxFIFOLevel">
+<span id="_CPPv315I2C_TxFIFOLevel"></span><span id="_CPPv215I2C_TxFIFOLevel"></span><span class="target" id="group__i2c__api_1g214346989f4c3e523e614a246e74033c"></span><em class="property">enum </em><code class="sig-name descname">I2C_TxFIFOLevel</code><a class="headerlink" href="#_CPPv415I2C_TxFIFOLevel" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__i2c__api_1g5d7d11f4c565247a8442b23f2225d5f1"><span class="std std-ref">I2C_setFIFOInterruptLevel()</span></a> as the <em>txLevel</em> parameter, returned by <a class="reference internal" href="#group__i2c__api_1g10e890c0de930839d3846ba98c3028cc"><span class="std std-ref">I2C_getFIFOInterruptLevel()</span></a> in the <em>txLevel</em> parameter, and returned by <a class="reference internal" href="#group__i2c__api_1g86eecafa22732c256f6ef09f377491ef"><span class="std std-ref">I2C_getTxFIFOStatus()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv416I2C_FIFO_TXEMPTY">
+<span id="_CPPv316I2C_FIFO_TXEMPTY"></span><span id="_CPPv216I2C_FIFO_TXEMPTY"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033ca22d47e3c1b28460f8a7490a0ae5898b"></span><code class="sig-name descname">I2C_FIFO_TXEMPTY</code> = 0x0000U<a class="headerlink" href="#_CPPv416I2C_FIFO_TXEMPTY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO empty. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX0">
+<span id="_CPPv312I2C_FIFO_TX0"></span><span id="_CPPv212I2C_FIFO_TX0"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c7bb91ab19fc62f4928f32ff339e70706"></span><code class="sig-name descname">I2C_FIFO_TX0</code> = 0x0000U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO empty. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX1">
+<span id="_CPPv312I2C_FIFO_TX1"></span><span id="_CPPv212I2C_FIFO_TX1"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033ce4d59d06fcefc905640c12cf76058a17"></span><code class="sig-name descname">I2C_FIFO_TX1</code> = 0x0001U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 1/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX2">
+<span id="_CPPv312I2C_FIFO_TX2"></span><span id="_CPPv212I2C_FIFO_TX2"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033cbb7c8b623dcbaba9ef85ef52b91a880a"></span><code class="sig-name descname">I2C_FIFO_TX2</code> = 0x0002U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 2/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX3">
+<span id="_CPPv312I2C_FIFO_TX3"></span><span id="_CPPv212I2C_FIFO_TX3"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c38dbde96cb2b08014d64b9b65789ba2e"></span><code class="sig-name descname">I2C_FIFO_TX3</code> = 0x0003U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 3/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX4">
+<span id="_CPPv312I2C_FIFO_TX4"></span><span id="_CPPv212I2C_FIFO_TX4"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033cea657fef5e8147129dadb1bbadeed195"></span><code class="sig-name descname">I2C_FIFO_TX4</code> = 0x0004U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 4/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX5">
+<span id="_CPPv312I2C_FIFO_TX5"></span><span id="_CPPv212I2C_FIFO_TX5"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c93522528330f1f0ccacb0d0549819ad0"></span><code class="sig-name descname">I2C_FIFO_TX5</code> = 0x0005U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 5/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX6">
+<span id="_CPPv312I2C_FIFO_TX6"></span><span id="_CPPv212I2C_FIFO_TX6"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c3aad7a2bf9fba24797613ef6a93ec7b1"></span><code class="sig-name descname">I2C_FIFO_TX6</code> = 0x0006U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 6/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX7">
+<span id="_CPPv312I2C_FIFO_TX7"></span><span id="_CPPv212I2C_FIFO_TX7"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c0f0f4c1e2790381e698877ccbab6f8c4"></span><code class="sig-name descname">I2C_FIFO_TX7</code> = 0x0007U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 7/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX8">
+<span id="_CPPv312I2C_FIFO_TX8"></span><span id="_CPPv212I2C_FIFO_TX8"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c01f42e9dae19d898292e1e4cb321dcc5"></span><code class="sig-name descname">I2C_FIFO_TX8</code> = 0x0008U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 8/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_TX9">
+<span id="_CPPv312I2C_FIFO_TX9"></span><span id="_CPPv212I2C_FIFO_TX9"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c7f165b853b3a4743d117523d11454815"></span><code class="sig-name descname">I2C_FIFO_TX9</code> = 0x0009U<a class="headerlink" href="#_CPPv412I2C_FIFO_TX9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 9/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX10">
+<span id="_CPPv313I2C_FIFO_TX10"></span><span id="_CPPv213I2C_FIFO_TX10"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c085a1e81a339d7d117a163a0b558fb29"></span><code class="sig-name descname">I2C_FIFO_TX10</code> = 0x000AU<a class="headerlink" href="#_CPPv413I2C_FIFO_TX10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 10/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX11">
+<span id="_CPPv313I2C_FIFO_TX11"></span><span id="_CPPv213I2C_FIFO_TX11"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c0542961f985c47a1fcdc854dc6ac7ac8"></span><code class="sig-name descname">I2C_FIFO_TX11</code> = 0x000BU<a class="headerlink" href="#_CPPv413I2C_FIFO_TX11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 11/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX12">
+<span id="_CPPv313I2C_FIFO_TX12"></span><span id="_CPPv213I2C_FIFO_TX12"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c6d5ac024d5b23f177b6004466143a4c7"></span><code class="sig-name descname">I2C_FIFO_TX12</code> = 0x000CU<a class="headerlink" href="#_CPPv413I2C_FIFO_TX12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 12/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX13">
+<span id="_CPPv313I2C_FIFO_TX13"></span><span id="_CPPv213I2C_FIFO_TX13"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c4a4455df8788018bdca4343695744008"></span><code class="sig-name descname">I2C_FIFO_TX13</code> = 0x000DU<a class="headerlink" href="#_CPPv413I2C_FIFO_TX13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 13/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX14">
+<span id="_CPPv313I2C_FIFO_TX14"></span><span id="_CPPv213I2C_FIFO_TX14"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c804dbd1aff0d33b7f6462ee0e6e5a5af"></span><code class="sig-name descname">I2C_FIFO_TX14</code> = 0x000EU<a class="headerlink" href="#_CPPv413I2C_FIFO_TX14" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 14/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX15">
+<span id="_CPPv313I2C_FIFO_TX15"></span><span id="_CPPv213I2C_FIFO_TX15"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c96503a56aa9d1f2b1cdcdc745580a5ed"></span><code class="sig-name descname">I2C_FIFO_TX15</code> = 0x000FU<a class="headerlink" href="#_CPPv413I2C_FIFO_TX15" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO 15/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_TX16">
+<span id="_CPPv313I2C_FIFO_TX16"></span><span id="_CPPv213I2C_FIFO_TX16"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033cd3d3b10689ccf8767576fa25626d72ad"></span><code class="sig-name descname">I2C_FIFO_TX16</code> = 0x0010U<a class="headerlink" href="#_CPPv413I2C_FIFO_TX16" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415I2C_FIFO_TXFULL">
+<span id="_CPPv315I2C_FIFO_TXFULL"></span><span id="_CPPv215I2C_FIFO_TXFULL"></span><span class="target" id="group__i2c__api_1gg214346989f4c3e523e614a246e74033c66511fd27b2e1168af70135150760bce"></span><code class="sig-name descname">I2C_FIFO_TXFULL</code> = 0x0010U<a class="headerlink" href="#_CPPv415I2C_FIFO_TXFULL" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmit FIFO full. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv415I2C_RxFIFOLevel">
+<span id="_CPPv315I2C_RxFIFOLevel"></span><span id="_CPPv215I2C_RxFIFOLevel"></span><span class="target" id="group__i2c__api_1g9b9eb55f226b36c47cd3258ed0c4e105"></span><em class="property">enum </em><code class="sig-name descname">I2C_RxFIFOLevel</code><a class="headerlink" href="#_CPPv415I2C_RxFIFOLevel" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__i2c__api_1g5d7d11f4c565247a8442b23f2225d5f1"><span class="std std-ref">I2C_setFIFOInterruptLevel()</span></a> as the <em>rxLevel</em> parameter, returned by <a class="reference internal" href="#group__i2c__api_1g10e890c0de930839d3846ba98c3028cc"><span class="std std-ref">I2C_getFIFOInterruptLevel()</span></a> in the <em>rxLevel</em> parameter, and returned by <a class="reference internal" href="#group__i2c__api_1g08594fc8f50e96291846c6151f7f8253"><span class="std std-ref">I2C_getRxFIFOStatus()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv416I2C_FIFO_RXEMPTY">
+<span id="_CPPv316I2C_FIFO_RXEMPTY"></span><span id="_CPPv216I2C_FIFO_RXEMPTY"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1053b9dd7064bbef9a8e105e9b36c7d74af"></span><code class="sig-name descname">I2C_FIFO_RXEMPTY</code> = 0x0000U<a class="headerlink" href="#_CPPv416I2C_FIFO_RXEMPTY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO empty. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX0">
+<span id="_CPPv312I2C_FIFO_RX0"></span><span id="_CPPv212I2C_FIFO_RX0"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105313ba132324868830a22864e4eaa8dd6"></span><code class="sig-name descname">I2C_FIFO_RX0</code> = 0x0000U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO empty. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX1">
+<span id="_CPPv312I2C_FIFO_RX1"></span><span id="_CPPv212I2C_FIFO_RX1"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1054f2dfb33f76ba810374b98d9a7179c92"></span><code class="sig-name descname">I2C_FIFO_RX1</code> = 0x0001U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 1/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX2">
+<span id="_CPPv312I2C_FIFO_RX2"></span><span id="_CPPv212I2C_FIFO_RX2"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105c67cfaf2457f9374349497b68e882fd6"></span><code class="sig-name descname">I2C_FIFO_RX2</code> = 0x0002U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 2/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX3">
+<span id="_CPPv312I2C_FIFO_RX3"></span><span id="_CPPv212I2C_FIFO_RX3"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1054a5c2fcdb32810b4d2503f5ef679d855"></span><code class="sig-name descname">I2C_FIFO_RX3</code> = 0x0003U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 3/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX4">
+<span id="_CPPv312I2C_FIFO_RX4"></span><span id="_CPPv212I2C_FIFO_RX4"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e10577fb41a4ab2c609b7a614e47be29063f"></span><code class="sig-name descname">I2C_FIFO_RX4</code> = 0x0004U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 4/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX5">
+<span id="_CPPv312I2C_FIFO_RX5"></span><span id="_CPPv212I2C_FIFO_RX5"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105912b78f8efbeac89205928356b1c205f"></span><code class="sig-name descname">I2C_FIFO_RX5</code> = 0x0005U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 5/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX6">
+<span id="_CPPv312I2C_FIFO_RX6"></span><span id="_CPPv212I2C_FIFO_RX6"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105a0e82559f940aca3e4e8b55092d69291"></span><code class="sig-name descname">I2C_FIFO_RX6</code> = 0x0006U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 6/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX7">
+<span id="_CPPv312I2C_FIFO_RX7"></span><span id="_CPPv212I2C_FIFO_RX7"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1054679ed3bb6c56f7f4285f729aaa89ae2"></span><code class="sig-name descname">I2C_FIFO_RX7</code> = 0x0007U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 7/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX8">
+<span id="_CPPv312I2C_FIFO_RX8"></span><span id="_CPPv212I2C_FIFO_RX8"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1052480d5cae233700c720d943e44b18ebf"></span><code class="sig-name descname">I2C_FIFO_RX8</code> = 0x0008U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 8/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412I2C_FIFO_RX9">
+<span id="_CPPv312I2C_FIFO_RX9"></span><span id="_CPPv212I2C_FIFO_RX9"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105f7532365d32c35f02c69b421b36d8cc9"></span><code class="sig-name descname">I2C_FIFO_RX9</code> = 0x0009U<a class="headerlink" href="#_CPPv412I2C_FIFO_RX9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 9/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX10">
+<span id="_CPPv313I2C_FIFO_RX10"></span><span id="_CPPv213I2C_FIFO_RX10"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1051f2c20d44d6a4da20cfb854daf3cffcb"></span><code class="sig-name descname">I2C_FIFO_RX10</code> = 0x000AU<a class="headerlink" href="#_CPPv413I2C_FIFO_RX10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 10/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX11">
+<span id="_CPPv313I2C_FIFO_RX11"></span><span id="_CPPv213I2C_FIFO_RX11"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105cb778d395fdb2f2d97b2225624a227cf"></span><code class="sig-name descname">I2C_FIFO_RX11</code> = 0x000BU<a class="headerlink" href="#_CPPv413I2C_FIFO_RX11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 11/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX12">
+<span id="_CPPv313I2C_FIFO_RX12"></span><span id="_CPPv213I2C_FIFO_RX12"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e1050a4fd63e383833f8c08e1fc530de22e0"></span><code class="sig-name descname">I2C_FIFO_RX12</code> = 0x000CU<a class="headerlink" href="#_CPPv413I2C_FIFO_RX12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 12/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX13">
+<span id="_CPPv313I2C_FIFO_RX13"></span><span id="_CPPv213I2C_FIFO_RX13"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105edf92a54ffc1549a2d015fe5e699d7f4"></span><code class="sig-name descname">I2C_FIFO_RX13</code> = 0x000DU<a class="headerlink" href="#_CPPv413I2C_FIFO_RX13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 13/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX14">
+<span id="_CPPv313I2C_FIFO_RX14"></span><span id="_CPPv213I2C_FIFO_RX14"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e10543243a98bc22ea976bba6f5b2e532721"></span><code class="sig-name descname">I2C_FIFO_RX14</code> = 0x000EU<a class="headerlink" href="#_CPPv413I2C_FIFO_RX14" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 14/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX15">
+<span id="_CPPv313I2C_FIFO_RX15"></span><span id="_CPPv213I2C_FIFO_RX15"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105e7d0e6eb326d900bdaa08a651fb58cf3"></span><code class="sig-name descname">I2C_FIFO_RX15</code> = 0x000FU<a class="headerlink" href="#_CPPv413I2C_FIFO_RX15" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO 15/16 full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413I2C_FIFO_RX16">
+<span id="_CPPv313I2C_FIFO_RX16"></span><span id="_CPPv213I2C_FIFO_RX16"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105a3b874ae50b26d34266fe14ff0c961d3"></span><code class="sig-name descname">I2C_FIFO_RX16</code> = 0x0010U<a class="headerlink" href="#_CPPv413I2C_FIFO_RX16" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO full. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415I2C_FIFO_RXFULL">
+<span id="_CPPv315I2C_FIFO_RXFULL"></span><span id="_CPPv215I2C_FIFO_RXFULL"></span><span class="target" id="group__i2c__api_1gg9b9eb55f226b36c47cd3258ed0c4e105444dc619fd413d1ec6cdaa794ae624c2"></span><code class="sig-name descname">I2C_FIFO_RXFULL</code> = 0x0010U<a class="headerlink" href="#_CPPv415I2C_FIFO_RXFULL" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receive FIFO full. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv412I2C_BitCount">
+<span id="_CPPv312I2C_BitCount"></span><span id="_CPPv212I2C_BitCount"></span><span class="target" id="group__i2c__api_1g21328ce0401b8b21b96a65eb83562de7"></span><em class="property">enum </em><code class="sig-name descname">I2C_BitCount</code><a class="headerlink" href="#_CPPv412I2C_BitCount" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__i2c__api_1gd2bd2d9260e7f990e6a0f202f9561c6a"><span class="std std-ref">I2C_setBitCount()</span></a> as the <em>size</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_1">
+<span id="_CPPv314I2C_BITCOUNT_1"></span><span id="_CPPv214I2C_BITCOUNT_1"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de711d6d1f303b9a598c7a3b881c284109a"></span><code class="sig-name descname">I2C_BITCOUNT_1</code> = 1U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>1 bit per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_2">
+<span id="_CPPv314I2C_BITCOUNT_2"></span><span id="_CPPv214I2C_BITCOUNT_2"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de795c884428d96c8ea43c3c803f5f169df"></span><code class="sig-name descname">I2C_BITCOUNT_2</code> = 2U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>2 bits per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_3">
+<span id="_CPPv314I2C_BITCOUNT_3"></span><span id="_CPPv214I2C_BITCOUNT_3"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de7c47bfc539f49f2aed471ec58946224f3"></span><code class="sig-name descname">I2C_BITCOUNT_3</code> = 3U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>3 bits per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_4">
+<span id="_CPPv314I2C_BITCOUNT_4"></span><span id="_CPPv214I2C_BITCOUNT_4"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de7becb8d2911fcc34024cbde36c4ba66ee"></span><code class="sig-name descname">I2C_BITCOUNT_4</code> = 4U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>4 bits per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_5">
+<span id="_CPPv314I2C_BITCOUNT_5"></span><span id="_CPPv214I2C_BITCOUNT_5"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de730df37a7c048065b71bd1146aa04aa3f"></span><code class="sig-name descname">I2C_BITCOUNT_5</code> = 5U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>5 bits per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_6">
+<span id="_CPPv314I2C_BITCOUNT_6"></span><span id="_CPPv214I2C_BITCOUNT_6"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de76cdcda35939caf659468b01bbf2c2eab"></span><code class="sig-name descname">I2C_BITCOUNT_6</code> = 6U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>6 bits per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_7">
+<span id="_CPPv314I2C_BITCOUNT_7"></span><span id="_CPPv214I2C_BITCOUNT_7"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de7420872a134c6aa6d0633b54a09b6464a"></span><code class="sig-name descname">I2C_BITCOUNT_7</code> = 7U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>7 bits per data byte </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414I2C_BITCOUNT_8">
+<span id="_CPPv314I2C_BITCOUNT_8"></span><span id="_CPPv214I2C_BITCOUNT_8"></span><span class="target" id="group__i2c__api_1gg21328ce0401b8b21b96a65eb83562de770c349227f6e847d8c96c7b8112e9331"></span><code class="sig-name descname">I2C_BITCOUNT_8</code> = 0U<a class="headerlink" href="#_CPPv414I2C_BITCOUNT_8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>8 bits per data byte </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv415I2C_AddressMode">
+<span id="_CPPv315I2C_AddressMode"></span><span id="_CPPv215I2C_AddressMode"></span><span class="target" id="group__i2c__api_1g8b54b8eb4718ee127011e433eb459c4f"></span><em class="property">enum </em><code class="sig-name descname">I2C_AddressMode</code><a class="headerlink" href="#_CPPv415I2C_AddressMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__i2c__api_1g85e795d6377e91b9443f61cdbf0343fc"><span class="std std-ref">I2C_setAddressMode()</span></a> as the <em>mode</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv419I2C_ADDR_MODE_7BITS">
+<span id="_CPPv319I2C_ADDR_MODE_7BITS"></span><span id="_CPPv219I2C_ADDR_MODE_7BITS"></span><span class="target" id="group__i2c__api_1gg8b54b8eb4718ee127011e433eb459c4fe17d2f5276d7529a09879a6aa18b1ce8"></span><code class="sig-name descname">I2C_ADDR_MODE_7BITS</code> = 0x0000U<a class="headerlink" href="#_CPPv419I2C_ADDR_MODE_7BITS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>7-bit address </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420I2C_ADDR_MODE_10BITS">
+<span id="_CPPv320I2C_ADDR_MODE_10BITS"></span><span id="_CPPv220I2C_ADDR_MODE_10BITS"></span><span class="target" id="group__i2c__api_1gg8b54b8eb4718ee127011e433eb459c4ff7bd8c7e7ddc55168e63dfc6d8e5f09e"></span><code class="sig-name descname">I2C_ADDR_MODE_10BITS</code> = 0x0100U<a class="headerlink" href="#_CPPv420I2C_ADDR_MODE_10BITS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>10-bit address </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv417I2C_EmulationMode">
+<span id="_CPPv317I2C_EmulationMode"></span><span id="_CPPv217I2C_EmulationMode"></span><span class="target" id="group__i2c__api_1g5682761b6b7adfa59abbe955a382e1a2"></span><em class="property">enum </em><code class="sig-name descname">I2C_EmulationMode</code><a class="headerlink" href="#_CPPv417I2C_EmulationMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__i2c__api_1g6e97f1b243e03288d448537e9278a5fb"><span class="std std-ref">I2C_setEmulationMode()</span></a> as the <em>mode</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv426I2C_EMULATION_STOP_SCL_LOW">
+<span id="_CPPv326I2C_EMULATION_STOP_SCL_LOW"></span><span id="_CPPv226I2C_EMULATION_STOP_SCL_LOW"></span><span class="target" id="group__i2c__api_1gg5682761b6b7adfa59abbe955a382e1a2750070ad464b52387a8e59495e095de2"></span><code class="sig-name descname">I2C_EMULATION_STOP_SCL_LOW</code> = 0x0000U<a class="headerlink" href="#_CPPv426I2C_EMULATION_STOP_SCL_LOW" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If SCL is low, keep it low. If high, stop when it goes low again. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422I2C_EMULATION_FREE_RUN">
+<span id="_CPPv322I2C_EMULATION_FREE_RUN"></span><span id="_CPPv222I2C_EMULATION_FREE_RUN"></span><span class="target" id="group__i2c__api_1gg5682761b6b7adfa59abbe955a382e1a280d375cb3d5592593438cbb40df26274"></span><code class="sig-name descname">I2C_EMULATION_FREE_RUN</code> = 0x4000U<a class="headerlink" href="#_CPPv422I2C_EMULATION_FREE_RUN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Continue I2C operation regardless. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv413I2C_DutyCycle">
+<span id="_CPPv313I2C_DutyCycle"></span><span id="_CPPv213I2C_DutyCycle"></span><span class="target" id="group__i2c__api_1gea0c596a81afc3011d61c7fa5aa440f2"></span><em class="property">enum </em><code class="sig-name descname">I2C_DutyCycle</code><a class="headerlink" href="#_CPPv413I2C_DutyCycle" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__i2c__api_1gdb9c53d7a6b1c63fbf8312fd0e111e7c"><span class="std std-ref">I2C_initMaster()</span></a> as the <em>dutyCycle</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv416I2C_DUTYCYCLE_33">
+<span id="_CPPv316I2C_DUTYCYCLE_33"></span><span id="_CPPv216I2C_DUTYCYCLE_33"></span><span class="target" id="group__i2c__api_1ggea0c596a81afc3011d61c7fa5aa440f2f07b8de96cb4c3bf6c881e793d2818f2"></span><code class="sig-name descname">I2C_DUTYCYCLE_33</code><a class="headerlink" href="#_CPPv416I2C_DUTYCYCLE_33" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clock duty cycle is 33%. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416I2C_DUTYCYCLE_50">
+<span id="_CPPv316I2C_DUTYCYCLE_50"></span><span id="_CPPv216I2C_DUTYCYCLE_50"></span><span class="target" id="group__i2c__api_1ggea0c596a81afc3011d61c7fa5aa440f21a13040fc401d4e7142829dab5ffb053"></span><code class="sig-name descname">I2C_DUTYCYCLE_50</code><a class="headerlink" href="#_CPPv416I2C_DUTYCYCLE_50" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clock duty cycle is 55%. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv416I2C_enableModule8uint32_t">
+<span id="_CPPv316I2C_enableModule8uint32_t"></span><span id="_CPPv216I2C_enableModule8uint32_t"></span><span id="I2C_enableModule__uint32_t"></span><span class="target" id="group__i2c__api_1g7318f3ca257cbd0d07f0507df2b63467"></span><em class="property">static</em> void <code class="sig-name descname">I2C_enableModule</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416I2C_enableModule8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables the I2C module.</p>
+<p><p>This function enables operation of the I2C module.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417I2C_disableModule8uint32_t">
+<span id="_CPPv317I2C_disableModule8uint32_t"></span><span id="_CPPv217I2C_disableModule8uint32_t"></span><span id="I2C_disableModule__uint32_t"></span><span class="target" id="group__i2c__api_1g2bc8fba38d22bd6571cf7ab8b30dc70c"></span><em class="property">static</em> void <code class="sig-name descname">I2C_disableModule</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417I2C_disableModule8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables the I2C module.</p>
+<p><p>This function disables operation of the I2C module.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414I2C_enableFIFO8uint32_t">
+<span id="_CPPv314I2C_enableFIFO8uint32_t"></span><span id="_CPPv214I2C_enableFIFO8uint32_t"></span><span id="I2C_enableFIFO__uint32_t"></span><span class="target" id="group__i2c__api_1g8d638953fe45f240abcff13dd68c695c"></span><em class="property">static</em> void <code class="sig-name descname">I2C_enableFIFO</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414I2C_enableFIFO8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables the transmit and receive FIFOs.</p>
+<p><p>This functions enables the transmit and receive FIFOs in the I2C.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415I2C_disableFIFO8uint32_t">
+<span id="_CPPv315I2C_disableFIFO8uint32_t"></span><span id="_CPPv215I2C_disableFIFO8uint32_t"></span><span id="I2C_disableFIFO__uint32_t"></span><span class="target" id="group__i2c__api_1g807b274a25525516edf1fa55f20fccf2"></span><em class="property">static</em> void <code class="sig-name descname">I2C_disableFIFO</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415I2C_disableFIFO8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables the transmit and receive FIFOs.</p>
+<p><p>This functions disables the transmit and receive FIFOs in the I2C.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425I2C_setFIFOInterruptLevel8uint32_t15I2C_TxFIFOLevel15I2C_RxFIFOLevel">
+<span id="_CPPv325I2C_setFIFOInterruptLevel8uint32_t15I2C_TxFIFOLevel15I2C_RxFIFOLevel"></span><span id="_CPPv225I2C_setFIFOInterruptLevel8uint32_t15I2C_TxFIFOLevel15I2C_RxFIFOLevel"></span><span id="I2C_setFIFOInterruptLevel__uint32_t.I2C_TxFIFOLevel.I2C_RxFIFOLevel"></span><span class="target" id="group__i2c__api_1g5d7d11f4c565247a8442b23f2225d5f1"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setFIFOInterruptLevel</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv415I2C_TxFIFOLevel" title="I2C_TxFIFOLevel">I2C_TxFIFOLevel</a> <em>txLevel</em>, <a class="reference internal" href="#_CPPv415I2C_RxFIFOLevel" title="I2C_RxFIFOLevel">I2C_RxFIFOLevel</a> <em>rxLevel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425I2C_setFIFOInterruptLevel8uint32_t15I2C_TxFIFOLevel15I2C_RxFIFOLevel" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the FIFO level at which interrupts are generated.</p>
+<p><p>This function sets the FIFO level at which transmit and receive interrupts are generated. The transmit FIFO interrupt flag will be set when the FIFO reaches a value less than or equal to </p>
+<em>txLevel</em>. The receive FIFO flag will be set when the FIFO reaches a value greater than or equal to <em>rxLevel</em>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">txLevel</span></code>: is the transmit FIFO interrupt level, specified as <strong>I2C_FIFO_TX0</strong>, <strong>I2C_FIFO_TX1</strong>, <strong>I2C_FIFO_TX2</strong>, … or <strong>I2C_FIFO_TX16</strong>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rxLevel</span></code>: is the receive FIFO interrupt level, specified as <strong>I2C_FIFO_RX0</strong>, <strong>I2C_FIFO_RX1</strong>, <strong>I2C_FIFO_RX2</strong>, … or <strong>I2C_FIFO_RX16</strong>.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425I2C_getFIFOInterruptLevel8uint32_tP15I2C_TxFIFOLevelP15I2C_RxFIFOLevel">
+<span id="_CPPv325I2C_getFIFOInterruptLevel8uint32_tP15I2C_TxFIFOLevelP15I2C_RxFIFOLevel"></span><span id="_CPPv225I2C_getFIFOInterruptLevel8uint32_tP15I2C_TxFIFOLevelP15I2C_RxFIFOLevel"></span><span id="I2C_getFIFOInterruptLevel__uint32_t.I2C_TxFIFOLevelP.I2C_RxFIFOLevelP"></span><span class="target" id="group__i2c__api_1g10e890c0de930839d3846ba98c3028cc"></span><em class="property">static</em> void <code class="sig-name descname">I2C_getFIFOInterruptLevel</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv415I2C_TxFIFOLevel" title="I2C_TxFIFOLevel">I2C_TxFIFOLevel</a> *<em>txLevel</em>, <a class="reference internal" href="#_CPPv415I2C_RxFIFOLevel" title="I2C_RxFIFOLevel">I2C_RxFIFOLevel</a> *<em>rxLevel</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425I2C_getFIFOInterruptLevel8uint32_tP15I2C_TxFIFOLevelP15I2C_RxFIFOLevel" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the FIFO level at which interrupts are generated.</p>
+<p><p>This function gets the FIFO level at which transmit and receive interrupts are generated. The transmit FIFO interrupt flag will be set when the FIFO reaches a value less than or equal to </p>
+<em>txLevel</em>. The receive FIFO flag will be set when the FIFO reaches a value greater than or equal to <em>rxLevel</em>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">txLevel</span></code>: is a pointer to storage for the transmit FIFO level, returned as one of <strong>I2C_FIFO_TX0</strong>, <strong>I2C_FIFO_TX1</strong>, <strong>I2C_FIFO_TX2</strong>, … or <strong>I2C_FIFO_TX16</strong>. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rxLevel</span></code>: is a pointer to storage for the receive FIFO level, returned as one of <strong>I2C_FIFO_RX0</strong>, <strong>I2C_FIFO_RX1</strong>, <strong>I2C_FIFO_RX2</strong>, … or <strong>I2C_FIFO_RX16</strong>.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419I2C_getTxFIFOStatus8uint32_t">
+<span id="_CPPv319I2C_getTxFIFOStatus8uint32_t"></span><span id="_CPPv219I2C_getTxFIFOStatus8uint32_t"></span><span id="I2C_getTxFIFOStatus__uint32_t"></span><span class="target" id="group__i2c__api_1g86eecafa22732c256f6ef09f377491ef"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv415I2C_TxFIFOLevel" title="I2C_TxFIFOLevel">I2C_TxFIFOLevel</a> <code class="sig-name descname">I2C_getTxFIFOStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419I2C_getTxFIFOStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the transmit FIFO status</p>
+<p><p>This function gets the current number of words in the transmit FIFO.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the current number of words in the transmit FIFO specified as one of the following: <strong>I2C_FIFO_TX0</strong>, <strong>I2C_FIFO_TX1</strong>, <strong>I2C_FIFO_TX2</strong>, <strong>I2C_FIFO_TX3</strong>, …, or <strong>I2C_FIFO_TX16</strong> </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419I2C_getRxFIFOStatus8uint32_t">
+<span id="_CPPv319I2C_getRxFIFOStatus8uint32_t"></span><span id="_CPPv219I2C_getRxFIFOStatus8uint32_t"></span><span id="I2C_getRxFIFOStatus__uint32_t"></span><span class="target" id="group__i2c__api_1g08594fc8f50e96291846c6151f7f8253"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv415I2C_RxFIFOLevel" title="I2C_RxFIFOLevel">I2C_RxFIFOLevel</a> <code class="sig-name descname">I2C_getRxFIFOStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419I2C_getRxFIFOStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the receive FIFO status</p>
+<p><p>This function gets the current number of words in the receive FIFO.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the current number of words in the receive FIFO specified as one of the following: <strong>I2C_FIFO_RX0</strong>, <strong>I2C_FIFO_RX1</strong>, <strong>I2C_FIFO_RX2</strong>, <strong>I2C_FIFO_RX3</strong>, …, or <strong>I2C_FIFO_RX16</strong> </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419I2C_setSlaveAddress8uint32_t8uint16_t">
+<span id="_CPPv319I2C_setSlaveAddress8uint32_t8uint16_t"></span><span id="_CPPv219I2C_setSlaveAddress8uint32_t8uint16_t"></span><span id="I2C_setSlaveAddress__uint32_t.uint16_t"></span><span class="target" id="group__i2c__api_1g71cd83ffaeda71d285cc559a4e9f177a"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setSlaveAddress</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>slaveAddr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419I2C_setSlaveAddress8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the address that the I2C Master places on the bus.</p>
+<p><p>This function configures the address that the I2C Master places on the bus when initiating a transaction.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slaveAddr</span></code>: 7-bit or 10-bit slave address</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422I2C_setOwnSlaveAddress8uint32_t8uint16_t">
+<span id="_CPPv322I2C_setOwnSlaveAddress8uint32_t8uint16_t"></span><span id="_CPPv222I2C_setOwnSlaveAddress8uint32_t8uint16_t"></span><span id="I2C_setOwnSlaveAddress__uint32_t.uint16_t"></span><span class="target" id="group__i2c__api_1g760feb14294b5a90c120643de50fd4dc"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setOwnSlaveAddress</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>slaveAddr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422I2C_setOwnSlaveAddress8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the slave address for this I2C module.</p>
+<p><p>This function writes the specified slave address.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C Slave module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slaveAddr</span></code>: is the 7-bit or 10-bit slave address</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The parameter <em>slaveAddr</em> is the value that is compared against the slave address sent by an I2C master.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413I2C_isBusBusy8uint32_t">
+<span id="_CPPv313I2C_isBusBusy8uint32_t"></span><span id="_CPPv213I2C_isBusBusy8uint32_t"></span><span id="I2C_isBusBusy__uint32_t"></span><span class="target" id="group__i2c__api_1g3c05730d62b75b6b6ab0633c4d3f5cb5"></span><em class="property">static</em> bool <code class="sig-name descname">I2C_isBusBusy</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413I2C_isBusBusy8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Indicates whether or not the I2C bus is busy.</p>
+<p><p>This function returns an indication of whether or not the I2C bus is busy. This function can be used in a multi-master environment to determine if the bus is free for another data transfer.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if the I2C bus is busy; otherwise, returns <strong>false</strong>. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413I2C_getStatus8uint32_t">
+<span id="_CPPv313I2C_getStatus8uint32_t"></span><span id="_CPPv213I2C_getStatus8uint32_t"></span><span id="I2C_getStatus__uint32_t"></span><span class="target" id="group__i2c__api_1g168a0f98ad06b00b900b8b559edb95ff"></span><em class="property">static</em> uint16_t <code class="sig-name descname">I2C_getStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413I2C_getStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current I2C module status.</p>
+<p><p>This function returns the status for the I2C module.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The current module status, enumerated as a bit field of<ul class="simple">
+<li><p><strong>I2C_STS_ARB_LOST</strong> - Arbitration-lost</p></li>
+<li><p><strong>I2C_STS_NO_ACK</strong> - No-acknowledgment (NACK)</p></li>
+<li><p><strong>I2C_STS_REG_ACCESS_RDY</strong> - Register-access-ready (ARDY)</p></li>
+<li><p><strong>I2C_STS_RX_DATA_RDY</strong> - Receive-data-ready</p></li>
+<li><p><strong>I2C_STS_TX_DATA_RDY</strong> - Transmit-data-ready</p></li>
+<li><p><strong>I2C_STS_STOP_CONDITION</strong> - Stop condition detected</p></li>
+<li><p><strong>I2C_STS_ADDR_ZERO</strong> - Address of all zeros detected</p></li>
+<li><p><strong>I2C_STS_ADDR_SLAVE</strong> - Addressed as slave</p></li>
+<li><p><strong>I2C_STS_TX_EMPTY</strong> - Transmit shift register empty</p></li>
+<li><p><strong>I2C_STS_RX_FULL</strong> - Receive shift register full</p></li>
+<li><p><strong>I2C_STS_BUS_BUSY</strong> - Bus busy, wait for STOP or reset</p></li>
+<li><p><strong>I2C_STS_NACK_SENT</strong> - NACK was sent</p></li>
+<li><p><strong>I2C_STS_SLAVE_DIR-</strong> Addressed as slave transmitter </p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415I2C_clearStatus8uint32_t8uint16_t">
+<span id="_CPPv315I2C_clearStatus8uint32_t8uint16_t"></span><span id="_CPPv215I2C_clearStatus8uint32_t8uint16_t"></span><span id="I2C_clearStatus__uint32_t.uint16_t"></span><span class="target" id="group__i2c__api_1g107a69e606f359add6b79d6f7e836c6d"></span><em class="property">static</em> void <code class="sig-name descname">I2C_clearStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>stsFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415I2C_clearStatus8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears I2C status flags.</p>
+<p><p>This function clears the specified I2C status flags. The </p>
+<em>stsFlags</em> parameter is the logical OR of the following values:<ul class="simple">
+<li><p><strong>I2C_STS_ARB_LOST</strong> </p></li>
+<li><p><strong>I2C_STS_NO_ACK</strong>,</p></li>
+<li><p><strong>I2C_STS_REG_ACCESS_RDY</strong> </p></li>
+<li><p><strong>I2C_STS_RX_DATA_RDY</strong> </p></li>
+<li><p><strong>I2C_STS_STOP_CONDITION</strong> </p></li>
+<li><p><strong>I2C_STS_NACK_SENT</strong> </p></li>
+<li><p><strong>I2C_STS_SLAVE_DIR</strong> </p></li>
+</ul>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stsFlags</span></code>: is a bit mask of the status flags to be cleared.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Note that some of the status flags returned by <a class="reference internal" href="#group__i2c__api_1g168a0f98ad06b00b900b8b559edb95ff"><span class="std std-ref">I2C_getStatus()</span></a> cannot be cleared by this function. Some may only be cleared by hardware or a reset of the I2C module.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413I2C_setConfig8uint32_t8uint16_t">
+<span id="_CPPv313I2C_setConfig8uint32_t8uint16_t"></span><span id="_CPPv213I2C_setConfig8uint32_t8uint16_t"></span><span id="I2C_setConfig__uint32_t.uint16_t"></span><span class="target" id="group__i2c__api_1g69450f774a27864fcbc17f6a6bccf7b2"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setConfig</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413I2C_setConfig8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Controls the state of the I2C module.</p>
+<p><p>This function is used to control the state of the master and slave send and receive operations. The </p>
+<em>config</em> is a logical OR of the following options.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code>: is the command to be issued to the I2C module.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>One of the following four options:<ul class="simple">
+<li><p><strong>I2C_MASTER_SEND_MODE</strong> - Master-transmitter mode</p></li>
+<li><p><strong>I2C_MASTER_RECEIVE_MODE</strong> - Master-receiver mode</p></li>
+<li><p><strong>I2C_SLAVE_SEND_MODE</strong> - Slave-transmitter mode</p></li>
+<li><p><strong>I2C_SLAVE_RECEIVE_MODE</strong> - Slave-receiver mode</p></li>
+</ul>
+</p>
+<p>Any of the following:<ul class="simple">
+<li><p><strong>I2C_REPEAT_MODE</strong> - Sends data until stop bit is set, ignores data count</p></li>
+<li><p><strong>I2C_START_BYTE_MODE</strong> - Use start byte mode</p></li>
+<li><p><strong>I2C_FREE_DATA_FORMAT</strong> - Use free data format, transfers have no address</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415I2C_setBitCount8uint32_t12I2C_BitCount">
+<span id="_CPPv315I2C_setBitCount8uint32_t12I2C_BitCount"></span><span id="_CPPv215I2C_setBitCount8uint32_t12I2C_BitCount"></span><span id="I2C_setBitCount__uint32_t.I2C_BitCount"></span><span class="target" id="group__i2c__api_1gd2bd2d9260e7f990e6a0f202f9561c6a"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setBitCount</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv412I2C_BitCount" title="I2C_BitCount">I2C_BitCount</a> <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415I2C_setBitCount8uint32_t12I2C_BitCount" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the data byte bit count the I2C module.</p>
+<p><p>The </p>
+<em>size</em> parameter is a value I2C_BITCOUNT_x where x is the number of bits per data byte. The default and maximum size is 8 bits.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: is the number of bits per data byte.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422I2C_sendStartCondition8uint32_t">
+<span id="_CPPv322I2C_sendStartCondition8uint32_t"></span><span id="_CPPv222I2C_sendStartCondition8uint32_t"></span><span id="I2C_sendStartCondition__uint32_t"></span><span class="target" id="group__i2c__api_1gcaa0cc457d71f861196d982353e7c9d5"></span><em class="property">static</em> void <code class="sig-name descname">I2C_sendStartCondition</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422I2C_sendStartCondition8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Issues an I2C START condition.</p>
+<p><p>This function causes the I2C module to generate a start condition. This function is only valid when the I2C module specified by the </p>
+<strong>base</strong> parameter is a master.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421I2C_sendStopCondition8uint32_t">
+<span id="_CPPv321I2C_sendStopCondition8uint32_t"></span><span id="_CPPv221I2C_sendStopCondition8uint32_t"></span><span id="I2C_sendStopCondition__uint32_t"></span><span class="target" id="group__i2c__api_1gd40133b1b77786c0bea93ac0866ef808"></span><em class="property">static</em> void <code class="sig-name descname">I2C_sendStopCondition</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421I2C_sendStopCondition8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Issues an I2C STOP condition.</p>
+<p><p>This function causes the I2C module to generate a stop condition. This function is only valid when the I2C module specified by the </p>
+<strong>base</strong> parameter is a master.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>To check on the status of the STOP condition, <a class="reference internal" href="#group__i2c__api_1gb25dfbb3d47cde196c8c0014e2a948a4"><span class="std std-ref">I2C_getStopConditionStatus()</span></a> can be used.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412I2C_sendNACK8uint32_t">
+<span id="_CPPv312I2C_sendNACK8uint32_t"></span><span id="_CPPv212I2C_sendNACK8uint32_t"></span><span id="I2C_sendNACK__uint32_t"></span><span class="target" id="group__i2c__api_1g43624b2deeb7366c74d3bb16b0f033d2"></span><em class="property">static</em> void <code class="sig-name descname">I2C_sendNACK</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412I2C_sendNACK8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Issues a no-acknowledge (NACK) bit.</p>
+<p><p>This function causes the I2C module to generate a NACK bit. This is only applicable when the I2C module is acting as a receiver.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411I2C_getData8uint32_t">
+<span id="_CPPv311I2C_getData8uint32_t"></span><span id="_CPPv211I2C_getData8uint32_t"></span><span id="I2C_getData__uint32_t"></span><span class="target" id="group__i2c__api_1g27683e07f981adecad782edcdc3ec865"></span><em class="property">static</em> uint16_t <code class="sig-name descname">I2C_getData</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411I2C_getData8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Receives a byte that has been sent to the I2C.</p>
+<p><p>This function reads a byte of data from the I2C Data Receive Register.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the byte received from by the I2C cast as an uint16_t. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411I2C_putData8uint32_t8uint16_t">
+<span id="_CPPv311I2C_putData8uint32_t8uint16_t"></span><span id="_CPPv211I2C_putData8uint32_t8uint16_t"></span><span id="I2C_putData__uint32_t.uint16_t"></span><span class="target" id="group__i2c__api_1gebbf9b36f3506853ddd419eba1c27959"></span><em class="property">static</em> void <code class="sig-name descname">I2C_putData</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411I2C_putData8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Transmits a byte from the I2C.</p>
+<p><p>This function places the supplied data into I2C Data Transmit Register.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: is the data to be transmitted from the I2C Master.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426I2C_getStopConditionStatus8uint32_t">
+<span id="_CPPv326I2C_getStopConditionStatus8uint32_t"></span><span id="_CPPv226I2C_getStopConditionStatus8uint32_t"></span><span id="I2C_getStopConditionStatus__uint32_t"></span><span class="target" id="group__i2c__api_1gb25dfbb3d47cde196c8c0014e2a948a4"></span><em class="property">static</em> bool <code class="sig-name descname">I2C_getStopConditionStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426I2C_getStopConditionStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get stop condition status.</p>
+<p><p>This function reads and returns the stop condition bit status.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if the STP bit has been set by the device to generate a stop condition when the internal data counter of the I2C module has reached 0. Returns <strong>false</strong> when the STP bit is zero. This bit is automatically cleared after the stop condition has been generated. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416I2C_setDataCount8uint32_t8uint16_t">
+<span id="_CPPv316I2C_setDataCount8uint32_t8uint16_t"></span><span id="_CPPv216I2C_setDataCount8uint32_t8uint16_t"></span><span id="I2C_setDataCount__uint32_t.uint16_t"></span><span class="target" id="group__i2c__api_1gfad782c889e2be5857fc25313f3835e5"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setDataCount</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>count</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416I2C_setDataCount8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set number of bytes to be to transfer or receive when repeat mode is off.</p>
+<p><p>This function sets the number of bytes to transfer or receive when repeat mode is off.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: is the value to be put in the I2C data count register.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418I2C_setAddressMode8uint32_t15I2C_AddressMode">
+<span id="_CPPv318I2C_setAddressMode8uint32_t15I2C_AddressMode"></span><span id="_CPPv218I2C_setAddressMode8uint32_t15I2C_AddressMode"></span><span id="I2C_setAddressMode__uint32_t.I2C_AddressMode"></span><span class="target" id="group__i2c__api_1g85e795d6377e91b9443f61cdbf0343fc"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setAddressMode</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv415I2C_AddressMode" title="I2C_AddressMode">I2C_AddressMode</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418I2C_setAddressMode8uint32_t15I2C_AddressMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the addressing mode to either 7-bit or 10-bit.</p>
+<p><p>This function configures the I2C module for either a 7-bit address (default) or a 10-bit address. The </p>
+<em>mode</em> parameter configures the address length to 10 bits when its value is <strong>I2C_ADDR_MODE_10BITS</strong> and 7 bits when <strong>I2C_ADDR_MODE_7BITS</strong>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: is the address mode, 7-bit or 10-bit.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420I2C_setEmulationMode8uint32_t17I2C_EmulationMode">
+<span id="_CPPv320I2C_setEmulationMode8uint32_t17I2C_EmulationMode"></span><span id="_CPPv220I2C_setEmulationMode8uint32_t17I2C_EmulationMode"></span><span id="I2C_setEmulationMode__uint32_t.I2C_EmulationMode"></span><span class="target" id="group__i2c__api_1g6e97f1b243e03288d448537e9278a5fb"></span><em class="property">static</em> void <code class="sig-name descname">I2C_setEmulationMode</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv417I2C_EmulationMode" title="I2C_EmulationMode">I2C_EmulationMode</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420I2C_setEmulationMode8uint32_t17I2C_EmulationMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets I2C emulation mode.</p>
+<p><p>This function sets the behavior of the I2C operation when an emulation suspend occurs. The </p>
+<em>mode</em> parameter can be one of the following:<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: is the emulation mode.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><ul class="simple">
+<li><p><strong>I2C_EMULATION_STOP_SCL_LOW</strong> - If SCL is low when the breakpoint occurs, the I2C module stops immediately. If SCL is high, the I2C module waits until SCL becomes low and then stops.</p></li>
+<li><p><strong>I2C_EMULATION_FREE_RUN</strong> - I2C operation continues regardless of a the suspend.</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418I2C_enableLoopback8uint32_t">
+<span id="_CPPv318I2C_enableLoopback8uint32_t"></span><span id="_CPPv218I2C_enableLoopback8uint32_t"></span><span id="I2C_enableLoopback__uint32_t"></span><span class="target" id="group__i2c__api_1g4312301857d04ea5f29af9e0841e7b58"></span><em class="property">static</em> void <code class="sig-name descname">I2C_enableLoopback</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418I2C_enableLoopback8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables I2C loopback mode.</p>
+<p><p>This function enables loopback mode. This mode is only valid during master mode and is helpful during device testing as it causes data transmitted out of the data transmit register to be received in data receive register.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419I2C_disableLoopback8uint32_t">
+<span id="_CPPv319I2C_disableLoopback8uint32_t"></span><span id="_CPPv219I2C_disableLoopback8uint32_t"></span><span id="I2C_disableLoopback__uint32_t"></span><span class="target" id="group__i2c__api_1gec4d31402b5582f4300b04f0faf1ccb7"></span><em class="property">static</em> void <code class="sig-name descname">I2C_disableLoopback</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419I2C_disableLoopback8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables I2C loopback mode.</p>
+<p><p>This function disables loopback mode. Loopback mode is disabled by default after reset.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422I2C_getInterruptSource8uint32_t">
+<span id="_CPPv322I2C_getInterruptSource8uint32_t"></span><span id="_CPPv222I2C_getInterruptSource8uint32_t"></span><span id="I2C_getInterruptSource__uint32_t"></span><span class="target" id="group__i2c__api_1gd93fe9f0a012b442562eea7b785d9684"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv419I2C_InterruptSource" title="I2C_InterruptSource">I2C_InterruptSource</a> <code class="sig-name descname">I2C_getInterruptSource</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422I2C_getInterruptSource8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the current I2C interrupt source.</p>
+<p><p>This function returns the event that generated an I2C basic (non-FIFO) interrupt. The possible sources are the following:</p>
+<ul class="simple">
+<li><p><strong>I2C_INTSRC_NONE</strong> </p></li>
+<li><p><strong>I2C_INTSRC_ARB_LOST</strong> </p></li>
+<li><p><strong>I2C_INTSRC_NO_ACK</strong> </p></li>
+<li><p><strong>I2C_INTSRC_REG_ACCESS_RDY</strong> </p></li>
+<li><p><strong>I2C_INTSRC_RX_DATA_RDY</strong> </p></li>
+<li><p><strong>I2C_INTSRC_TX_DATA_RDY</strong> </p></li>
+<li><p><strong>I2C_INTSRC_STOP_CONDITION</strong> </p></li>
+<li><p><strong>I2C_INTSRC_ADDR_SLAVE</strong> </p></li>
+</ul>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Calling this function will result in hardware automatically clearing the current interrupt code and if ready, loading the next pending enabled interrupt. It will also clear the corresponding interrupt flag if the source is <strong>I2C_INTSRC_ARB_LOST</strong>, <strong>I2C_INTSRC_NO_ACK</strong>, or <strong>I2C_INTSRC_STOP_CONDITION</strong>.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Note that this function differs from <a class="reference internal" href="#group__i2c__api_1g36730d55d25cd9496fa6f1b8859e9ecb"><span class="std std-ref">I2C_getInterruptStatus()</span></a> in that it returns a single interrupt source. <a class="reference internal" href="#group__i2c__api_1gd93fe9f0a012b442562eea7b785d9684"><span class="std std-ref">I2C_getInterruptSource()</span></a> will return the status of all interrupt flags possible, including the flags that aren’t necessarily enabled to generate interrupts.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414I2C_initMaster8uint32_t8uint32_t8uint32_t13I2C_DutyCycle">
+<span id="_CPPv314I2C_initMaster8uint32_t8uint32_t8uint32_t13I2C_DutyCycle"></span><span id="_CPPv214I2C_initMaster8uint32_t8uint32_t8uint32_t13I2C_DutyCycle"></span><span id="I2C_initMaster__uint32_t.uint32_t.uint32_t.I2C_DutyCycle"></span><span class="target" id="group__i2c__api_1gdb9c53d7a6b1c63fbf8312fd0e111e7c"></span>void <code class="sig-name descname">I2C_initMaster</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint32_t <em>sysclkHz</em>, uint32_t <em>bitRate</em>, <a class="reference internal" href="#_CPPv413I2C_DutyCycle" title="I2C_DutyCycle">I2C_DutyCycle</a> <em>dutyCycle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414I2C_initMaster8uint32_t8uint32_t8uint32_t13I2C_DutyCycle" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the I2C Master.</p>
+<p><p>This function initializes operation of the I2C Master by configuring the bus speed for the master. Note that the I2C module </p>
+<strong>must</strong> be put into reset before calling this function. You can do this with the function <a class="reference internal" href="#group__i2c__api_1g2bc8fba38d22bd6571cf7ab8b30dc70c"><span class="std std-ref">I2C_disableModule()</span></a>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sysclkHz</span></code>: is the rate of the clock supplied to the I2C module (SYSCLK) in Hz. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitRate</span></code>: is the rate of the master clock signal, SCL. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dutyCycle</span></code>: is duty cycle of the SCL signal.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>A programmable prescaler in the I2C module divides down the input clock (rate specified by <em>sysclkHz</em>) to produce the module clock (calculated to be around 10 MHz in this function). That clock is then divided down further to configure the SCL signal to run at the rate specified by <em>bitRate</em>. The <em>dutyCycle</em> parameter determines the percentage of time high and time low on the clock signal. The valid values are <strong>I2C_DUTYCYCLE_33</strong> for 33% and <strong>I2C_DUTYCYCLE_50</strong> for 50%.</p>
+<p>The peripheral clock is the system clock. This value is returned by <a class="reference internal" href="sysctl.html#group__sysctl__api_1g1a2624c048e736c2944b5f6f27512d17"><span class="std std-ref">SysCtl_getClock()</span></a>, or it can be explicitly hard coded if it is constant and known (to save the code/execution overhead of a call to <a class="reference internal" href="sysctl.html#group__sysctl__api_1g1a2624c048e736c2944b5f6f27512d17"><span class="std std-ref">SysCtl_getClock()</span></a>).</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419I2C_enableInterrupt8uint32_t8uint32_t">
+<span id="_CPPv319I2C_enableInterrupt8uint32_t8uint32_t"></span><span id="_CPPv219I2C_enableInterrupt8uint32_t8uint32_t"></span><span id="I2C_enableInterrupt__uint32_t.uint32_t"></span><span class="target" id="group__i2c__api_1gf533ac625333ffc41d540080acd9a3f9"></span>void <code class="sig-name descname">I2C_enableInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint32_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419I2C_enableInterrupt8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables I2C interrupt sources.</p>
+<p><p>This function enables the indicated I2C Master interrupt sources. Only the sources that are enabled can be reflected to the processor interrupt. Disabled sources have no effect on the processor.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is the bit mask of the interrupt sources to be enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>intFlags</em> parameter is the logical OR of any of the following:</p>
+<p><ul class="simple">
+<li><p><strong>I2C_INT_ARB_LOST</strong> - Arbitration-lost interrupt</p></li>
+<li><p><strong>I2C_INT_NO_ACK</strong> - No-acknowledgment (NACK) interrupt</p></li>
+<li><p><strong>I2C_INT_REG_ACCESS_RDY</strong> - Register-access-ready interrupt</p></li>
+<li><p><strong>I2C_INT_RX_DATA_RDY</strong> - Receive-data-ready interrupt</p></li>
+<li><p><strong>I2C_INT_TX_DATA_RDY</strong> - Transmit-data-ready interrupt</p></li>
+<li><p><strong>I2C_INT_STOP_CONDITION</strong> - Stop condition detected</p></li>
+<li><p><strong>I2C_INT_ADDR_SLAVE</strong> - Addressed as slave interrupt</p></li>
+<li><p><strong>I2C_INT_RXFF</strong> - RX FIFO level interrupt</p></li>
+<li><p><strong>I2C_INT_TXFF</strong> - TX FIFO level interrupt</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p><strong>I2C_INT_RXFF</strong> and <strong>I2C_INT_TXFF</strong> are associated with the I2C FIFO interrupt vector. All others are associated with the I2C basic interrupt.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420I2C_disableInterrupt8uint32_t8uint32_t">
+<span id="_CPPv320I2C_disableInterrupt8uint32_t8uint32_t"></span><span id="_CPPv220I2C_disableInterrupt8uint32_t8uint32_t"></span><span id="I2C_disableInterrupt__uint32_t.uint32_t"></span><span class="target" id="group__i2c__api_1gf8388682745e94a554b426e765613afe"></span>void <code class="sig-name descname">I2C_disableInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint32_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420I2C_disableInterrupt8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables I2C interrupt sources.</p>
+<p><p>This function disables the indicated I2C Slave interrupt sources. Only the sources that are enabled can be reflected to the processor interrupt. Disabled sources have no effect on the processor.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is the bit mask of the interrupt sources to be disabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>intFlags</em> parameter has the same definition as the <em>intFlags</em> parameter to <a class="reference internal" href="#group__i2c__api_1gf533ac625333ffc41d540080acd9a3f9"><span class="std std-ref">I2C_enableInterrupt()</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422I2C_getInterruptStatus8uint32_t">
+<span id="_CPPv322I2C_getInterruptStatus8uint32_t"></span><span id="_CPPv222I2C_getInterruptStatus8uint32_t"></span><span id="I2C_getInterruptStatus__uint32_t"></span><span class="target" id="group__i2c__api_1g36730d55d25cd9496fa6f1b8859e9ecb"></span>uint32_t <code class="sig-name descname">I2C_getInterruptStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422I2C_getInterruptStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current I2C interrupt status.</p>
+<p><p>This function returns the interrupt status for the I2C module.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The current interrupt status, enumerated as a bit field of<ul class="simple">
+<li><p><strong>I2C_INT_ARB_LOST</strong> </p></li>
+<li><p><strong>I2C_INT_NO_ACK</strong> </p></li>
+<li><p><strong>I2C_INT_REG_ACCESS_RDY</strong> </p></li>
+<li><p><strong>I2C_INT_RX_DATA_RDY</strong> </p></li>
+<li><p><strong>I2C_INT_TX_DATA_RDY</strong> </p></li>
+<li><p><strong>I2C_INT_STOP_CONDITION</strong> </p></li>
+<li><p><strong>I2C_INT_ADDR_SLAVE</strong> </p></li>
+<li><p><strong>I2C_INT_RXFF</strong> </p></li>
+<li><p><strong>I2C_INT_TXFF</strong> </p></li>
+</ul>
+</p>
+</dd>
+<dt><strong>Note</strong></dt><dd><p>This function will only return the status flags associated with interrupts. However, a flag may be set even if its corresponding interrupt is disabled. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424I2C_clearInterruptStatus8uint32_t8uint32_t">
+<span id="_CPPv324I2C_clearInterruptStatus8uint32_t8uint32_t"></span><span id="_CPPv224I2C_clearInterruptStatus8uint32_t8uint32_t"></span><span id="I2C_clearInterruptStatus__uint32_t.uint32_t"></span><span class="target" id="group__i2c__api_1gbbadd8cb311c3febbdd37f6f9ac835ef"></span>void <code class="sig-name descname">I2C_clearInterruptStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint32_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424I2C_clearInterruptStatus8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears I2C interrupt sources.</p>
+<p><p>The specified I2C interrupt sources are cleared, so that they no longer assert. This function must be called in the interrupt handler to keep the interrupt from being triggered again immediately upon exit.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the I2C instance used. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is a bit mask of the interrupt sources to be cleared.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>intFlags</em> parameter has the same definition as the <em>intFlags</em> parameter to <a class="reference internal" href="#group__i2c__api_1gf533ac625333ffc41d540080acd9a3f9"><span class="std std-ref">I2C_enableInterrupt()</span></a>.</p>
+<p><dl>
+<dt><strong>Note</strong></dt><dd><p><strong>I2C_INT_RXFF</strong> and <strong>I2C_INT_TXFF</strong> are associated with the I2C FIFO interrupt vector. All others are associated with the I2C basic interrupt.</p>
+<p>Also note that some of the status flags returned by <a class="reference internal" href="#group__i2c__api_1g36730d55d25cd9496fa6f1b8859e9ecb"><span class="std std-ref">I2C_getInterruptStatus()</span></a> cannot be cleared by this function. Some may only be cleared by hardware or a reset of the I2C module.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>Before initializing the I2C module, the user first must put the module into
+the reset state by calling I2C_disableModule(). When using the API in master
+mode, the user must then call I2C_initMaster() which will configure the rate
+and duty cycle of the master clock. For slave mode, I2C_setOwnSlaveAddress()
+will need to be called to set the module’s address.</p>
+<p>For both modes, this is also the time to do any FIFO or interrupt
+configuration. FIFOs are configured using I2C_enableFIFO() and
+I2C_disableFIFO() and I2C_setFIFOInterruptLevel() if interrupts are desired.
+The functions I2C_enableInterrupt(), I2C_disableInterrupt(),
+I2C_clearInterruptStatus(), and I2C_getInterruptStatus() are for management
+of interrupts. Note that the I2C module uses separate interrupt lines for its
+basic and FIFO interrupts although the functions to configure them are the
+same.</p>
+<p>When configuration is complete, I2C_enableModule() should be called to enable
+the operation of the module.</p>
+<p>To do a transfer, for both master and slave modes, I2C_setConfig() should be
+called to configure the behavior of the module. A master will need to set
+I2C_setSlaveAddress() to set the address of the slave to which it will
+communicate. I2C_putData() will place data in the transmit buffer. A start
+condition can be sent by a master using I2C_sendStartCondition().</p>
+<p>When receiving data, the status of data received can be checked using
+I2C_getStatus() or if in FIFO mode, I2C_getRxFIFOStatus(). I2C_getData()
+will read the data from the receive buffer and return it.</p>
+<p>The code for this module is contained in driverlib/i2c.c, with driverlib/i2c.h containing the API declarations for use by applications.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interrupt.html" class="btn btn-neutral float-right" title="Interrupt Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gpio.html" class="btn btn-neutral float-left" title="GPIO Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2020, Texas Instruments Incorporated</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+      <span class="lastupdated">
+        Last updated on May 26, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v3.02.00.00',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+
+        $('body').on("mousewheel", function () {
+            // Remove default behavior
+            event.preventDefault();
+            // Scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

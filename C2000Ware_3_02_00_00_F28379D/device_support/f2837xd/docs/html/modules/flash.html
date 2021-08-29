@@ -1,0 +1,1388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FLASH Module &mdash; F2837xd API Guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tiicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="F2837xd API Guide" href="../index.html"/>
+        <link rel="up" title="Modules" href="index.html"/>
+        <link rel="next" title="GPIO Module" href="gpio.html"/>
+        <link rel="prev" title="EQEP Module" href="eqep.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> F2837xd API Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.02.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model.html">Programming Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Driver Library Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">ADC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asysctl.html">ASysCtl Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="can.html">CAN Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cla.html">CLA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html">CLB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmpss.html">CMPSS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cputimer.html">CPU Timer Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">DAC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcsm.html">DCSM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dma.html">DMA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecap.html">ECAP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emif.html">EMIF Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="epwm.html">EPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hrpwm.html">HRPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqep.html">EQEP Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FLASH Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html">I2C Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupt Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcbsp.html">MCBSP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memcfg.html">MEMCFG Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sci.html">SCI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdfm.html">SDFM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysctl.html">SYSCTL Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html">USB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upp.html">UPP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbar.html">XBAR Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">F2837xd API Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Modules</a> &raquo;</li>
+        
+      <li>FLASH Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="flash-module">
+<span id="flash"></span><h1>FLASH Module<a class="headerlink" href="#flash-module" title="Permalink to this headline">¶</a></h1>
+<p>The Flash driver provides functions to configure the fallback power modes and
+the active grace periods of flash banks and pump, and the pump wake-up time.
+This driver also provides functions to configure the flash wait-states,
+prefetch, cache and ECC features.  It also provides functions to access the
+Flash ECC test mode registers and the Flash ECC error status registers.</p>
+<dl class="group">
+<dt>
+<span class="target" id="group__flash__api"></span><em>group</em> <code class="sig-name descname">flash_api</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.FLASH_FAIL_0_CLR">
+<span class="target" id="group__flash__api_1g699fd0fa1c37861be0ca10f055b08d6f"></span><code class="sig-name descname">FLASH_FAIL_0_CLR</code><a class="headerlink" href="#c.FLASH_FAIL_0_CLR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fail-0 clear. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_FAIL_1_CLR">
+<span class="target" id="group__flash__api_1g52f04839d021882f72fc25e1c20cf461"></span><code class="sig-name descname">FLASH_FAIL_1_CLR</code><a class="headerlink" href="#c.FLASH_FAIL_1_CLR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fail-1 clear. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_UNC_ERR_CLR">
+<span class="target" id="group__flash__api_1gb2b298b34b9b135d87ef4b0674914406"></span><code class="sig-name descname">FLASH_UNC_ERR_CLR</code><a class="headerlink" href="#c.FLASH_UNC_ERR_CLR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Uncorrectable error Clear. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_NO_ERROR">
+<span class="target" id="group__flash__api_1gb52372a3278a4b09a125bac9f2523649"></span><code class="sig-name descname">FLASH_NO_ERROR</code><a class="headerlink" href="#c.FLASH_NO_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No error. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_SINGLE_ERROR">
+<span class="target" id="group__flash__api_1g98e6d2a2cad41750b58616fa9f542ef4"></span><code class="sig-name descname">FLASH_SINGLE_ERROR</code><a class="headerlink" href="#c.FLASH_SINGLE_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Single bit error. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_UNC_ERROR">
+<span class="target" id="group__flash__api_1gd34e4bc9105b794b85b183f8a16d0370"></span><code class="sig-name descname">FLASH_UNC_ERROR</code><a class="headerlink" href="#c.FLASH_UNC_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Uncorrectable error. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_DELAY_CONFIG">
+<span class="target" id="group__flash__api_1g349bbbc4b0f3a60010cd28ac5c4ba02d"></span><code class="sig-name descname">FLASH_DELAY_CONFIG</code><a class="headerlink" href="#c.FLASH_DELAY_CONFIG" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.FLASH_PUMP_KEY">
+<span class="target" id="group__flash__api_1g582727ce17562b026e1a75dfb33ef256"></span><code class="sig-name descname">FLASH_PUMP_KEY</code><a class="headerlink" href="#c.FLASH_PUMP_KEY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pump semaphore key. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv416Flash_BankNumber">
+<span id="_CPPv316Flash_BankNumber"></span><span id="_CPPv216Flash_BankNumber"></span><span class="target" id="group__flash__api_1g5991e412b297107617bf1c7000a1d0b7"></span><em class="property">enum </em><code class="sig-name descname">Flash_BankNumber</code><a class="headerlink" href="#_CPPv416Flash_BankNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__flash__api_1gfdf42deb187ded0da2e87c8fb7f8cc7d"><span class="std std-ref">Flash_setBankPowerMode()</span></a> as the bank parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv410FLASH_BANK">
+<span id="_CPPv310FLASH_BANK"></span><span id="_CPPv210FLASH_BANK"></span><span class="target" id="group__flash__api_1gg5991e412b297107617bf1c7000a1d0b734192525bb7ab62ce0b191e69a98119e"></span><code class="sig-name descname">FLASH_BANK</code> = 0x0<a class="headerlink" href="#_CPPv410FLASH_BANK" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bank. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv419Flash_PumpOwnership">
+<span id="_CPPv319Flash_PumpOwnership"></span><span id="_CPPv219Flash_PumpOwnership"></span><span class="target" id="group__flash__api_1g8c37aa7629d453930c245e7cb44756f4"></span><em class="property">enum </em><code class="sig-name descname">Flash_PumpOwnership</code><a class="headerlink" href="#_CPPv419Flash_PumpOwnership" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__flash__api_1g84f10877c52791bcbef6e9e9d9e77232"><span class="std std-ref">Flash_claimPumpSemaphore()</span></a> in order to claim the pump semaphore. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv418FLASH_CPU1_WRAPPER">
+<span id="_CPPv318FLASH_CPU1_WRAPPER"></span><span id="_CPPv218FLASH_CPU1_WRAPPER"></span><span class="target" id="group__flash__api_1gg8c37aa7629d453930c245e7cb44756f41d0f22da65cce99b522331510ff90a83"></span><code class="sig-name descname">FLASH_CPU1_WRAPPER</code> = 0x2<a class="headerlink" href="#_CPPv418FLASH_CPU1_WRAPPER" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU1 Wrapper. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv418FLASH_CPU2_WRAPPER">
+<span id="_CPPv318FLASH_CPU2_WRAPPER"></span><span id="_CPPv218FLASH_CPU2_WRAPPER"></span><span class="target" id="group__flash__api_1gg8c37aa7629d453930c245e7cb44756f413d5232a8ece2e51c32b8d1a97c30693"></span><code class="sig-name descname">FLASH_CPU2_WRAPPER</code> = 0x1<a class="headerlink" href="#_CPPv418FLASH_CPU2_WRAPPER" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU2 Wrapper. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv419Flash_BankPowerMode">
+<span id="_CPPv319Flash_BankPowerMode"></span><span id="_CPPv219Flash_BankPowerMode"></span><span class="target" id="group__flash__api_1g2c060d0889f47f5a7b709eb031362ab0"></span><em class="property">enum </em><code class="sig-name descname">Flash_BankPowerMode</code><a class="headerlink" href="#_CPPv419Flash_BankPowerMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__flash__api_1gfdf42deb187ded0da2e87c8fb7f8cc7d"><span class="std std-ref">Flash_setBankPowerMode()</span></a> as the powerMode parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv420FLASH_BANK_PWR_SLEEP">
+<span id="_CPPv320FLASH_BANK_PWR_SLEEP"></span><span id="_CPPv220FLASH_BANK_PWR_SLEEP"></span><span class="target" id="group__flash__api_1gg2c060d0889f47f5a7b709eb031362ab0365d4c9f95048a0d21c1f00e788e6807"></span><code class="sig-name descname">FLASH_BANK_PWR_SLEEP</code> = 0x0<a class="headerlink" href="#_CPPv420FLASH_BANK_PWR_SLEEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sleep fallback mode. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422FLASH_BANK_PWR_STANDBY">
+<span id="_CPPv322FLASH_BANK_PWR_STANDBY"></span><span id="_CPPv222FLASH_BANK_PWR_STANDBY"></span><span class="target" id="group__flash__api_1gg2c060d0889f47f5a7b709eb031362ab0027c37bde404ee8b8a27276920a82222"></span><code class="sig-name descname">FLASH_BANK_PWR_STANDBY</code> = 0x1<a class="headerlink" href="#_CPPv422FLASH_BANK_PWR_STANDBY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Standby fallback mode. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv421FLASH_BANK_PWR_ACTIVE">
+<span id="_CPPv321FLASH_BANK_PWR_ACTIVE"></span><span id="_CPPv221FLASH_BANK_PWR_ACTIVE"></span><span class="target" id="group__flash__api_1gg2c060d0889f47f5a7b709eb031362ab00d422ac3f7c51ba985dc1e627567fc5b"></span><code class="sig-name descname">FLASH_BANK_PWR_ACTIVE</code> = 0x3<a class="headerlink" href="#_CPPv421FLASH_BANK_PWR_ACTIVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Active fallback mode. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv419Flash_PumpPowerMode">
+<span id="_CPPv319Flash_PumpPowerMode"></span><span id="_CPPv219Flash_PumpPowerMode"></span><span class="target" id="group__flash__api_1g330326d8f45a7913d03a86c59b33ff40"></span><em class="property">enum </em><code class="sig-name descname">Flash_PumpPowerMode</code><a class="headerlink" href="#_CPPv419Flash_PumpPowerMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__flash__api_1g9ec3f28dbe2857e252d460ab55f278a3"><span class="std std-ref">Flash_setPumpPowerMode()</span></a> as the powerMode parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv420FLASH_PUMP_PWR_SLEEP">
+<span id="_CPPv320FLASH_PUMP_PWR_SLEEP"></span><span id="_CPPv220FLASH_PUMP_PWR_SLEEP"></span><span class="target" id="group__flash__api_1gg330326d8f45a7913d03a86c59b33ff40635ae6ff515baa66b8909e27a6828ea7"></span><code class="sig-name descname">FLASH_PUMP_PWR_SLEEP</code> = 0x0<a class="headerlink" href="#_CPPv420FLASH_PUMP_PWR_SLEEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sleep fallback mode. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv421FLASH_PUMP_PWR_ACTIVE">
+<span id="_CPPv321FLASH_PUMP_PWR_ACTIVE"></span><span id="_CPPv221FLASH_PUMP_PWR_ACTIVE"></span><span class="target" id="group__flash__api_1gg330326d8f45a7913d03a86c59b33ff402631ed0be718bd2b46d43f29675cdab4"></span><code class="sig-name descname">FLASH_PUMP_PWR_ACTIVE</code> = 0x1<a class="headerlink" href="#_CPPv421FLASH_PUMP_PWR_ACTIVE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Active fallback mode. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv417Flash_ErrorStatus">
+<span id="_CPPv317Flash_ErrorStatus"></span><span id="_CPPv217Flash_ErrorStatus"></span><span class="target" id="group__flash__api_1g8ca731a092526ca667aa729a93961236"></span><em class="property">enum </em><code class="sig-name descname">Flash_ErrorStatus</code><a class="headerlink" href="#_CPPv417Flash_ErrorStatus" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Type that correspond to values returned from <a class="reference internal" href="#group__flash__api_1gb24c56a69dbd244b3740bc0bc9f7993e"><span class="std std-ref">Flash_getLowErrorStatus()</span></a> and <a class="reference internal" href="#group__flash__api_1g3bf97ea548705f4b95375e93da566160"><span class="std std-ref">Flash_getHighErrorStatus()</span></a> determining the error status code. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv412FLASH_NO_ERR">
+<span id="_CPPv312FLASH_NO_ERR"></span><span id="_CPPv212FLASH_NO_ERR"></span><span class="target" id="group__flash__api_1gg8ca731a092526ca667aa729a939612363cd6c10cae6e8165e6eaa42fd3022fb3"></span><code class="sig-name descname">FLASH_NO_ERR</code> = 0x0<a class="headerlink" href="#_CPPv412FLASH_NO_ERR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412FLASH_FAIL_0">
+<span id="_CPPv312FLASH_FAIL_0"></span><span id="_CPPv212FLASH_FAIL_0"></span><span class="target" id="group__flash__api_1gg8ca731a092526ca667aa729a93961236baa1442f73d11df146d8249a7daadca7"></span><code class="sig-name descname">FLASH_FAIL_0</code> = 0x1<a class="headerlink" href="#_CPPv412FLASH_FAIL_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fail on 0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv412FLASH_FAIL_1">
+<span id="_CPPv312FLASH_FAIL_1"></span><span id="_CPPv212FLASH_FAIL_1"></span><span class="target" id="group__flash__api_1gg8ca731a092526ca667aa729a939612368bb3e12a957f29a20b0a674bade46ed3"></span><code class="sig-name descname">FLASH_FAIL_1</code> = 0x2<a class="headerlink" href="#_CPPv412FLASH_FAIL_1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Fail on 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413FLASH_UNC_ERR">
+<span id="_CPPv313FLASH_UNC_ERR"></span><span id="_CPPv213FLASH_UNC_ERR"></span><span class="target" id="group__flash__api_1gg8ca731a092526ca667aa729a93961236e9cde9c93672c5c4941af77384ac96f2"></span><code class="sig-name descname">FLASH_UNC_ERR</code> = 0x4<a class="headerlink" href="#_CPPv413FLASH_UNC_ERR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Uncorrectable error. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv415Flash_ErrorType">
+<span id="_CPPv315Flash_ErrorType"></span><span id="_CPPv215Flash_ErrorType"></span><span class="target" id="group__flash__api_1g13bb84bf31e158f63ae4893f51e9433f"></span><em class="property">enum </em><code class="sig-name descname">Flash_ErrorType</code><a class="headerlink" href="#_CPPv415Flash_ErrorType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be returned from <a class="reference internal" href="#group__flash__api_1gb7ba57010f2703f0c4a830a13c73cc29"><span class="std std-ref">Flash_getLowErrorType()</span></a> and <a class="reference internal" href="#group__flash__api_1gb2b71445e6a3e4c64776e7fc25ecd096"><span class="std std-ref">Flash_getHighErrorType()</span></a> determining the error type. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv414FLASH_DATA_ERR">
+<span id="_CPPv314FLASH_DATA_ERR"></span><span id="_CPPv214FLASH_DATA_ERR"></span><span class="target" id="group__flash__api_1gg13bb84bf31e158f63ae4893f51e9433fe595910c33289343aec206fd23447eb5"></span><code class="sig-name descname">FLASH_DATA_ERR</code> = 0x0<a class="headerlink" href="#_CPPv414FLASH_DATA_ERR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Data error. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413FLASH_ECC_ERR">
+<span id="_CPPv313FLASH_ECC_ERR"></span><span id="_CPPv213FLASH_ECC_ERR"></span><span class="target" id="group__flash__api_1gg13bb84bf31e158f63ae4893f51e9433f6d798e2f280d6cc53aa2eaf6595867d7"></span><code class="sig-name descname">FLASH_ECC_ERR</code> = 0x1<a class="headerlink" href="#_CPPv413FLASH_ECC_ERR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ECC error. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv429Flash_SingleBitErrorIndicator">
+<span id="_CPPv329Flash_SingleBitErrorIndicator"></span><span id="_CPPv229Flash_SingleBitErrorIndicator"></span><span class="target" id="group__flash__api_1gbe00d875ef1f31ca9d673fbc5506f7db"></span><em class="property">enum </em><code class="sig-name descname">Flash_SingleBitErrorIndicator</code><a class="headerlink" href="#_CPPv429Flash_SingleBitErrorIndicator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be returned from <a class="reference internal" href="#group__flash__api_1g0bd57568368d127a14aa4ec4f8038f38"><span class="std std-ref">Flash_getECCTestSingleBitErrorType()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv415FLASH_DATA_BITS">
+<span id="_CPPv315FLASH_DATA_BITS"></span><span id="_CPPv215FLASH_DATA_BITS"></span><span class="target" id="group__flash__api_1ggbe00d875ef1f31ca9d673fbc5506f7dbbbdddf5dc0fc53e357ee4d0c315c8604"></span><code class="sig-name descname">FLASH_DATA_BITS</code> = 0x0<a class="headerlink" href="#_CPPv415FLASH_DATA_BITS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Data bits. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416FLASH_CHECK_BITS">
+<span id="_CPPv316FLASH_CHECK_BITS"></span><span id="_CPPv216FLASH_CHECK_BITS"></span><span class="target" id="group__flash__api_1ggbe00d875ef1f31ca9d673fbc5506f7db381bffcc70634f512483f3bbd4ea6b74"></span><code class="sig-name descname">FLASH_CHECK_BITS</code> = 0x1<a class="headerlink" href="#_CPPv416FLASH_CHECK_BITS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ECC bits. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv419Flash_setWaitstates8uint32_t8uint16_t">
+<span id="_CPPv319Flash_setWaitstates8uint32_t8uint16_t"></span><span id="_CPPv219Flash_setWaitstates8uint32_t8uint16_t"></span><span id="Flash_setWaitstates__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1gfa14d4685658f22df2ba48e5ec44da00"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setWaitstates</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, uint16_t <em>waitstates</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419Flash_setWaitstates8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the random read wait state amount.</p>
+<p><p>This function sets the number of wait states for a flash read access. The </p>
+<em>waitstates</em> parameter is a number between 0 and 15. It is <strong>important</strong> to look at your device’s datasheet for information about what the required minimum flash wait-state is for your selected SYSCLK frequency.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">waitstates</span></code>: is the wait-state value.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>By default the wait state amount is configured to the maximum 15.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Flash_setBankPowerMode8uint32_t16Flash_BankNumber19Flash_BankPowerMode">
+<span id="_CPPv322Flash_setBankPowerMode8uint32_t16Flash_BankNumber19Flash_BankPowerMode"></span><span id="_CPPv222Flash_setBankPowerMode8uint32_t16Flash_BankNumber19Flash_BankPowerMode"></span><span id="Flash_setBankPowerMode__uint32_t.Flash_BankNumber.Flash_BankPowerMode"></span><span class="target" id="group__flash__api_1gfdf42deb187ded0da2e87c8fb7f8cc7d"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setBankPowerMode</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, <a class="reference internal" href="#_CPPv416Flash_BankNumber" title="Flash_BankNumber">Flash_BankNumber</a> <em>bank</em>, <a class="reference internal" href="#_CPPv419Flash_BankPowerMode" title="Flash_BankPowerMode">Flash_BankPowerMode</a> <em>powerMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Flash_setBankPowerMode8uint32_t16Flash_BankNumber19Flash_BankPowerMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the fallback power mode of a flash bank.</p>
+<p><p>This function sets the fallback power mode of the flash bank specified by them </p>
+<em>bank</em> parameter. The power mode is specified by the <em>powerMode</em> parameter with one of the following values:<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bank</span></code>: is the flash bank that is being configured. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">powerMode</span></code>: is the power mode to be entered.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><ul class="simple">
+<li><p><strong>FLASH_BANK_PWR_SLEEP</strong> - Sense amplifiers and sense reference disabled.</p></li>
+<li><p><strong>FLASH_BANK_PWR_STANDBY</strong> - Sense amplifiers disabled but sense reference enabled.</p></li>
+<li><p><strong>FLASH_BANK_PWR_ACTIVE</strong> - Sense amplifiers and sense reference enabled.</p></li>
+</ul>
+</p>
+<p>Note: There is only one Flash_BankNumber value on this device (FLASH_BANK).</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Flash_setPumpPowerMode8uint32_t19Flash_PumpPowerMode">
+<span id="_CPPv322Flash_setPumpPowerMode8uint32_t19Flash_PumpPowerMode"></span><span id="_CPPv222Flash_setPumpPowerMode8uint32_t19Flash_PumpPowerMode"></span><span id="Flash_setPumpPowerMode__uint32_t.Flash_PumpPowerMode"></span><span class="target" id="group__flash__api_1g9ec3f28dbe2857e252d460ab55f278a3"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setPumpPowerMode</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, <a class="reference internal" href="#_CPPv419Flash_PumpPowerMode" title="Flash_PumpPowerMode">Flash_PumpPowerMode</a> <em>powerMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Flash_setPumpPowerMode8uint32_t19Flash_PumpPowerMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the fallback power mode of the charge pump.</p>
+<p><p>This function sets the fallback power mode flash charge pump.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">powerMode</span></code>: is the power mode to be entered.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><ul class="simple">
+<li><p><strong>FLASH_PUMP_PWR_SLEEP</strong> - All circuits disabled.</p></li>
+<li><p><strong>FLASH_PUMP_PWR_ACTIVE</strong> - All pump circuits active.</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420Flash_enablePrefetch8uint32_t">
+<span id="_CPPv320Flash_enablePrefetch8uint32_t"></span><span id="_CPPv220Flash_enablePrefetch8uint32_t"></span><span id="Flash_enablePrefetch__uint32_t"></span><span class="target" id="group__flash__api_1g83367bc28a9b85a4ba50e22863f35cd7"></span><em class="property">static</em> void <code class="sig-name descname">Flash_enablePrefetch</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Flash_enablePrefetch8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables prefetch mechanism.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421Flash_disablePrefetch8uint32_t">
+<span id="_CPPv321Flash_disablePrefetch8uint32_t"></span><span id="_CPPv221Flash_disablePrefetch8uint32_t"></span><span id="Flash_disablePrefetch__uint32_t"></span><span class="target" id="group__flash__api_1gc23b7d8ac9694ebaec025846fb3fff07"></span><em class="property">static</em> void <code class="sig-name descname">Flash_disablePrefetch</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421Flash_disablePrefetch8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables prefetch mechanism.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417Flash_enableCache8uint32_t">
+<span id="_CPPv317Flash_enableCache8uint32_t"></span><span id="_CPPv217Flash_enableCache8uint32_t"></span><span id="Flash_enableCache__uint32_t"></span><span class="target" id="group__flash__api_1g33c8217bac8678fa32de902fd730d1c7"></span><em class="property">static</em> void <code class="sig-name descname">Flash_enableCache</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417Flash_enableCache8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables data cache.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418Flash_disableCache8uint32_t">
+<span id="_CPPv318Flash_disableCache8uint32_t"></span><span id="_CPPv218Flash_disableCache8uint32_t"></span><span id="Flash_disableCache__uint32_t"></span><span class="target" id="group__flash__api_1g597f9498714038e24472ee92357d6bb0"></span><em class="property">static</em> void <code class="sig-name descname">Flash_disableCache</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418Flash_disableCache8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables data cache.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415Flash_enableECC8uint32_t">
+<span id="_CPPv315Flash_enableECC8uint32_t"></span><span id="_CPPv215Flash_enableECC8uint32_t"></span><span id="Flash_enableECC__uint32_t"></span><span class="target" id="group__flash__api_1g20a4a91f1f752a61af9ef51a738cad35"></span><em class="property">static</em> void <code class="sig-name descname">Flash_enableECC</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Flash_enableECC8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables flash error correction code (ECC) protection.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416Flash_disableECC8uint32_t">
+<span id="_CPPv316Flash_disableECC8uint32_t"></span><span id="_CPPv216Flash_disableECC8uint32_t"></span><span id="Flash_disableECC__uint32_t"></span><span class="target" id="group__flash__api_1g54f6d59d0930b70540e0e71e650ef678"></span><em class="property">static</em> void <code class="sig-name descname">Flash_disableECC</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416Flash_disableECC8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables flash error correction code (ECC) protection.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425Flash_setBankPowerUpDelay8uint32_t8uint16_t">
+<span id="_CPPv325Flash_setBankPowerUpDelay8uint32_t8uint16_t"></span><span id="_CPPv225Flash_setBankPowerUpDelay8uint32_t8uint16_t"></span><span id="Flash_setBankPowerUpDelay__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1g83dd5e4d08e48089003191bad14a335a"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setBankPowerUpDelay</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, uint16_t <em>delay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425Flash_setBankPowerUpDelay8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the bank power up delay.</p>
+<p><p>This function sets the VREADST delay to ensure that the requisite delay is introduced for the flash pump/bank to come out of low-power mode, so that the flash/OTP is ready for CPU access.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delay</span></code>: is the number of HCLK cycles.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Note: Refer to TRM before configuring VREADST.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_setPumpWakeupTime8uint32_t8uint16_t">
+<span id="_CPPv323Flash_setPumpWakeupTime8uint32_t8uint16_t"></span><span id="_CPPv223Flash_setPumpWakeupTime8uint32_t8uint16_t"></span><span id="Flash_setPumpWakeupTime__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1g27b746f626e29bf8001185820086105e"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setPumpWakeupTime</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, uint16_t <em>sysclkCycles</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_setPumpWakeupTime8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the pump wake up time.</p>
+<p><p>This function sets the wakeup time with </p>
+<em>sysclkCycles</em> parameter. The <em>sysclkCycles</em> is a value between 0 and 8190. When the charge pump exits sleep power mode, it will take sysclkCycles to wakeup.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sysclkCycles</span></code>: is the number of SYSCLK cycles it takes for the pump to wakeup.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417Flash_isBankReady8uint32_t16Flash_BankNumber">
+<span id="_CPPv317Flash_isBankReady8uint32_t16Flash_BankNumber"></span><span id="_CPPv217Flash_isBankReady8uint32_t16Flash_BankNumber"></span><span id="Flash_isBankReady__uint32_t.Flash_BankNumber"></span><span class="target" id="group__flash__api_1g4440609fb9478abeaf110b9c8c2e8604"></span><em class="property">static</em> bool <code class="sig-name descname">Flash_isBankReady</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, <a class="reference internal" href="#_CPPv416Flash_BankNumber" title="Flash_BankNumber">Flash_BankNumber</a> <em>bank</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417Flash_isBankReady8uint32_t16Flash_BankNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the bank active power state.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if the Bank is in Active power state and <strong>false</strong> otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bank</span></code>: is the flash bank that is being used.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417Flash_isPumpReady8uint32_t">
+<span id="_CPPv317Flash_isPumpReady8uint32_t"></span><span id="_CPPv217Flash_isPumpReady8uint32_t"></span><span id="Flash_isPumpReady__uint32_t"></span><span class="target" id="group__flash__api_1gd11acca955b7a1aac290e39702b1904f"></span><em class="property">static</em> bool <code class="sig-name descname">Flash_isPumpReady</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417Flash_isPumpReady8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the pump active power state.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if the Pump is in Active power state and <strong>false</strong> otherwise. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv433Flash_getSingleBitErrorAddressLow8uint32_t">
+<span id="_CPPv333Flash_getSingleBitErrorAddressLow8uint32_t"></span><span id="_CPPv233Flash_getSingleBitErrorAddressLow8uint32_t"></span><span id="Flash_getSingleBitErrorAddressLow__uint32_t"></span><span class="target" id="group__flash__api_1g599e5e01e493bfc9912e60d1dbf9a969"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getSingleBitErrorAddressLow</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433Flash_getSingleBitErrorAddressLow8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the single error address low.</p>
+<p><p>This function returns the 32-bit address of the single bit error that occurred in the lower 64-bits of a 128-bit memory-aligned data. The returned address is to that 64-bit aligned data.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the 32 bits of a 64-bit aligned address where a single bit error occurred. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv434Flash_getSingleBitErrorAddressHigh8uint32_t">
+<span id="_CPPv334Flash_getSingleBitErrorAddressHigh8uint32_t"></span><span id="_CPPv234Flash_getSingleBitErrorAddressHigh8uint32_t"></span><span id="Flash_getSingleBitErrorAddressHigh__uint32_t"></span><span class="target" id="group__flash__api_1gf759343b5841f04f4af8fda9427f2ed6"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getSingleBitErrorAddressHigh</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434Flash_getSingleBitErrorAddressHigh8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the single error address high.</p>
+<p><p>This function returns the 32-bit address of the single bit error that occurred in the upper 64-bits of a 128-bit memory-aligned data. The returned address is to that 64-bit aligned data.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the 32 bits of a 64-bit aligned address where a single bit error occurred. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv437Flash_getUncorrectableErrorAddressLow8uint32_t">
+<span id="_CPPv337Flash_getUncorrectableErrorAddressLow8uint32_t"></span><span id="_CPPv237Flash_getUncorrectableErrorAddressLow8uint32_t"></span><span id="Flash_getUncorrectableErrorAddressLow__uint32_t"></span><span class="target" id="group__flash__api_1g33434591e831228f5c9c59b6d8bb7d25"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getUncorrectableErrorAddressLow</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv437Flash_getUncorrectableErrorAddressLow8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the uncorrectable error address low.</p>
+<p><p>This function returns the 32-bit address of the uncorrectable error that occurred in the lower 64-bits of a 128-bit memory-aligned data. The returned address is to that 64-bit aligned data.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the 32 bits of a 64-bit aligned address where an uncorrectable error occurred. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv438Flash_getUncorrectableErrorAddressHigh8uint32_t">
+<span id="_CPPv338Flash_getUncorrectableErrorAddressHigh8uint32_t"></span><span id="_CPPv238Flash_getUncorrectableErrorAddressHigh8uint32_t"></span><span id="Flash_getUncorrectableErrorAddressHigh__uint32_t"></span><span class="target" id="group__flash__api_1g6934ec6538c63ac366d14146d206657e"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getUncorrectableErrorAddressHigh</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv438Flash_getUncorrectableErrorAddressHigh8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the uncorrectable error address high.</p>
+<p><p>This function returns the 32-bit address of the uncorrectable error that occurred in the upper 64-bits of a 128-bit memory-aligned data. The returned address is to that 64-bit aligned data.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC base.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the 32 bits of a 64-bit aligned address where an uncorrectable error occurred. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_getLowErrorStatus8uint32_t">
+<span id="_CPPv323Flash_getLowErrorStatus8uint32_t"></span><span id="_CPPv223Flash_getLowErrorStatus8uint32_t"></span><span id="Flash_getLowErrorStatus__uint32_t"></span><span class="target" id="group__flash__api_1gb24c56a69dbd244b3740bc0bc9f7993e"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv417Flash_ErrorStatus" title="Flash_ErrorStatus">Flash_ErrorStatus</a> <code class="sig-name descname">Flash_getLowErrorStatus</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_getLowErrorStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error status of the Lower 64-bits.</p>
+<p><p>This function returns the error status of the lower 64-bits of a 128-bit aligned address.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns value of the low error status bits which can be used with Flash_ErrorStatus type. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424Flash_getHighErrorStatus8uint32_t">
+<span id="_CPPv324Flash_getHighErrorStatus8uint32_t"></span><span id="_CPPv224Flash_getHighErrorStatus8uint32_t"></span><span id="Flash_getHighErrorStatus__uint32_t"></span><span class="target" id="group__flash__api_1g3bf97ea548705f4b95375e93da566160"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv417Flash_ErrorStatus" title="Flash_ErrorStatus">Flash_ErrorStatus</a> <code class="sig-name descname">Flash_getHighErrorStatus</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Flash_getHighErrorStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error status of the Upper 64-bits.</p>
+<p><p>This function returns the error status of the upper 64-bits of a 128-bit aligned address.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns value of the high error status bits which can be used with Flash_ErrorStatus type. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425Flash_getLowErrorPosition8uint32_t">
+<span id="_CPPv325Flash_getLowErrorPosition8uint32_t"></span><span id="_CPPv225Flash_getLowErrorPosition8uint32_t"></span><span id="Flash_getLowErrorPosition__uint32_t"></span><span class="target" id="group__flash__api_1g469ecb5e90edd15a8c488d5228c67814"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getLowErrorPosition</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425Flash_getLowErrorPosition8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error position of the lower 64-bits for a single bit error.</p>
+<p><p>This function returns the error position of the lower 64-bits. If the error type is FLASH_ECC_ERR, the position ranges from 0-7 else it ranges from 0-63 for FLASH_DATA_ERR.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the position of the lower error bit. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426Flash_getHighErrorPosition8uint32_t">
+<span id="_CPPv326Flash_getHighErrorPosition8uint32_t"></span><span id="_CPPv226Flash_getHighErrorPosition8uint32_t"></span><span id="Flash_getHighErrorPosition__uint32_t"></span><span class="target" id="group__flash__api_1gfdaa9858b7d7bf83ed657b8bd9796db9"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getHighErrorPosition</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426Flash_getHighErrorPosition8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error position of the upper 64-bits for a single bit error.</p>
+<p><p>This function returns the error position of the upper 64-bits. If the error type is FLASH_ECC_ERR, the position ranges from 0-7 else it ranges from 0-63 for FLASH_DATA_ERR.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the position of the upper error bit. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421Flash_getLowErrorType8uint32_t">
+<span id="_CPPv321Flash_getLowErrorType8uint32_t"></span><span id="_CPPv221Flash_getLowErrorType8uint32_t"></span><span id="Flash_getLowErrorType__uint32_t"></span><span class="target" id="group__flash__api_1gb7ba57010f2703f0c4a830a13c73cc29"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv415Flash_ErrorType" title="Flash_ErrorType">Flash_ErrorType</a> <code class="sig-name descname">Flash_getLowErrorType</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421Flash_getLowErrorType8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error type of the lower 64-bits.</p>
+<p><p>This function returns the error type of the lower 64-bits. The error type can be FLASH_ECC_ERR or FLASH_DATA_ERR.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the type of the lower 64-bit error. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Flash_getHighErrorType8uint32_t">
+<span id="_CPPv322Flash_getHighErrorType8uint32_t"></span><span id="_CPPv222Flash_getHighErrorType8uint32_t"></span><span id="Flash_getHighErrorType__uint32_t"></span><span class="target" id="group__flash__api_1gb2b71445e6a3e4c64776e7fc25ecd096"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv415Flash_ErrorType" title="Flash_ErrorType">Flash_ErrorType</a> <code class="sig-name descname">Flash_getHighErrorType</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Flash_getHighErrorType8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error type of the upper 64-bits.</p>
+<p><p>This function returns the error type of the upper 64-bits. The error type can be FLASH_ECC_ERR or FLASH_DATA_ERR.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the type of the upper 64-bit error. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425Flash_clearLowErrorStatus8uint32_t8uint16_t">
+<span id="_CPPv325Flash_clearLowErrorStatus8uint32_t8uint16_t"></span><span id="_CPPv225Flash_clearLowErrorStatus8uint32_t8uint16_t"></span><span id="Flash_clearLowErrorStatus__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1g1327554fa67b65056428e33eaddd16f7"></span><em class="property">static</em> void <code class="sig-name descname">Flash_clearLowErrorStatus</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint16_t <em>errorStatus</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425Flash_clearLowErrorStatus8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears the errors status of the lower 64-bits.</p>
+<p><ul class="simple">
+<li><p><strong>FLASH_FAIL_0_CLR</strong> </p></li>
+<li><p><strong>FLASH_FAIL_1_CLR</strong> </p></li>
+<li><p><strong>FLASH_UNC_ERR_CLR</strong> </p></li>
+</ul>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errorStatus</span></code>: is the error status to clear. errorStatus is a uint16_t. errorStatus is a bitwise OR of the following value:</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426Flash_clearHighErrorStatus8uint32_t8uint16_t">
+<span id="_CPPv326Flash_clearHighErrorStatus8uint32_t8uint16_t"></span><span id="_CPPv226Flash_clearHighErrorStatus8uint32_t8uint16_t"></span><span id="Flash_clearHighErrorStatus__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1g8971ecd7adfcda93e700fd0510eb807d"></span><em class="property">static</em> void <code class="sig-name descname">Flash_clearHighErrorStatus</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint16_t <em>errorStatus</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426Flash_clearHighErrorStatus8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears the errors status of the upper 64-bits.</p>
+<p><ul class="simple">
+<li><p><strong>FLASH_FAIL_0_CLR</strong> </p></li>
+<li><p><strong>FLASH_FAIL_1_CLR</strong> </p></li>
+<li><p><strong>FLASH_UNC_ERR_CLR</strong> </p></li>
+</ul>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">errorStatus</span></code>: is the error status to clear. errorStatus is a uint16_t. errorStatus is a bitwise OR of the following value:</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419Flash_getErrorCount8uint32_t">
+<span id="_CPPv319Flash_getErrorCount8uint32_t"></span><span id="_CPPv219Flash_getErrorCount8uint32_t"></span><span id="Flash_getErrorCount__uint32_t"></span><span class="target" id="group__flash__api_1gacb9e5bc6a61a682846ab17963203256"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getErrorCount</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419Flash_getErrorCount8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the single bit error count.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the single bit error count. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_setErrorThreshold8uint32_t8uint16_t">
+<span id="_CPPv323Flash_setErrorThreshold8uint32_t8uint16_t"></span><span id="_CPPv223Flash_setErrorThreshold8uint32_t8uint16_t"></span><span id="Flash_setErrorThreshold__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1g41d7f2a10700940bbf47422b6f457be0"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setErrorThreshold</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint16_t <em>threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_setErrorThreshold8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the single bit error threshold.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: is the single bit error threshold. Valid ranges are from 0-65535.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Flash_getInterruptFlag8uint32_t">
+<span id="_CPPv322Flash_getInterruptFlag8uint32_t"></span><span id="_CPPv222Flash_getInterruptFlag8uint32_t"></span><span id="Flash_getInterruptFlag__uint32_t"></span><span class="target" id="group__flash__api_1ged107bf1a130de9a52b7b04f1197026e"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getInterruptFlag</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Flash_getInterruptFlag8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the error interrupt.</p>
+<p><p>This function returns the type of error interrupt that occurred. The values can be used with</p>
+<ul class="simple">
+<li><p><strong>FLASH_NO_ERROR</strong> </p></li>
+<li><p><strong>FLASH_SINGLE_ERROR</strong> </p></li>
+<li><p><strong>FLASH_UNC_ERROR</strong> </p></li>
+</ul>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the interrupt flag. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv435Flash_clearSingleErrorInterruptFlag8uint32_t">
+<span id="_CPPv335Flash_clearSingleErrorInterruptFlag8uint32_t"></span><span id="_CPPv235Flash_clearSingleErrorInterruptFlag8uint32_t"></span><span id="Flash_clearSingleErrorInterruptFlag__uint32_t"></span><span class="target" id="group__flash__api_1g3ef533445a528ebc7fab32ee240dc693"></span><em class="property">static</em> void <code class="sig-name descname">Flash_clearSingleErrorInterruptFlag</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435Flash_clearSingleErrorInterruptFlag8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears the single error interrupt flag.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv437Flash_clearUncorrectableInterruptFlag8uint32_t">
+<span id="_CPPv337Flash_clearUncorrectableInterruptFlag8uint32_t"></span><span id="_CPPv237Flash_clearUncorrectableInterruptFlag8uint32_t"></span><span id="Flash_clearUncorrectableInterruptFlag__uint32_t"></span><span class="target" id="group__flash__api_1gb7d74001fa038d952ecd640ffbf716db"></span><em class="property">static</em> void <code class="sig-name descname">Flash_clearUncorrectableInterruptFlag</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv437Flash_clearUncorrectableInterruptFlag8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears the uncorrectable error interrupt flag.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_setDataLowECCTest8uint32_t8uint32_t">
+<span id="_CPPv323Flash_setDataLowECCTest8uint32_t8uint32_t"></span><span id="_CPPv223Flash_setDataLowECCTest8uint32_t8uint32_t"></span><span id="Flash_setDataLowECCTest__uint32_t.uint32_t"></span><span class="target" id="group__flash__api_1g5eae7d247c2cd7626f0fe0912b395ab3"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setDataLowECCTest</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint32_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_setDataLowECCTest8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the Data Low Test register for ECC testing.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: is a 32-bit value that is the low double word of selected 64-bit data</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424Flash_setDataHighECCTest8uint32_t8uint32_t">
+<span id="_CPPv324Flash_setDataHighECCTest8uint32_t8uint32_t"></span><span id="_CPPv224Flash_setDataHighECCTest8uint32_t8uint32_t"></span><span id="Flash_setDataHighECCTest__uint32_t.uint32_t"></span><span class="target" id="group__flash__api_1g715f7203664b241c0d2fb930141c23e8"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setDataHighECCTest</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint32_t <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Flash_setDataHighECCTest8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the Data High Test register for ECC testing.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: is a 32-bit value that is the high double word of selected 64-bit data</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_setECCTestAddress8uint32_t8uint32_t">
+<span id="_CPPv323Flash_setECCTestAddress8uint32_t8uint32_t"></span><span id="_CPPv223Flash_setECCTestAddress8uint32_t8uint32_t"></span><span id="Flash_setECCTestAddress__uint32_t.uint32_t"></span><span class="target" id="group__flash__api_1g1721ab9ce011fd0312663317b2cc8c41"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setECCTestAddress</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint32_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_setECCTestAddress8uint32_t8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the test address register for ECC testing.</p>
+<p><p>This function left shifts the address 1 bit to convert it to a byte address</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code>: is a 32-bit value containing an address. Bits 21-3 will be used as the flash word (128-bit) address.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_setECCTestECCBits8uint32_t8uint16_t">
+<span id="_CPPv323Flash_setECCTestECCBits8uint32_t8uint16_t"></span><span id="_CPPv223Flash_setECCTestECCBits8uint32_t8uint16_t"></span><span id="Flash_setECCTestECCBits__uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1g903bc1dabf91628550bcaa7034b7a951"></span><em class="property">static</em> void <code class="sig-name descname">Flash_setECCTestECCBits</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em>, uint16_t <em>ecc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_setECCTestECCBits8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the ECC test bits for ECC testing.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ecc</span></code>: is a 32-bit value. The least significant 8 bits are used as the ECC Control Bits in the ECC Test.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_enableECCTestMode8uint32_t">
+<span id="_CPPv323Flash_enableECCTestMode8uint32_t"></span><span id="_CPPv223Flash_enableECCTestMode8uint32_t"></span><span id="Flash_enableECCTestMode__uint32_t"></span><span class="target" id="group__flash__api_1gf8d717fa9569320b625cd3ce0bd89dba"></span><em class="property">static</em> void <code class="sig-name descname">Flash_enableECCTestMode</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_enableECCTestMode8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables ECC Test mode.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424Flash_disableECCTestMode8uint32_t">
+<span id="_CPPv324Flash_disableECCTestMode8uint32_t"></span><span id="_CPPv224Flash_disableECCTestMode8uint32_t"></span><span id="Flash_disableECCTestMode__uint32_t"></span><span class="target" id="group__flash__api_1gac018c23b55365b57eb1e6c78ee83554"></span><em class="property">static</em> void <code class="sig-name descname">Flash_disableECCTestMode</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Flash_disableECCTestMode8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables ECC Test mode.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_selectLowECCBlock8uint32_t">
+<span id="_CPPv323Flash_selectLowECCBlock8uint32_t"></span><span id="_CPPv223Flash_selectLowECCBlock8uint32_t"></span><span id="Flash_selectLowECCBlock__uint32_t"></span><span class="target" id="group__flash__api_1gb18fcf96925ade678b009d4a45ee291a"></span><em class="property">static</em> void <code class="sig-name descname">Flash_selectLowECCBlock</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_selectLowECCBlock8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Selects the ECC block on bits [63:0] of bank data.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424Flash_selectHighECCBlock8uint32_t">
+<span id="_CPPv324Flash_selectHighECCBlock8uint32_t"></span><span id="_CPPv224Flash_selectHighECCBlock8uint32_t"></span><span id="Flash_selectHighECCBlock__uint32_t"></span><span class="target" id="group__flash__api_1g2e42eb76ae0fa098a2b2f56431c7315b"></span><em class="property">static</em> void <code class="sig-name descname">Flash_selectHighECCBlock</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Flash_selectHighECCBlock8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Selects the ECC block on bits [127:64] of bank data.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427Flash_performECCCalculation8uint32_t">
+<span id="_CPPv327Flash_performECCCalculation8uint32_t"></span><span id="_CPPv227Flash_performECCCalculation8uint32_t"></span><span id="Flash_performECCCalculation__uint32_t"></span><span class="target" id="group__flash__api_1g169f4c71c60447994071a8cadd90e0e3"></span><em class="property">static</em> void <code class="sig-name descname">Flash_performECCCalculation</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427Flash_performECCCalculation8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs the ECC calculation on the test block.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424Flash_getTestDataOutHigh8uint32_t">
+<span id="_CPPv324Flash_getTestDataOutHigh8uint32_t"></span><span id="_CPPv224Flash_getTestDataOutHigh8uint32_t"></span><span id="Flash_getTestDataOutHigh__uint32_t"></span><span class="target" id="group__flash__api_1g8304169e3678dbc50026bc70c220e07a"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getTestDataOutHigh</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Flash_getTestDataOutHigh8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the ECC Test data out high 63:32 bits.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the ECC TEst data out High. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423Flash_getTestDataOutLow8uint32_t">
+<span id="_CPPv323Flash_getTestDataOutLow8uint32_t"></span><span id="_CPPv223Flash_getTestDataOutLow8uint32_t"></span><span id="Flash_getTestDataOutLow__uint32_t"></span><span class="target" id="group__flash__api_1g76c9137c2d8b029363a47e513600df15"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getTestDataOutLow</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423Flash_getTestDataOutLow8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the ECC Test data out low 31:0 bits.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the ECC Test data out Low. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422Flash_getECCTestStatus8uint32_t">
+<span id="_CPPv322Flash_getECCTestStatus8uint32_t"></span><span id="_CPPv222Flash_getECCTestStatus8uint32_t"></span><span id="Flash_getECCTestStatus__uint32_t"></span><span class="target" id="group__flash__api_1g909f96625cd805c2f4ef4585a98d1f97"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getECCTestStatus</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422Flash_getECCTestStatus8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the ECC Test status.</p>
+<p><p>This function returns the ECC test status. The values can be used with</p>
+<ul class="simple">
+<li><p><strong>FLASH_NO_ERROR</strong> </p></li>
+<li><p><strong>FLASH_SINGLE_ERROR</strong> </p></li>
+<li><p><strong>FLASH_UNC_ERROR</strong> </p></li>
+</ul>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the ECC test status. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv429Flash_getECCTestErrorPosition8uint32_t">
+<span id="_CPPv329Flash_getECCTestErrorPosition8uint32_t"></span><span id="_CPPv229Flash_getECCTestErrorPosition8uint32_t"></span><span id="Flash_getECCTestErrorPosition__uint32_t"></span><span class="target" id="group__flash__api_1g0f9a323df99c10dcbbd7899181d7931b"></span><em class="property">static</em> uint32_t <code class="sig-name descname">Flash_getECCTestErrorPosition</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429Flash_getECCTestErrorPosition8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the ECC Test single bit error position.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the ECC Test single bit error position. If the error type is check bits than the position can range from 0 to 7. If the error type is data bits than the position can range from 0 to 63. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv434Flash_getECCTestSingleBitErrorType8uint32_t">
+<span id="_CPPv334Flash_getECCTestSingleBitErrorType8uint32_t"></span><span id="_CPPv234Flash_getECCTestSingleBitErrorType8uint32_t"></span><span id="Flash_getECCTestSingleBitErrorType__uint32_t"></span><span class="target" id="group__flash__api_1g0bd57568368d127a14aa4ec4f8038f38"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv429Flash_SingleBitErrorIndicator" title="Flash_SingleBitErrorIndicator">Flash_SingleBitErrorIndicator</a> <code class="sig-name descname">Flash_getECCTestSingleBitErrorType</code><span class="sig-paren">(</span>uint32_t <em>eccBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434Flash_getECCTestSingleBitErrorType8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the single bit error type.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the single bit error type as a Flash_SingleBitErrorIndicator. FLASH_DATA_BITS and FLASH_CHECK_BITS indicate where the single bit error occurred. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424Flash_claimPumpSemaphore8uint32_t19Flash_PumpOwnership">
+<span id="_CPPv324Flash_claimPumpSemaphore8uint32_t19Flash_PumpOwnership"></span><span id="_CPPv224Flash_claimPumpSemaphore8uint32_t19Flash_PumpOwnership"></span><span id="Flash_claimPumpSemaphore__uint32_t.Flash_PumpOwnership"></span><span class="target" id="group__flash__api_1g84f10877c52791bcbef6e9e9d9e77232"></span><em class="property">static</em> void <code class="sig-name descname">Flash_claimPumpSemaphore</code><span class="sig-paren">(</span>uint32_t <em>pumpSemBase</em>, <a class="reference internal" href="#_CPPv419Flash_PumpOwnership" title="Flash_PumpOwnership">Flash_PumpOwnership</a> <em>wrapper</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424Flash_claimPumpSemaphore8uint32_t19Flash_PumpOwnership" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Claim the flash pump semaphore.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pumpSemBase</span></code>: is the base address of the flash pump semaphore. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wrapper</span></code>: is the Flash_PumpOwnership wrapper claiming the pump semaphore.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426Flash_releasePumpSemaphore8uint32_t">
+<span id="_CPPv326Flash_releasePumpSemaphore8uint32_t"></span><span id="_CPPv226Flash_releasePumpSemaphore8uint32_t"></span><span id="Flash_releasePumpSemaphore__uint32_t"></span><span class="target" id="group__flash__api_1g4235aa8e49fcff1ef1573251ecd7ff13"></span><em class="property">static</em> void <code class="sig-name descname">Flash_releasePumpSemaphore</code><span class="sig-paren">(</span>uint32_t <em>pumpSemBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426Flash_releasePumpSemaphore8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Release the flash pump semaphore.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pumpSemBase</span></code>: is the base address of the flash pump semaphore.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416Flash_initModule8uint32_t8uint32_t8uint16_t">
+<span id="_CPPv316Flash_initModule8uint32_t8uint32_t8uint16_t"></span><span id="_CPPv216Flash_initModule8uint32_t8uint32_t8uint16_t"></span><span id="Flash_initModule__uint32_t.uint32_t.uint16_t"></span><span class="target" id="group__flash__api_1gefe4eb7bd5466087f5fa971d81e5f0a3"></span>void <code class="sig-name descname">Flash_initModule</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em>, uint32_t <em>eccBase</em>, uint16_t <em>waitstates</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416Flash_initModule8uint32_t8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initializes the flash control registers.</p>
+<p><p>This function initializes the flash control registers. At reset bank and pump are in sleep. A flash access will power up the bank and pump automatically. After a flash access, bank and pump go to low power mode (configurable in FBFALLBACK/FPAC1 registers) if there is no further access to flash. This function will power up Flash bank and pump and set the fallback mode of flash and pump as active.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eccBase</span></code>: is the base address of the flash wrapper ECC registers. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">waitstates</span></code>: is the wait-state value.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>This function also sets the number of wait-states for a flash access (see <a class="reference internal" href="#group__flash__api_1gfa14d4685658f22df2ba48e5ec44da00"><span class="std std-ref">Flash_setWaitstates()</span></a> for more details), and enables cache, the prefetch mechanism, and ECC.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415Flash_powerDown8uint32_t">
+<span id="_CPPv315Flash_powerDown8uint32_t"></span><span id="_CPPv215Flash_powerDown8uint32_t"></span><span id="Flash_powerDown__uint32_t"></span><span class="target" id="group__flash__api_1g71ff6e32213b5516086d5ecba3f0d8d2"></span>void <code class="sig-name descname">Flash_powerDown</code><span class="sig-paren">(</span>uint32_t <em>ctrlBase</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Flash_powerDown8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Powers down the flash.</p>
+<p><p>This function powers down the flash bank(s) and the flash pump.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ctrlBase</span></code>: is the base address of the flash wrapper control registers.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Note: For this device, you must claim the flash pump semaphore before calling this function and powering down the pump. Afterwards, you may want to relinquish the flash pump.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>The code for this module is contained in driverlib/flash.c, with driverlib/flash.h containing the API declarations for use by applications.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gpio.html" class="btn btn-neutral float-right" title="GPIO Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="eqep.html" class="btn btn-neutral float-left" title="EQEP Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2020, Texas Instruments Incorporated</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+      <span class="lastupdated">
+        Last updated on May 26, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v3.02.00.00',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+
+        $('body').on("mousewheel", function () {
+            // Remove default behavior
+            event.preventDefault();
+            // Scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

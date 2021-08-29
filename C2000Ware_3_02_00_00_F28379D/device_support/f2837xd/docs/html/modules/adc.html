@@ -1,0 +1,2176 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ADC Module &mdash; F2837xd API Guide</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tiicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="F2837xd API Guide" href="../index.html"/>
+        <link rel="up" title="Modules" href="index.html"/>
+        <link rel="next" title="ASysCtl Module" href="asysctl.html"/>
+        <link rel="prev" title="Modules" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="../_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> F2837xd API Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v3.02.00.00
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model.html">Programming Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Driver Library Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asysctl.html">ASysCtl Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="can.html">CAN Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cla.html">CLA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clb.html">CLB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cmpss.html">CMPSS Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cputimer.html">CPU Timer Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dac.html">DAC Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcsm.html">DCSM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dma.html">DMA Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecap.html">ECAP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emif.html">EMIF Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="epwm.html">EPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hrpwm.html">HRPWM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eqep.html">EQEP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flash.html">FLASH Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i2c.html">I2C Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupt Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcbsp.html">MCBSP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memcfg.html">MEMCFG Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sci.html">SCI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdfm.html">SDFM Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPI Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysctl.html">SYSCTL Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usb.html">USB Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upp.html">UPP Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="version.html">Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xbar.html">XBAR Module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">F2837xd API Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Modules</a> &raquo;</li>
+        
+      <li>ADC Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adc-module">
+<span id="adc"></span><h1>ADC Module<a class="headerlink" href="#adc-module" title="Permalink to this headline">¶</a></h1>
+<p>The analog to digital converter (ADC) API provides a set of functions for programming the digital circuits of the converter, referred to as the ADC wrapper.
+Functions are provided to configure the conversions, read the data conversion result registers, configure the post-processing blocks (PPB), and
+set up and handle interrupts and events.</p>
+<dl class="group">
+<dt>
+<span class="target" id="group__adc__api"></span><em>group</em> <code class="sig-name descname">adc_api</code></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.ADC_NUM_INTERRUPTS">
+<span class="target" id="group__adc__api_1g1337e86d52d8859974699a4cc162cdd4"></span><code class="sig-name descname">ADC_NUM_INTERRUPTS</code><a class="headerlink" href="#c.ADC_NUM_INTERRUPTS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_SOCxCTL_OFFSET_BASE">
+<span class="target" id="group__adc__api_1g9ac6cef6b1c7b621644cdb1b0c979d9f"></span><code class="sig-name descname">ADC_SOCxCTL_OFFSET_BASE</code><a class="headerlink" href="#c.ADC_SOCxCTL_OFFSET_BASE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_RESULTx_OFFSET_BASE">
+<span class="target" id="group__adc__api_1g50ffd353be0ea79aedad04454fbec0f8"></span><code class="sig-name descname">ADC_RESULTx_OFFSET_BASE</code><a class="headerlink" href="#c.ADC_RESULTx_OFFSET_BASE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_INTSELxNy_OFFSET_BASE">
+<span class="target" id="group__adc__api_1gd5dfa8b642f277cb5b422a3e9ed6fa3a"></span><code class="sig-name descname">ADC_INTSELxNy_OFFSET_BASE</code><a class="headerlink" href="#c.ADC_INTSELxNy_OFFSET_BASE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxRESULT_OFFSET_BASE">
+<span class="target" id="group__adc__api_1g205a4405b762f159a33f5ba7fa4e056b"></span><code class="sig-name descname">ADC_PPBxRESULT_OFFSET_BASE</code><a class="headerlink" href="#c.ADC_PPBxRESULT_OFFSET_BASE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxCONFIG_STEP">
+<span class="target" id="group__adc__api_1g6c29c7ca9948c9831a8bd22efb59932f"></span><code class="sig-name descname">ADC_PPBxCONFIG_STEP</code><a class="headerlink" href="#c.ADC_PPBxCONFIG_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxTRIPHI_STEP">
+<span class="target" id="group__adc__api_1g446cad0799e8ab2c3e9ca837ee5988b0"></span><code class="sig-name descname">ADC_PPBxTRIPHI_STEP</code><a class="headerlink" href="#c.ADC_PPBxTRIPHI_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxTRIPLO_STEP">
+<span class="target" id="group__adc__api_1g5d65dec2014f0bd1b58f1d7a984bc5f5"></span><code class="sig-name descname">ADC_PPBxTRIPLO_STEP</code><a class="headerlink" href="#c.ADC_PPBxTRIPLO_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxSTAMP_STEP">
+<span class="target" id="group__adc__api_1ge397e34bdcb265a0eb77584a86f8cfe9"></span><code class="sig-name descname">ADC_PPBxSTAMP_STEP</code><a class="headerlink" href="#c.ADC_PPBxSTAMP_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxOFFCAL_STEP">
+<span class="target" id="group__adc__api_1gc306e73e4026f9a02c7e144b21471343"></span><code class="sig-name descname">ADC_PPBxOFFCAL_STEP</code><a class="headerlink" href="#c.ADC_PPBxOFFCAL_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBxOFFREF_STEP">
+<span class="target" id="group__adc__api_1g58f3603c00c0c39fdca0479d49e2c324"></span><code class="sig-name descname">ADC_PPBxOFFREF_STEP</code><a class="headerlink" href="#c.ADC_PPBxOFFREF_STEP" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_PPBTRIP_MASK">
+<span class="target" id="group__adc__api_1g124e5b4934cafd27652cef50c4e8aed0"></span><code class="sig-name descname">ADC_PPBTRIP_MASK</code><a class="headerlink" href="#c.ADC_PPBTRIP_MASK" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_getTempSlope">
+<span class="target" id="group__adc__api_1g8d21bbd36fd25cd0f139b0b98ed2675c"></span><code class="sig-name descname">ADC_getTempSlope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.ADC_getTempSlope" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_getTempOffset">
+<span class="target" id="group__adc__api_1g82c9c92689e3d05cece8ce07ec795b87"></span><code class="sig-name descname">ADC_getTempOffset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#c.ADC_getTempOffset" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_EVT_TRIPHI">
+<span class="target" id="group__adc__api_1g00d0561867e9d40a29758e44e51e2f00"></span><code class="sig-name descname">ADC_EVT_TRIPHI</code><a class="headerlink" href="#c.ADC_EVT_TRIPHI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Trip High Event. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_EVT_TRIPLO">
+<span class="target" id="group__adc__api_1gd87f385fd872cbd3af09193ea6a49dbe"></span><code class="sig-name descname">ADC_EVT_TRIPLO</code><a class="headerlink" href="#c.ADC_EVT_TRIPLO" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Trip Low Event. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_EVT_ZERO">
+<span class="target" id="group__adc__api_1gdb14867d71c53b73a43d981e15e532a6"></span><code class="sig-name descname">ADC_EVT_ZERO</code><a class="headerlink" href="#c.ADC_EVT_ZERO" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Zero Crossing Event. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC0">
+<span class="target" id="group__adc__api_1g9e2dd76129ec57286932987d44de0f76"></span><code class="sig-name descname">ADC_FORCE_SOC0</code><a class="headerlink" href="#c.ADC_FORCE_SOC0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 0. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC1">
+<span class="target" id="group__adc__api_1gbdeeb6faef840a06223a97e31c061c63"></span><code class="sig-name descname">ADC_FORCE_SOC1</code><a class="headerlink" href="#c.ADC_FORCE_SOC1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 1. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC2">
+<span class="target" id="group__adc__api_1gdf003c22d0401dbefeae28e9d92a24a7"></span><code class="sig-name descname">ADC_FORCE_SOC2</code><a class="headerlink" href="#c.ADC_FORCE_SOC2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 2. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC3">
+<span class="target" id="group__adc__api_1g86d31082ae7d83d595dc9a7e31fc3306"></span><code class="sig-name descname">ADC_FORCE_SOC3</code><a class="headerlink" href="#c.ADC_FORCE_SOC3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 3. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC4">
+<span class="target" id="group__adc__api_1g087ead22b8d233d93b3ceda2e1ee19cb"></span><code class="sig-name descname">ADC_FORCE_SOC4</code><a class="headerlink" href="#c.ADC_FORCE_SOC4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 4. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC5">
+<span class="target" id="group__adc__api_1gb757aa8fc9395a02d0d15eabf26e9737"></span><code class="sig-name descname">ADC_FORCE_SOC5</code><a class="headerlink" href="#c.ADC_FORCE_SOC5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 5. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC6">
+<span class="target" id="group__adc__api_1gb51e9fd809ee194f927f94b9694d1c39"></span><code class="sig-name descname">ADC_FORCE_SOC6</code><a class="headerlink" href="#c.ADC_FORCE_SOC6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 6. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC7">
+<span class="target" id="group__adc__api_1g713c15b6680601d7019736054167c2cc"></span><code class="sig-name descname">ADC_FORCE_SOC7</code><a class="headerlink" href="#c.ADC_FORCE_SOC7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 7. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC8">
+<span class="target" id="group__adc__api_1gb4e046c29756d5b702e2c470fcd88d6a"></span><code class="sig-name descname">ADC_FORCE_SOC8</code><a class="headerlink" href="#c.ADC_FORCE_SOC8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 8. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC9">
+<span class="target" id="group__adc__api_1gc5f664647302debc5b49cd9145f7cd09"></span><code class="sig-name descname">ADC_FORCE_SOC9</code><a class="headerlink" href="#c.ADC_FORCE_SOC9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 9. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC10">
+<span class="target" id="group__adc__api_1g352199395245a957d96ae4302352848c"></span><code class="sig-name descname">ADC_FORCE_SOC10</code><a class="headerlink" href="#c.ADC_FORCE_SOC10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 10. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC11">
+<span class="target" id="group__adc__api_1g7bafe09577c004f9f70d06e3f9d59d3b"></span><code class="sig-name descname">ADC_FORCE_SOC11</code><a class="headerlink" href="#c.ADC_FORCE_SOC11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 11. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC12">
+<span class="target" id="group__adc__api_1g361dbb184761dc2c565ddde5714665de"></span><code class="sig-name descname">ADC_FORCE_SOC12</code><a class="headerlink" href="#c.ADC_FORCE_SOC12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 12. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC13">
+<span class="target" id="group__adc__api_1g252dc947ce951dc853f4487593d62daf"></span><code class="sig-name descname">ADC_FORCE_SOC13</code><a class="headerlink" href="#c.ADC_FORCE_SOC13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 13. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC14">
+<span class="target" id="group__adc__api_1g0c387a7c3de99eae2a33c669190447e1"></span><code class="sig-name descname">ADC_FORCE_SOC14</code><a class="headerlink" href="#c.ADC_FORCE_SOC14" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 14. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.ADC_FORCE_SOC15">
+<span class="target" id="group__adc__api_1geed0219c5c958a3a99458b6517ef0205"></span><code class="sig-name descname">ADC_FORCE_SOC15</code><a class="headerlink" href="#c.ADC_FORCE_SOC15" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SW trigger ADC SOC 15. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv415ADC_ClkPrescale">
+<span id="_CPPv315ADC_ClkPrescale"></span><span id="_CPPv215ADC_ClkPrescale"></span><span class="target" id="group__adc__api_1gc5ef0db51af152f30768999dbbf3b555"></span><em class="property">enum </em><code class="sig-name descname">ADC_ClkPrescale</code><a class="headerlink" href="#_CPPv415ADC_ClkPrescale" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1g334d2bdbc8f87fa2bb662790152cba91"><span class="std std-ref">ADC_setPrescaler()</span></a> as the <em>clkPrescale</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_1_0">
+<span id="_CPPv315ADC_CLK_DIV_1_0"></span><span id="_CPPv215ADC_CLK_DIV_1_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b55585d558b7ac83cb38c35dd06113ff17fe"></span><code class="sig-name descname">ADC_CLK_DIV_1_0</code> = 0<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_1_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 1.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_2_0">
+<span id="_CPPv315ADC_CLK_DIV_2_0"></span><span id="_CPPv215ADC_CLK_DIV_2_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555547a87858d61d055bc5fe47e412a6408"></span><code class="sig-name descname">ADC_CLK_DIV_2_0</code> = 2<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_2_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 2.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_2_5">
+<span id="_CPPv315ADC_CLK_DIV_2_5"></span><span id="_CPPv215ADC_CLK_DIV_2_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b5557e0b0f6b30b3fb92b6e5f164b9329cf0"></span><code class="sig-name descname">ADC_CLK_DIV_2_5</code> = 3<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_2_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 2.5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_3_0">
+<span id="_CPPv315ADC_CLK_DIV_3_0"></span><span id="_CPPv215ADC_CLK_DIV_3_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555cb03b44a83951f36fcf09ff28f9399ea"></span><code class="sig-name descname">ADC_CLK_DIV_3_0</code> = 4<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_3_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 3.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_3_5">
+<span id="_CPPv315ADC_CLK_DIV_3_5"></span><span id="_CPPv215ADC_CLK_DIV_3_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555d47b9d2e844a831a089788d3a4690acb"></span><code class="sig-name descname">ADC_CLK_DIV_3_5</code> = 5<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_3_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 3.5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_4_0">
+<span id="_CPPv315ADC_CLK_DIV_4_0"></span><span id="_CPPv215ADC_CLK_DIV_4_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b5553e5261ea8bd2d0ec553a5c9a2933bd12"></span><code class="sig-name descname">ADC_CLK_DIV_4_0</code> = 6<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_4_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 4.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_4_5">
+<span id="_CPPv315ADC_CLK_DIV_4_5"></span><span id="_CPPv215ADC_CLK_DIV_4_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555a9612b3a628ad6d7dbcadb98c0505652"></span><code class="sig-name descname">ADC_CLK_DIV_4_5</code> = 7<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_4_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 4.5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_5_0">
+<span id="_CPPv315ADC_CLK_DIV_5_0"></span><span id="_CPPv215ADC_CLK_DIV_5_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555465352bb4d56a301ca70922a10041be3"></span><code class="sig-name descname">ADC_CLK_DIV_5_0</code> = 8<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_5_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 5.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_5_5">
+<span id="_CPPv315ADC_CLK_DIV_5_5"></span><span id="_CPPv215ADC_CLK_DIV_5_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555c00d81b2cff998a0d2868d49011dc9c2"></span><code class="sig-name descname">ADC_CLK_DIV_5_5</code> = 9<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_5_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 5.5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_6_0">
+<span id="_CPPv315ADC_CLK_DIV_6_0"></span><span id="_CPPv215ADC_CLK_DIV_6_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555d960099e41b608f5d5ce369f4e5ff42a"></span><code class="sig-name descname">ADC_CLK_DIV_6_0</code> = 10<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_6_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 6.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_6_5">
+<span id="_CPPv315ADC_CLK_DIV_6_5"></span><span id="_CPPv215ADC_CLK_DIV_6_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555cd31c0143babf1c670c82685325ba33d"></span><code class="sig-name descname">ADC_CLK_DIV_6_5</code> = 11<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_6_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 6.5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_7_0">
+<span id="_CPPv315ADC_CLK_DIV_7_0"></span><span id="_CPPv215ADC_CLK_DIV_7_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555773f51e738b8a6e81933b69ee8ee2d4e"></span><code class="sig-name descname">ADC_CLK_DIV_7_0</code> = 12<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_7_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 7.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_7_5">
+<span id="_CPPv315ADC_CLK_DIV_7_5"></span><span id="_CPPv215ADC_CLK_DIV_7_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b55537fd593859bb28e32e0379e347ee015b"></span><code class="sig-name descname">ADC_CLK_DIV_7_5</code> = 13<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_7_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 7.5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_8_0">
+<span id="_CPPv315ADC_CLK_DIV_8_0"></span><span id="_CPPv215ADC_CLK_DIV_8_0"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b55543840bf1fec50e68a879ce19aeb25691"></span><code class="sig-name descname">ADC_CLK_DIV_8_0</code> = 14<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_8_0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 8.0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_CLK_DIV_8_5">
+<span id="_CPPv315ADC_CLK_DIV_8_5"></span><span id="_CPPv215ADC_CLK_DIV_8_5"></span><span class="target" id="group__adc__api_1ggc5ef0db51af152f30768999dbbf3b555d3dd345cff45232d60fe66e98b60df20"></span><code class="sig-name descname">ADC_CLK_DIV_8_5</code> = 15<a class="headerlink" href="#_CPPv415ADC_CLK_DIV_8_5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCCLK = (input clock) / 8.5. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv414ADC_Resolution">
+<span id="_CPPv314ADC_Resolution"></span><span id="_CPPv214ADC_Resolution"></span><span class="target" id="group__adc__api_1gfdf0325367eced6434e6040e4c0190db"></span><em class="property">enum </em><code class="sig-name descname">ADC_Resolution</code><a class="headerlink" href="#_CPPv414ADC_Resolution" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1gfc9152a88cca51f84c94193887f1e3bf"><span class="std std-ref">ADC_setMode()</span></a> as the <em>resolution</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_RESOLUTION_12BIT">
+<span id="_CPPv320ADC_RESOLUTION_12BIT"></span><span id="_CPPv220ADC_RESOLUTION_12BIT"></span><span class="target" id="group__adc__api_1ggfdf0325367eced6434e6040e4c0190db8e9dd7d5eeef09bdf73d19672dc614f2"></span><code class="sig-name descname">ADC_RESOLUTION_12BIT</code> = 0x00<a class="headerlink" href="#_CPPv420ADC_RESOLUTION_12BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>12-bit conversion resolution </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_RESOLUTION_16BIT">
+<span id="_CPPv320ADC_RESOLUTION_16BIT"></span><span id="_CPPv220ADC_RESOLUTION_16BIT"></span><span class="target" id="group__adc__api_1ggfdf0325367eced6434e6040e4c0190dbfdfb75cd587ea91bdc31d9da151b53da"></span><code class="sig-name descname">ADC_RESOLUTION_16BIT</code> = 0x40<a class="headerlink" href="#_CPPv420ADC_RESOLUTION_16BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>16-bit conversion resolution </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv414ADC_SignalMode">
+<span id="_CPPv314ADC_SignalMode"></span><span id="_CPPv214ADC_SignalMode"></span><span class="target" id="group__adc__api_1g112c6492b1b7d96f2645e55a19346532"></span><em class="property">enum </em><code class="sig-name descname">ADC_SignalMode</code><a class="headerlink" href="#_CPPv414ADC_SignalMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1gfc9152a88cca51f84c94193887f1e3bf"><span class="std std-ref">ADC_setMode()</span></a> as the <em>signalMode</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv421ADC_MODE_SINGLE_ENDED">
+<span id="_CPPv321ADC_MODE_SINGLE_ENDED"></span><span id="_CPPv221ADC_MODE_SINGLE_ENDED"></span><span class="target" id="group__adc__api_1gg112c6492b1b7d96f2645e55a19346532b5db02210906404e3fe8430724bb4f81"></span><code class="sig-name descname">ADC_MODE_SINGLE_ENDED</code> = 0x00<a class="headerlink" href="#_CPPv421ADC_MODE_SINGLE_ENDED" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sample on single pin with VREFLO. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv421ADC_MODE_DIFFERENTIAL">
+<span id="_CPPv321ADC_MODE_DIFFERENTIAL"></span><span id="_CPPv221ADC_MODE_DIFFERENTIAL"></span><span class="target" id="group__adc__api_1gg112c6492b1b7d96f2645e55a1934653214e65ed04d26de812eac52bd8eabcb38"></span><code class="sig-name descname">ADC_MODE_DIFFERENTIAL</code> = 0x80<a class="headerlink" href="#_CPPv421ADC_MODE_DIFFERENTIAL" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sample on pair of pins. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv411ADC_Trigger">
+<span id="_CPPv311ADC_Trigger"></span><span id="_CPPv211ADC_Trigger"></span><span class="target" id="group__adc__api_1gdfd869334815431bed4dddc6b0f2544a"></span><em class="property">enum </em><code class="sig-name descname">ADC_Trigger</code><a class="headerlink" href="#_CPPv411ADC_Trigger" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"><span class="std std-ref">ADC_setupSOC()</span></a> as the <em>trigger</em> parameter to specify the event that will trigger a conversion to start. It is also used with <a class="reference internal" href="#group__adc__api_1ga18e8b8e8ac3b31d9d7dc757c9989353"><span class="std std-ref">ADC_setBurstModeConfig()</span></a>. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv419ADC_TRIGGER_SW_ONLY">
+<span id="_CPPv319ADC_TRIGGER_SW_ONLY"></span><span id="_CPPv219ADC_TRIGGER_SW_ONLY"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544afef4beec9e195f8521897d3ee20599f8"></span><code class="sig-name descname">ADC_TRIGGER_SW_ONLY</code> = 0<a class="headerlink" href="#_CPPv419ADC_TRIGGER_SW_ONLY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Software only. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_CPU1_TINT0">
+<span id="_CPPv322ADC_TRIGGER_CPU1_TINT0"></span><span id="_CPPv222ADC_TRIGGER_CPU1_TINT0"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a88a704e4af175553dd455e219ac2df18"></span><code class="sig-name descname">ADC_TRIGGER_CPU1_TINT0</code> = 1<a class="headerlink" href="#_CPPv422ADC_TRIGGER_CPU1_TINT0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU1 Timer 0, TINT0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_CPU1_TINT1">
+<span id="_CPPv322ADC_TRIGGER_CPU1_TINT1"></span><span id="_CPPv222ADC_TRIGGER_CPU1_TINT1"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ab64563c233b64f86915c75505c5f40c8"></span><code class="sig-name descname">ADC_TRIGGER_CPU1_TINT1</code> = 2<a class="headerlink" href="#_CPPv422ADC_TRIGGER_CPU1_TINT1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU1 Timer 1, TINT1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_CPU1_TINT2">
+<span id="_CPPv322ADC_TRIGGER_CPU1_TINT2"></span><span id="_CPPv222ADC_TRIGGER_CPU1_TINT2"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a8187d6142ffa62ee11a15ddd04813a7d"></span><code class="sig-name descname">ADC_TRIGGER_CPU1_TINT2</code> = 3<a class="headerlink" href="#_CPPv422ADC_TRIGGER_CPU1_TINT2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU1 Timer 2, TINT2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_TRIGGER_GPIO">
+<span id="_CPPv316ADC_TRIGGER_GPIO"></span><span id="_CPPv216ADC_TRIGGER_GPIO"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ae0349a1f333a5302cdc0dbaf786a6547"></span><code class="sig-name descname">ADC_TRIGGER_GPIO</code> = 4<a class="headerlink" href="#_CPPv416ADC_TRIGGER_GPIO" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>GPIO, ADCEXTSOC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM1_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM1_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM1_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a9723ceb715ec5c0d595e00178673b850"></span><code class="sig-name descname">ADC_TRIGGER_EPWM1_SOCA</code> = 5<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM1_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM1, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM1_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM1_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM1_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544aa7661e85d07c7b02dc4b69ac1f8de9a3"></span><code class="sig-name descname">ADC_TRIGGER_EPWM1_SOCB</code> = 6<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM1_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM1, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM2_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM2_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM2_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ad919742119a448293af45d16b2e860c6"></span><code class="sig-name descname">ADC_TRIGGER_EPWM2_SOCA</code> = 7<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM2_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM2, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM2_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM2_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM2_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544adb0f365aa03c9dd5dbe69e7ecc0db802"></span><code class="sig-name descname">ADC_TRIGGER_EPWM2_SOCB</code> = 8<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM2_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM2, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM3_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM3_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM3_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a9534dd7ae6c2f6217e6236a76ae13923"></span><code class="sig-name descname">ADC_TRIGGER_EPWM3_SOCA</code> = 9<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM3_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM3, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM3_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM3_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM3_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ab2a7633e6bc8df2b94dc332125a8cfa0"></span><code class="sig-name descname">ADC_TRIGGER_EPWM3_SOCB</code> = 10<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM3_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM3, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM4_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM4_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM4_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ab63b299f5102f2849ee6683fd6620e3f"></span><code class="sig-name descname">ADC_TRIGGER_EPWM4_SOCA</code> = 11<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM4_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM4, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM4_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM4_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM4_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a758a6b83231ddd147db5d7ddc8ba50ac"></span><code class="sig-name descname">ADC_TRIGGER_EPWM4_SOCB</code> = 12<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM4_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM4, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM5_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM5_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM5_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a425f82f678504e6e95966e1b6f4df79c"></span><code class="sig-name descname">ADC_TRIGGER_EPWM5_SOCA</code> = 13<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM5_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM5, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM5_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM5_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM5_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a8af0cd494b9ad68f72dc8e49d5d616f2"></span><code class="sig-name descname">ADC_TRIGGER_EPWM5_SOCB</code> = 14<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM5_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM5, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM6_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM6_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM6_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ad7fbb0d33551fa83e217f77dcfdc99fa"></span><code class="sig-name descname">ADC_TRIGGER_EPWM6_SOCA</code> = 15<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM6_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM6, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM6_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM6_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM6_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544aee63aefbe424c17e8432c7285a0f7ba0"></span><code class="sig-name descname">ADC_TRIGGER_EPWM6_SOCB</code> = 16<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM6_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM6, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM7_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM7_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM7_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a51bf20f736e308a9967b0492b26b9d4d"></span><code class="sig-name descname">ADC_TRIGGER_EPWM7_SOCA</code> = 17<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM7_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM7, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM7_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM7_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM7_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ad1f779adbc6aa3347e21e5dd34cf5d55"></span><code class="sig-name descname">ADC_TRIGGER_EPWM7_SOCB</code> = 18<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM7_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM7, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM8_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM8_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM8_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544aeb3cacd7491126fae67450a37b47987b"></span><code class="sig-name descname">ADC_TRIGGER_EPWM8_SOCA</code> = 19<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM8_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM8, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM8_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM8_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM8_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ae7d5e12c1c75ac4f3593921949ae2a91"></span><code class="sig-name descname">ADC_TRIGGER_EPWM8_SOCB</code> = 20<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM8_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM8, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM9_SOCA">
+<span id="_CPPv322ADC_TRIGGER_EPWM9_SOCA"></span><span id="_CPPv222ADC_TRIGGER_EPWM9_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ac4b88e7e773fa90e6349bfcfb6e87627"></span><code class="sig-name descname">ADC_TRIGGER_EPWM9_SOCA</code> = 21<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM9_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM9, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_EPWM9_SOCB">
+<span id="_CPPv322ADC_TRIGGER_EPWM9_SOCB"></span><span id="_CPPv222ADC_TRIGGER_EPWM9_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a2b3d1e02305fa55cf8f49618b26c4e98"></span><code class="sig-name descname">ADC_TRIGGER_EPWM9_SOCB</code> = 22<a class="headerlink" href="#_CPPv422ADC_TRIGGER_EPWM9_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM9, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_TRIGGER_EPWM10_SOCA">
+<span id="_CPPv323ADC_TRIGGER_EPWM10_SOCA"></span><span id="_CPPv223ADC_TRIGGER_EPWM10_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a0eba54c096c4baa8093ac61915e141d9"></span><code class="sig-name descname">ADC_TRIGGER_EPWM10_SOCA</code> = 23<a class="headerlink" href="#_CPPv423ADC_TRIGGER_EPWM10_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM10, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_TRIGGER_EPWM10_SOCB">
+<span id="_CPPv323ADC_TRIGGER_EPWM10_SOCB"></span><span id="_CPPv223ADC_TRIGGER_EPWM10_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a7b303a54fe5cda7b880cef28443007f1"></span><code class="sig-name descname">ADC_TRIGGER_EPWM10_SOCB</code> = 24<a class="headerlink" href="#_CPPv423ADC_TRIGGER_EPWM10_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM10, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_TRIGGER_EPWM11_SOCA">
+<span id="_CPPv323ADC_TRIGGER_EPWM11_SOCA"></span><span id="_CPPv223ADC_TRIGGER_EPWM11_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a99aba948c44dfbc48dc20080e6d788fd"></span><code class="sig-name descname">ADC_TRIGGER_EPWM11_SOCA</code> = 25<a class="headerlink" href="#_CPPv423ADC_TRIGGER_EPWM11_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM11, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_TRIGGER_EPWM11_SOCB">
+<span id="_CPPv323ADC_TRIGGER_EPWM11_SOCB"></span><span id="_CPPv223ADC_TRIGGER_EPWM11_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ae1ea6647a73847a72cf23bc0d40b943f"></span><code class="sig-name descname">ADC_TRIGGER_EPWM11_SOCB</code> = 26<a class="headerlink" href="#_CPPv423ADC_TRIGGER_EPWM11_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM11, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_TRIGGER_EPWM12_SOCA">
+<span id="_CPPv323ADC_TRIGGER_EPWM12_SOCA"></span><span id="_CPPv223ADC_TRIGGER_EPWM12_SOCA"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544ac8bb906176112c9afafb818579825901"></span><code class="sig-name descname">ADC_TRIGGER_EPWM12_SOCA</code> = 27<a class="headerlink" href="#_CPPv423ADC_TRIGGER_EPWM12_SOCA" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM12, ADCSOCA </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_TRIGGER_EPWM12_SOCB">
+<span id="_CPPv323ADC_TRIGGER_EPWM12_SOCB"></span><span id="_CPPv223ADC_TRIGGER_EPWM12_SOCB"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a2385bc8bfa8afbaee88c305cc05328d4"></span><code class="sig-name descname">ADC_TRIGGER_EPWM12_SOCB</code> = 28<a class="headerlink" href="#_CPPv423ADC_TRIGGER_EPWM12_SOCB" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ePWM12, ADCSOCB </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_CPU2_TINT0">
+<span id="_CPPv322ADC_TRIGGER_CPU2_TINT0"></span><span id="_CPPv222ADC_TRIGGER_CPU2_TINT0"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a79747d9c0f3e2c7956cbab44cd862704"></span><code class="sig-name descname">ADC_TRIGGER_CPU2_TINT0</code> = 29<a class="headerlink" href="#_CPPv422ADC_TRIGGER_CPU2_TINT0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU2 Timer 0, TINT0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_CPU2_TINT1">
+<span id="_CPPv322ADC_TRIGGER_CPU2_TINT1"></span><span id="_CPPv222ADC_TRIGGER_CPU2_TINT1"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a153f625c75ad4cde697455f40c521d05"></span><code class="sig-name descname">ADC_TRIGGER_CPU2_TINT1</code> = 30<a class="headerlink" href="#_CPPv422ADC_TRIGGER_CPU2_TINT1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU2 Timer 1, TINT1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_TRIGGER_CPU2_TINT2">
+<span id="_CPPv322ADC_TRIGGER_CPU2_TINT2"></span><span id="_CPPv222ADC_TRIGGER_CPU2_TINT2"></span><span class="target" id="group__adc__api_1ggdfd869334815431bed4dddc6b0f2544a7678cd18123ba290a7fe1c3c0b56ba7d"></span><code class="sig-name descname">ADC_TRIGGER_CPU2_TINT2</code> = 31<a class="headerlink" href="#_CPPv422ADC_TRIGGER_CPU2_TINT2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CPU2 Timer 2, TINT2. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv411ADC_Channel">
+<span id="_CPPv311ADC_Channel"></span><span id="_CPPv211ADC_Channel"></span><span class="target" id="group__adc__api_1g006c821d1a009dbde3d098c1110627c1"></span><em class="property">enum </em><code class="sig-name descname">ADC_Channel</code><a class="headerlink" href="#_CPPv411ADC_Channel" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"><span class="std std-ref">ADC_setupSOC()</span></a> as the <em>channel</em> parameter. This is the input pin on which the signal to be converted is located. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN0">
+<span id="_CPPv313ADC_CH_ADCIN0"></span><span id="_CPPv213ADC_CH_ADCIN0"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1b691c10f32db9e83c1979f3036c097a8"></span><code class="sig-name descname">ADC_CH_ADCIN0</code> = 0<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN0 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN1">
+<span id="_CPPv313ADC_CH_ADCIN1"></span><span id="_CPPv213ADC_CH_ADCIN1"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c148ed0c0f56d2926c86b01126160498a6"></span><code class="sig-name descname">ADC_CH_ADCIN1</code> = 1<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN1 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN2">
+<span id="_CPPv313ADC_CH_ADCIN2"></span><span id="_CPPv213ADC_CH_ADCIN2"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c13af5d766d19020ba9a7929676426c10e"></span><code class="sig-name descname">ADC_CH_ADCIN2</code> = 2<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN2 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN3">
+<span id="_CPPv313ADC_CH_ADCIN3"></span><span id="_CPPv213ADC_CH_ADCIN3"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1cfdfdef528d74e7adc464db30e66c69e"></span><code class="sig-name descname">ADC_CH_ADCIN3</code> = 3<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN3 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN4">
+<span id="_CPPv313ADC_CH_ADCIN4"></span><span id="_CPPv213ADC_CH_ADCIN4"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c18d61c1d84f322c30565532e90b6cae68"></span><code class="sig-name descname">ADC_CH_ADCIN4</code> = 4<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN4 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN5">
+<span id="_CPPv313ADC_CH_ADCIN5"></span><span id="_CPPv213ADC_CH_ADCIN5"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1757b00baad3512c78b571aa455d7db22"></span><code class="sig-name descname">ADC_CH_ADCIN5</code> = 5<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN5 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN6">
+<span id="_CPPv313ADC_CH_ADCIN6"></span><span id="_CPPv213ADC_CH_ADCIN6"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c15c5effd7d6c14f05661d5aaea96fe43e"></span><code class="sig-name descname">ADC_CH_ADCIN6</code> = 6<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN6 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN7">
+<span id="_CPPv313ADC_CH_ADCIN7"></span><span id="_CPPv213ADC_CH_ADCIN7"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c14cc49eed2e2f812d412f84560faa7b36"></span><code class="sig-name descname">ADC_CH_ADCIN7</code> = 7<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN7 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN8">
+<span id="_CPPv313ADC_CH_ADCIN8"></span><span id="_CPPv213ADC_CH_ADCIN8"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c11d4d959169ab5838cd7ec911160aada6"></span><code class="sig-name descname">ADC_CH_ADCIN8</code> = 8<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN8 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv413ADC_CH_ADCIN9">
+<span id="_CPPv313ADC_CH_ADCIN9"></span><span id="_CPPv213ADC_CH_ADCIN9"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c13061a6545f4cac0c5762cd358570672d"></span><code class="sig-name descname">ADC_CH_ADCIN9</code> = 9<a class="headerlink" href="#_CPPv413ADC_CH_ADCIN9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN9 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414ADC_CH_ADCIN10">
+<span id="_CPPv314ADC_CH_ADCIN10"></span><span id="_CPPv214ADC_CH_ADCIN10"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c12c15d7327e80962dc346faf25e1673ca"></span><code class="sig-name descname">ADC_CH_ADCIN10</code> = 10<a class="headerlink" href="#_CPPv414ADC_CH_ADCIN10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN10 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414ADC_CH_ADCIN11">
+<span id="_CPPv314ADC_CH_ADCIN11"></span><span id="_CPPv214ADC_CH_ADCIN11"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1d026d047ad074398fe763779580eb5f0"></span><code class="sig-name descname">ADC_CH_ADCIN11</code> = 11<a class="headerlink" href="#_CPPv414ADC_CH_ADCIN11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN11 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414ADC_CH_ADCIN12">
+<span id="_CPPv314ADC_CH_ADCIN12"></span><span id="_CPPv214ADC_CH_ADCIN12"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c172ec7c7636ef60d024176e998bbae911"></span><code class="sig-name descname">ADC_CH_ADCIN12</code> = 12<a class="headerlink" href="#_CPPv414ADC_CH_ADCIN12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN12 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414ADC_CH_ADCIN13">
+<span id="_CPPv314ADC_CH_ADCIN13"></span><span id="_CPPv214ADC_CH_ADCIN13"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c123396ff00f891df8eea6c247ada642d0"></span><code class="sig-name descname">ADC_CH_ADCIN13</code> = 13<a class="headerlink" href="#_CPPv414ADC_CH_ADCIN13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN13 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414ADC_CH_ADCIN14">
+<span id="_CPPv314ADC_CH_ADCIN14"></span><span id="_CPPv214ADC_CH_ADCIN14"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1d02e1134e644b217b69da0201e2859ba"></span><code class="sig-name descname">ADC_CH_ADCIN14</code> = 14<a class="headerlink" href="#_CPPv414ADC_CH_ADCIN14" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN14 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv414ADC_CH_ADCIN15">
+<span id="_CPPv314ADC_CH_ADCIN15"></span><span id="_CPPv214ADC_CH_ADCIN15"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1f66e16b85e26012fefe383a8fe9b0361"></span><code class="sig-name descname">ADC_CH_ADCIN15</code> = 15<a class="headerlink" href="#_CPPv414ADC_CH_ADCIN15" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>single-ended, ADCIN15 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_CH_ADCIN0_ADCIN1">
+<span id="_CPPv320ADC_CH_ADCIN0_ADCIN1"></span><span id="_CPPv220ADC_CH_ADCIN0_ADCIN1"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c13f9dfeca1d9e80958aba84c4e8c61e40"></span><code class="sig-name descname">ADC_CH_ADCIN0_ADCIN1</code> = 0<a class="headerlink" href="#_CPPv420ADC_CH_ADCIN0_ADCIN1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN0 and ADCIN1 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_CH_ADCIN2_ADCIN3">
+<span id="_CPPv320ADC_CH_ADCIN2_ADCIN3"></span><span id="_CPPv220ADC_CH_ADCIN2_ADCIN3"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c110619a7214183913426545bd12807187"></span><code class="sig-name descname">ADC_CH_ADCIN2_ADCIN3</code> = 2<a class="headerlink" href="#_CPPv420ADC_CH_ADCIN2_ADCIN3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN2 and ADCIN3 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_CH_ADCIN4_ADCIN5">
+<span id="_CPPv320ADC_CH_ADCIN4_ADCIN5"></span><span id="_CPPv220ADC_CH_ADCIN4_ADCIN5"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1e1c673248fecbe0468c5bec574f24a3d"></span><code class="sig-name descname">ADC_CH_ADCIN4_ADCIN5</code> = 4<a class="headerlink" href="#_CPPv420ADC_CH_ADCIN4_ADCIN5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN4 and ADCIN5 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_CH_ADCIN6_ADCIN7">
+<span id="_CPPv320ADC_CH_ADCIN6_ADCIN7"></span><span id="_CPPv220ADC_CH_ADCIN6_ADCIN7"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c13fc1399fd8514d1ee1c551c7c9e92647"></span><code class="sig-name descname">ADC_CH_ADCIN6_ADCIN7</code> = 6<a class="headerlink" href="#_CPPv420ADC_CH_ADCIN6_ADCIN7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN6 and ADCIN7 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv420ADC_CH_ADCIN8_ADCIN9">
+<span id="_CPPv320ADC_CH_ADCIN8_ADCIN9"></span><span id="_CPPv220ADC_CH_ADCIN8_ADCIN9"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c10ac553d96614be088c61bf369ab57f3e"></span><code class="sig-name descname">ADC_CH_ADCIN8_ADCIN9</code> = 8<a class="headerlink" href="#_CPPv420ADC_CH_ADCIN8_ADCIN9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN8 and ADCIN9 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_CH_ADCIN10_ADCIN11">
+<span id="_CPPv322ADC_CH_ADCIN10_ADCIN11"></span><span id="_CPPv222ADC_CH_ADCIN10_ADCIN11"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c19906784aa0182f3d496523e6a9f532e3"></span><code class="sig-name descname">ADC_CH_ADCIN10_ADCIN11</code> = 10<a class="headerlink" href="#_CPPv422ADC_CH_ADCIN10_ADCIN11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN10 and ADCIN11 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_CH_ADCIN12_ADCIN13">
+<span id="_CPPv322ADC_CH_ADCIN12_ADCIN13"></span><span id="_CPPv222ADC_CH_ADCIN12_ADCIN13"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c1f92dcbafb83a2a7d09b8a8ca1b5c3052"></span><code class="sig-name descname">ADC_CH_ADCIN12_ADCIN13</code> = 12<a class="headerlink" href="#_CPPv422ADC_CH_ADCIN12_ADCIN13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN12 and ADCIN13 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv422ADC_CH_ADCIN14_ADCIN15">
+<span id="_CPPv322ADC_CH_ADCIN14_ADCIN15"></span><span id="_CPPv222ADC_CH_ADCIN14_ADCIN15"></span><span class="target" id="group__adc__api_1gg006c821d1a009dbde3d098c1110627c188dc0e74bb20b7d0e5c9287b56c5f0f4"></span><code class="sig-name descname">ADC_CH_ADCIN14_ADCIN15</code> = 14<a class="headerlink" href="#_CPPv422ADC_CH_ADCIN14_ADCIN15" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>differential, ADCIN14 and ADCIN15 </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv413ADC_PulseMode">
+<span id="_CPPv313ADC_PulseMode"></span><span id="_CPPv213ADC_PulseMode"></span><span class="target" id="group__adc__api_1g413baef9bad049f2506c87e0a06792a2"></span><em class="property">enum </em><code class="sig-name descname">ADC_PulseMode</code><a class="headerlink" href="#_CPPv413ADC_PulseMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1g2f3d7a17f70add92d6675df19f3fa497"><span class="std std-ref">ADC_setInterruptPulseMode()</span></a> as the <em>pulseMode</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_PULSE_END_OF_ACQ_WIN">
+<span id="_CPPv324ADC_PULSE_END_OF_ACQ_WIN"></span><span id="_CPPv224ADC_PULSE_END_OF_ACQ_WIN"></span><span class="target" id="group__adc__api_1gg413baef9bad049f2506c87e0a06792a2c0ec654a4fe5c4fff4cce2b0cafdd2f0"></span><code class="sig-name descname">ADC_PULSE_END_OF_ACQ_WIN</code> = 0x00<a class="headerlink" href="#_CPPv424ADC_PULSE_END_OF_ACQ_WIN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Occurs at the end of the acquisition window. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv421ADC_PULSE_END_OF_CONV">
+<span id="_CPPv321ADC_PULSE_END_OF_CONV"></span><span id="_CPPv221ADC_PULSE_END_OF_CONV"></span><span class="target" id="group__adc__api_1gg413baef9bad049f2506c87e0a06792a225ba86ba35d2f57abaadf523e8a6701b"></span><code class="sig-name descname">ADC_PULSE_END_OF_CONV</code> = 0x04<a class="headerlink" href="#_CPPv421ADC_PULSE_END_OF_CONV" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Occurs at the end of the conversion. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv413ADC_IntNumber">
+<span id="_CPPv313ADC_IntNumber"></span><span id="_CPPv213ADC_IntNumber"></span><span class="target" id="group__adc__api_1g87775424aff24cc37cda44ed53553eb9"></span><em class="property">enum </em><code class="sig-name descname">ADC_IntNumber</code><a class="headerlink" href="#_CPPv413ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1ge4cfea32380838565c07f025c93d4a57"><span class="std std-ref">ADC_enableInterrupt()</span></a>, <a class="reference internal" href="#group__adc__api_1g7e1ab04160075d9ac53a1a70c2c1981b"><span class="std std-ref">ADC_disableInterrupt()</span></a>, and <a class="reference internal" href="#group__adc__api_1g26fd2729cef533ca5be548d34055c16c"><span class="std std-ref">ADC_getInterruptStatus()</span></a> as the <em>adcIntNum</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_INT_NUMBER1">
+<span id="_CPPv315ADC_INT_NUMBER1"></span><span id="_CPPv215ADC_INT_NUMBER1"></span><span class="target" id="group__adc__api_1gg87775424aff24cc37cda44ed53553eb969590fdd71251da035a42f4d1d08e8c5"></span><code class="sig-name descname">ADC_INT_NUMBER1</code><a class="headerlink" href="#_CPPv415ADC_INT_NUMBER1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCINT1 Interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_INT_NUMBER2">
+<span id="_CPPv315ADC_INT_NUMBER2"></span><span id="_CPPv215ADC_INT_NUMBER2"></span><span class="target" id="group__adc__api_1gg87775424aff24cc37cda44ed53553eb9f7c8c6da2c437396ee82f7c1e5747381"></span><code class="sig-name descname">ADC_INT_NUMBER2</code><a class="headerlink" href="#_CPPv415ADC_INT_NUMBER2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCINT2 Interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_INT_NUMBER3">
+<span id="_CPPv315ADC_INT_NUMBER3"></span><span id="_CPPv215ADC_INT_NUMBER3"></span><span class="target" id="group__adc__api_1gg87775424aff24cc37cda44ed53553eb9ff6537821be5162ddb5611186e909f90"></span><code class="sig-name descname">ADC_INT_NUMBER3</code><a class="headerlink" href="#_CPPv415ADC_INT_NUMBER3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCINT3 Interrupt. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_INT_NUMBER4">
+<span id="_CPPv315ADC_INT_NUMBER4"></span><span id="_CPPv215ADC_INT_NUMBER4"></span><span class="target" id="group__adc__api_1gg87775424aff24cc37cda44ed53553eb9355a9f14731329f9a2c5a3b3fd822cbd"></span><code class="sig-name descname">ADC_INT_NUMBER4</code><a class="headerlink" href="#_CPPv415ADC_INT_NUMBER4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCINT4 Interrupt. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv413ADC_PPBNumber">
+<span id="_CPPv313ADC_PPBNumber"></span><span id="_CPPv213ADC_PPBNumber"></span><span class="target" id="group__adc__api_1gf855a9a486acd80891a416739835960a"></span><em class="property">enum </em><code class="sig-name descname">ADC_PPBNumber</code><a class="headerlink" href="#_CPPv413ADC_PPBNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed in as the <em>ppbNumber</em> parameter for several functions. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_PPB_NUMBER1">
+<span id="_CPPv315ADC_PPB_NUMBER1"></span><span id="_CPPv215ADC_PPB_NUMBER1"></span><span class="target" id="group__adc__api_1ggf855a9a486acd80891a416739835960a29c6caa3d65cf119d472f2c2f2ed6b3c"></span><code class="sig-name descname">ADC_PPB_NUMBER1</code><a class="headerlink" href="#_CPPv415ADC_PPB_NUMBER1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Post-processing block 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_PPB_NUMBER2">
+<span id="_CPPv315ADC_PPB_NUMBER2"></span><span id="_CPPv215ADC_PPB_NUMBER2"></span><span class="target" id="group__adc__api_1ggf855a9a486acd80891a416739835960a51b041aa27e27e581ad58159e3ddd952"></span><code class="sig-name descname">ADC_PPB_NUMBER2</code><a class="headerlink" href="#_CPPv415ADC_PPB_NUMBER2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Post-processing block 2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_PPB_NUMBER3">
+<span id="_CPPv315ADC_PPB_NUMBER3"></span><span id="_CPPv215ADC_PPB_NUMBER3"></span><span class="target" id="group__adc__api_1ggf855a9a486acd80891a416739835960a54fad1dcb55ac52d9c7346e23929be81"></span><code class="sig-name descname">ADC_PPB_NUMBER3</code><a class="headerlink" href="#_CPPv415ADC_PPB_NUMBER3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Post-processing block 3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_PPB_NUMBER4">
+<span id="_CPPv315ADC_PPB_NUMBER4"></span><span id="_CPPv215ADC_PPB_NUMBER4"></span><span class="target" id="group__adc__api_1ggf855a9a486acd80891a416739835960a9065664b5ad8b6cae86fde772cf572f3"></span><code class="sig-name descname">ADC_PPB_NUMBER4</code><a class="headerlink" href="#_CPPv415ADC_PPB_NUMBER4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Post-processing block 4. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv413ADC_SOCNumber">
+<span id="_CPPv313ADC_SOCNumber"></span><span id="_CPPv213ADC_SOCNumber"></span><span class="target" id="group__adc__api_1gad6ff34f4e3fe9471bf157397ffccfb8"></span><em class="property">enum </em><code class="sig-name descname">ADC_SOCNumber</code><a class="headerlink" href="#_CPPv413ADC_SOCNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed in as the <em>socNumber</em> parameter for several functions. This value identifies the start-of-conversion (SOC) that a function is configuring or accessing. Note that in some cases (for example, <a class="reference internal" href="#group__adc__api_1gbb8c63959746704955e4ff1a6038c6f2"><span class="std std-ref">ADC_setInterruptSource()</span></a>) <em>socNumber</em> is used to refer to the corresponding end-of-conversion (EOC). </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER0">
+<span id="_CPPv315ADC_SOC_NUMBER0"></span><span id="_CPPv215ADC_SOC_NUMBER0"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb8b5d10be1911d041c365e7f468200f8c5"></span><code class="sig-name descname">ADC_SOC_NUMBER0</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER0" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 0. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER1">
+<span id="_CPPv315ADC_SOC_NUMBER1"></span><span id="_CPPv215ADC_SOC_NUMBER1"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb89107627b18863008da8a4d68ac3405a0"></span><code class="sig-name descname">ADC_SOC_NUMBER1</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 1. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER2">
+<span id="_CPPv315ADC_SOC_NUMBER2"></span><span id="_CPPv215ADC_SOC_NUMBER2"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb80be28c3b9afc67b2e598dcdb5a9065a3"></span><code class="sig-name descname">ADC_SOC_NUMBER2</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 2. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER3">
+<span id="_CPPv315ADC_SOC_NUMBER3"></span><span id="_CPPv215ADC_SOC_NUMBER3"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb83cfe1fc8041f3dfd54852c679c28c55e"></span><code class="sig-name descname">ADC_SOC_NUMBER3</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER3" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 3. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER4">
+<span id="_CPPv315ADC_SOC_NUMBER4"></span><span id="_CPPv215ADC_SOC_NUMBER4"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb8897116ca0b8c2fad1cc8d5570a6fde67"></span><code class="sig-name descname">ADC_SOC_NUMBER4</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER4" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 4. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER5">
+<span id="_CPPv315ADC_SOC_NUMBER5"></span><span id="_CPPv215ADC_SOC_NUMBER5"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb84181817df161941e1aaa63d293505ce2"></span><code class="sig-name descname">ADC_SOC_NUMBER5</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER5" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 5. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER6">
+<span id="_CPPv315ADC_SOC_NUMBER6"></span><span id="_CPPv215ADC_SOC_NUMBER6"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb8c437e85c05cfbf795f5ac9220f65d1c3"></span><code class="sig-name descname">ADC_SOC_NUMBER6</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER6" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 6. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER7">
+<span id="_CPPv315ADC_SOC_NUMBER7"></span><span id="_CPPv215ADC_SOC_NUMBER7"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb8a1e4d27c2cac6ff5823abba2bef5bb1d"></span><code class="sig-name descname">ADC_SOC_NUMBER7</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER7" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 7. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER8">
+<span id="_CPPv315ADC_SOC_NUMBER8"></span><span id="_CPPv215ADC_SOC_NUMBER8"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb804802a417fcc2df20b5c1c2be61d1624"></span><code class="sig-name descname">ADC_SOC_NUMBER8</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER8" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 8. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv415ADC_SOC_NUMBER9">
+<span id="_CPPv315ADC_SOC_NUMBER9"></span><span id="_CPPv215ADC_SOC_NUMBER9"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb86766b3173d8798b3fc35de8051cd96c0"></span><code class="sig-name descname">ADC_SOC_NUMBER9</code><a class="headerlink" href="#_CPPv415ADC_SOC_NUMBER9" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 9. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_SOC_NUMBER10">
+<span id="_CPPv316ADC_SOC_NUMBER10"></span><span id="_CPPv216ADC_SOC_NUMBER10"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb83f1b19b6e8f760e66e33c64fc32946d2"></span><code class="sig-name descname">ADC_SOC_NUMBER10</code><a class="headerlink" href="#_CPPv416ADC_SOC_NUMBER10" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 10. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_SOC_NUMBER11">
+<span id="_CPPv316ADC_SOC_NUMBER11"></span><span id="_CPPv216ADC_SOC_NUMBER11"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb8f65c6ded42f537465aa272f38573106b"></span><code class="sig-name descname">ADC_SOC_NUMBER11</code><a class="headerlink" href="#_CPPv416ADC_SOC_NUMBER11" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 11. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_SOC_NUMBER12">
+<span id="_CPPv316ADC_SOC_NUMBER12"></span><span id="_CPPv216ADC_SOC_NUMBER12"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb864c7881e66cd7b46f46091f60df81598"></span><code class="sig-name descname">ADC_SOC_NUMBER12</code><a class="headerlink" href="#_CPPv416ADC_SOC_NUMBER12" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 12. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_SOC_NUMBER13">
+<span id="_CPPv316ADC_SOC_NUMBER13"></span><span id="_CPPv216ADC_SOC_NUMBER13"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb87679fd597f6206db6feba69015691ee9"></span><code class="sig-name descname">ADC_SOC_NUMBER13</code><a class="headerlink" href="#_CPPv416ADC_SOC_NUMBER13" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 13. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_SOC_NUMBER14">
+<span id="_CPPv316ADC_SOC_NUMBER14"></span><span id="_CPPv216ADC_SOC_NUMBER14"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb8667b609df250c3620472cf331926472d"></span><code class="sig-name descname">ADC_SOC_NUMBER14</code><a class="headerlink" href="#_CPPv416ADC_SOC_NUMBER14" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 14. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv416ADC_SOC_NUMBER15">
+<span id="_CPPv316ADC_SOC_NUMBER15"></span><span id="_CPPv216ADC_SOC_NUMBER15"></span><span class="target" id="group__adc__api_1ggad6ff34f4e3fe9471bf157397ffccfb82462f897eb4050480f725503be11dd1c"></span><code class="sig-name descname">ADC_SOC_NUMBER15</code><a class="headerlink" href="#_CPPv416ADC_SOC_NUMBER15" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC/EOC number 15. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv417ADC_IntSOCTrigger">
+<span id="_CPPv317ADC_IntSOCTrigger"></span><span id="_CPPv217ADC_IntSOCTrigger"></span><span class="target" id="group__adc__api_1g04f99586254462749ef251657f6e311e"></span><em class="property">enum </em><code class="sig-name descname">ADC_IntSOCTrigger</code><a class="headerlink" href="#_CPPv417ADC_IntSOCTrigger" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed in as the <em>trigger</em> parameter for the <a class="reference internal" href="#group__adc__api_1gccd5bcf943a2276ef76117c9026d3a84"><span class="std std-ref">ADC_setInterruptSOCTrigger()</span></a> function. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_INT_SOC_TRIGGER_NONE">
+<span id="_CPPv324ADC_INT_SOC_TRIGGER_NONE"></span><span id="_CPPv224ADC_INT_SOC_TRIGGER_NONE"></span><span class="target" id="group__adc__api_1gg04f99586254462749ef251657f6e311e4d284d918f17a9ab00f435d50c71edfc"></span><code class="sig-name descname">ADC_INT_SOC_TRIGGER_NONE</code><a class="headerlink" href="#_CPPv424ADC_INT_SOC_TRIGGER_NONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No ADCINT will trigger the SOC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv427ADC_INT_SOC_TRIGGER_ADCINT1">
+<span id="_CPPv327ADC_INT_SOC_TRIGGER_ADCINT1"></span><span id="_CPPv227ADC_INT_SOC_TRIGGER_ADCINT1"></span><span class="target" id="group__adc__api_1gg04f99586254462749ef251657f6e311e474c70733e8e172a79a490d632b730d6"></span><code class="sig-name descname">ADC_INT_SOC_TRIGGER_ADCINT1</code><a class="headerlink" href="#_CPPv427ADC_INT_SOC_TRIGGER_ADCINT1" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCINT1 will trigger the SOC. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv427ADC_INT_SOC_TRIGGER_ADCINT2">
+<span id="_CPPv327ADC_INT_SOC_TRIGGER_ADCINT2"></span><span id="_CPPv227ADC_INT_SOC_TRIGGER_ADCINT2"></span><span class="target" id="group__adc__api_1gg04f99586254462749ef251657f6e311e182699493738f94f35684946662d223e"></span><code class="sig-name descname">ADC_INT_SOC_TRIGGER_ADCINT2</code><a class="headerlink" href="#_CPPv427ADC_INT_SOC_TRIGGER_ADCINT2" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ADCINT2 will trigger the SOC. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv416ADC_PriorityMode">
+<span id="_CPPv316ADC_PriorityMode"></span><span id="_CPPv216ADC_PriorityMode"></span><span class="target" id="group__adc__api_1g18161963f585ffd1fe4e00889b3c7d06"></span><em class="property">enum </em><code class="sig-name descname">ADC_PriorityMode</code><a class="headerlink" href="#_CPPv416ADC_PriorityMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Values that can be passed to <a class="reference internal" href="#group__adc__api_1g9c9825511b02131e9eb64ee5b9cb6d2a"><span class="std std-ref">ADC_setSOCPriority()</span></a> as the <em>priMode</em> parameter. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_ALL_ROUND_ROBIN">
+<span id="_CPPv323ADC_PRI_ALL_ROUND_ROBIN"></span><span id="_CPPv223ADC_PRI_ALL_ROUND_ROBIN"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d061a367ad652a7e16cab3ed998fc5e5138"></span><code class="sig-name descname">ADC_PRI_ALL_ROUND_ROBIN</code><a class="headerlink" href="#_CPPv423ADC_PRI_ALL_ROUND_ROBIN" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Round robin mode is used for all. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv418ADC_PRI_SOC0_HIPRI">
+<span id="_CPPv318ADC_PRI_SOC0_HIPRI"></span><span id="_CPPv218ADC_PRI_SOC0_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d06b6585918becf698b230f763ce1e841be"></span><code class="sig-name descname">ADC_PRI_SOC0_HIPRI</code><a class="headerlink" href="#_CPPv418ADC_PRI_SOC0_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC1_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC1_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC1_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d065e7b74d52d49ee62df49178c9a25b94b"></span><code class="sig-name descname">ADC_PRI_THRU_SOC1_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC1_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-1 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC2_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC2_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC2_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d068abd5d05486dbbc70b23bc361cec40ae"></span><code class="sig-name descname">ADC_PRI_THRU_SOC2_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC2_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-2 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC3_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC3_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC3_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d066ef6f63a867762d342a9d89ccca4e09c"></span><code class="sig-name descname">ADC_PRI_THRU_SOC3_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC3_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-3 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC4_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC4_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC4_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d0686ea1de8dbfc4aa2de0b465cc0fae55f"></span><code class="sig-name descname">ADC_PRI_THRU_SOC4_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC4_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-4 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC5_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC5_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC5_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d069fb45c90ba532a9ac13ca9a3542541b3"></span><code class="sig-name descname">ADC_PRI_THRU_SOC5_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC5_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-5 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC6_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC6_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC6_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d06b017ff7ec5117e6fba0584a2c737cc1a"></span><code class="sig-name descname">ADC_PRI_THRU_SOC6_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC6_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-6 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC7_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC7_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC7_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d069846f4f1c6391c83837211cd9b30a194"></span><code class="sig-name descname">ADC_PRI_THRU_SOC7_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC7_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-7 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC8_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC8_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC8_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d06f24edf71665b13ce3d99148bc74ccc1a"></span><code class="sig-name descname">ADC_PRI_THRU_SOC8_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC8_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-8 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv423ADC_PRI_THRU_SOC9_HIPRI">
+<span id="_CPPv323ADC_PRI_THRU_SOC9_HIPRI"></span><span id="_CPPv223ADC_PRI_THRU_SOC9_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d065fa89f59f27f647fff5456eae78ed701"></span><code class="sig-name descname">ADC_PRI_THRU_SOC9_HIPRI</code><a class="headerlink" href="#_CPPv423ADC_PRI_THRU_SOC9_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-9 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_PRI_THRU_SOC10_HIPRI">
+<span id="_CPPv324ADC_PRI_THRU_SOC10_HIPRI"></span><span id="_CPPv224ADC_PRI_THRU_SOC10_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d069111af1fec3fb10b1400b7b4c1b57a3c"></span><code class="sig-name descname">ADC_PRI_THRU_SOC10_HIPRI</code><a class="headerlink" href="#_CPPv424ADC_PRI_THRU_SOC10_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-10 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_PRI_THRU_SOC11_HIPRI">
+<span id="_CPPv324ADC_PRI_THRU_SOC11_HIPRI"></span><span id="_CPPv224ADC_PRI_THRU_SOC11_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d064b4b4f0590da32d330d2ff29931c1ce2"></span><code class="sig-name descname">ADC_PRI_THRU_SOC11_HIPRI</code><a class="headerlink" href="#_CPPv424ADC_PRI_THRU_SOC11_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-11 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_PRI_THRU_SOC12_HIPRI">
+<span id="_CPPv324ADC_PRI_THRU_SOC12_HIPRI"></span><span id="_CPPv224ADC_PRI_THRU_SOC12_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d06df13e04e71ff413f6999852975413dab"></span><code class="sig-name descname">ADC_PRI_THRU_SOC12_HIPRI</code><a class="headerlink" href="#_CPPv424ADC_PRI_THRU_SOC12_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-12 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_PRI_THRU_SOC13_HIPRI">
+<span id="_CPPv324ADC_PRI_THRU_SOC13_HIPRI"></span><span id="_CPPv224ADC_PRI_THRU_SOC13_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d06f86cb4b78392071f3863210937dd9828"></span><code class="sig-name descname">ADC_PRI_THRU_SOC13_HIPRI</code><a class="headerlink" href="#_CPPv424ADC_PRI_THRU_SOC13_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-13 hi pri, others in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv424ADC_PRI_THRU_SOC14_HIPRI">
+<span id="_CPPv324ADC_PRI_THRU_SOC14_HIPRI"></span><span id="_CPPv224ADC_PRI_THRU_SOC14_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d06da94b7fb106a0543bbe73912fd931a9a"></span><code class="sig-name descname">ADC_PRI_THRU_SOC14_HIPRI</code><a class="headerlink" href="#_CPPv424ADC_PRI_THRU_SOC14_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>SOC 0-14 hi pri, SOC15 in round robin. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv417ADC_PRI_ALL_HIPRI">
+<span id="_CPPv317ADC_PRI_ALL_HIPRI"></span><span id="_CPPv217ADC_PRI_ALL_HIPRI"></span><span class="target" id="group__adc__api_1gg18161963f585ffd1fe4e00889b3c7d066e14904a9067e59dd5a56267d2c4f45e"></span><code class="sig-name descname">ADC_PRI_ALL_HIPRI</code><a class="headerlink" href="#_CPPv417ADC_PRI_ALL_HIPRI" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>All priorities based on SOC number. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv416ADC_setPrescaler8uint32_t15ADC_ClkPrescale">
+<span id="_CPPv316ADC_setPrescaler8uint32_t15ADC_ClkPrescale"></span><span id="_CPPv216ADC_setPrescaler8uint32_t15ADC_ClkPrescale"></span><span id="ADC_setPrescaler__uint32_t.ADC_ClkPrescale"></span><span class="target" id="group__adc__api_1g334d2bdbc8f87fa2bb662790152cba91"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setPrescaler</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv415ADC_ClkPrescale" title="ADC_ClkPrescale">ADC_ClkPrescale</a> <em>clkPrescale</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416ADC_setPrescaler8uint32_t15ADC_ClkPrescale" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configures the analog-to-digital converter module prescaler.</p>
+<p><p>This function configures the ADC module’s ADCCLK.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clkPrescale</span></code>: is the ADC clock prescaler.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>clkPrescale</em> parameter specifies the value by which the input clock is divided to make the ADCCLK. The clkPrescale value can be specified with any of the following enum values: <strong>ADC_CLK_DIV_1_0</strong>, <strong>ADC_CLK_DIV_2_0</strong>, <strong>ADC_CLK_DIV_2_5</strong>, …, <strong>ADC_CLK_DIV_7_5</strong>, <strong>ADC_CLK_DIV_8_0</strong>, or <strong>ADC_CLK_DIV_8_5</strong>.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412ADC_setupSOC8uint32_t13ADC_SOCNumber11ADC_Trigger11ADC_Channel8uint32_t">
+<span id="_CPPv312ADC_setupSOC8uint32_t13ADC_SOCNumber11ADC_Trigger11ADC_Channel8uint32_t"></span><span id="_CPPv212ADC_setupSOC8uint32_t13ADC_SOCNumber11ADC_Trigger11ADC_Channel8uint32_t"></span><span id="ADC_setupSOC__uint32_t.ADC_SOCNumber.ADC_Trigger.ADC_Channel.uint32_t"></span><span class="target" id="group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setupSOC</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_SOCNumber" title="ADC_SOCNumber">ADC_SOCNumber</a> <em>socNumber</em>, <a class="reference internal" href="#_CPPv411ADC_Trigger" title="ADC_Trigger">ADC_Trigger</a> <em>trigger</em>, <a class="reference internal" href="#_CPPv411ADC_Channel" title="ADC_Channel">ADC_Channel</a> <em>channel</em>, uint32_t <em>sampleWindow</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412ADC_setupSOC8uint32_t13ADC_SOCNumber11ADC_Trigger11ADC_Channel8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configures a start-of-conversion (SOC) in the ADC.</p>
+<p><p>This function configures the a start-of-conversion (SOC) in the ADC module.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socNumber</span></code>: is the number of the start-of-conversion. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code>: the source that will cause the SOC. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">channel</span></code>: is the number associated with the input signal. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sampleWindow</span></code>: is the acquisition window duration.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>socNumber</em> number is a value <strong>ADC_SOC_NUMBERX</strong> where X is a number from 0 to 15 specifying which SOC is to be configured on the ADC module specified by <em>base</em>.</p>
+<p>The <em>trigger</em> specifies the event that causes the SOC such as software, a timer interrupt, an ePWM event, or an ADC interrupt. It should be a value in the format of <strong>ADC_TRIGGER_XXXX</strong> where XXXX is the event such as <strong>ADC_TRIGGER_SW_ONLY</strong>, <strong>ADC_TRIGGER_CPU1_TINT0</strong>, <strong>ADC_TRIGGER_GPIO</strong>, <strong>ADC_TRIGGER_EPWM1_SOCA</strong>, and so on.</p>
+<p>The <em>channel</em> parameter specifies the channel to be converted. In single-ended mode this is a single pin given by <strong>ADC_CH_ADCINx</strong> where x is the number identifying the pin between 0 and 15 inclusive. In differential mode, two pins are used as inputs and are passed in the <em>channel</em> parameter as <strong>ADC_CH_ADCIN0_ADCIN1</strong>, <strong>ADC_CH_ADCIN2_ADCIN3</strong>, …, or <strong>ADC_CH_ADCIN14_ADCIN15</strong>.</p>
+<p>The <em>sampleWindow</em> parameter is the acquisition window duration in SYSCLK cycles. It should be a value between 1 and 512 cycles inclusive. The selected duration must be at least as long as one ADCCLK cycle. Also, the datasheet will specify a minimum window duration requirement in nanoseconds.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426ADC_setInterruptSOCTrigger8uint32_t13ADC_SOCNumber17ADC_IntSOCTrigger">
+<span id="_CPPv326ADC_setInterruptSOCTrigger8uint32_t13ADC_SOCNumber17ADC_IntSOCTrigger"></span><span id="_CPPv226ADC_setInterruptSOCTrigger8uint32_t13ADC_SOCNumber17ADC_IntSOCTrigger"></span><span id="ADC_setInterruptSOCTrigger__uint32_t.ADC_SOCNumber.ADC_IntSOCTrigger"></span><span class="target" id="group__adc__api_1gccd5bcf943a2276ef76117c9026d3a84"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setInterruptSOCTrigger</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_SOCNumber" title="ADC_SOCNumber">ADC_SOCNumber</a> <em>socNumber</em>, <a class="reference internal" href="#_CPPv417ADC_IntSOCTrigger" title="ADC_IntSOCTrigger">ADC_IntSOCTrigger</a> <em>trigger</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426ADC_setInterruptSOCTrigger8uint32_t13ADC_SOCNumber17ADC_IntSOCTrigger" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configures the interrupt SOC trigger of an SOC.</p>
+<p><p>This function configures the interrupt start-of-conversion trigger in the ADC module.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socNumber</span></code>: is the number of the start-of-conversion. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code>: the interrupt source that will cause the SOC.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>socNumber</em> number is a value <strong>ADC_SOC_NUMBERX</strong> where X is a number from 0 to 15 specifying which SOC is to be configured on the ADC module specified by <em>base</em>.</p>
+<p>The <em>trigger</em> specifies the interrupt that causes a start of conversion or none. It should be one of the following values.</p>
+<p><ul class="simple">
+<li><p><strong>ADC_INT_SOC_TRIGGER_NONE</strong> </p></li>
+<li><p><strong>ADC_INT_SOC_TRIGGER_ADCINT1</strong> </p></li>
+<li><p><strong>ADC_INT_SOC_TRIGGER_ADCINT2</strong> </p></li>
+</ul>
+</p>
+<p>This functionality is useful for creating continuous conversions.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425ADC_setInterruptPulseMode8uint32_t13ADC_PulseMode">
+<span id="_CPPv325ADC_setInterruptPulseMode8uint32_t13ADC_PulseMode"></span><span id="_CPPv225ADC_setInterruptPulseMode8uint32_t13ADC_PulseMode"></span><span id="ADC_setInterruptPulseMode__uint32_t.ADC_PulseMode"></span><span class="target" id="group__adc__api_1g2f3d7a17f70add92d6675df19f3fa497"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setInterruptPulseMode</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PulseMode" title="ADC_PulseMode">ADC_PulseMode</a> <em>pulseMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425ADC_setInterruptPulseMode8uint32_t13ADC_PulseMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the timing of the end-of-conversion pulse</p>
+<p><p>This function configures the end-of-conversion (EOC) pulse generated by ADC. This pulse will be generated either at the end of the acquisition window (pass </p>
+<strong>ADC_PULSE_END_OF_ACQ_WIN</strong> into <em>pulseMode</em>) or at the end of the voltage conversion, one cycle prior to the ADC result latching into it’s result register (pass <strong>ADC_PULSE_END_OF_CONV</strong> into <em>pulseMode</em>).<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pulseMode</span></code>: is the generation mode of the EOC pulse.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419ADC_enableConverter8uint32_t">
+<span id="_CPPv319ADC_enableConverter8uint32_t"></span><span id="_CPPv219ADC_enableConverter8uint32_t"></span><span id="ADC_enableConverter__uint32_t"></span><span class="target" id="group__adc__api_1gc119d3a404b234f82ea8d4a9613b6e43"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enableConverter</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419ADC_enableConverter8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Powers up the analog-to-digital converter core.</p>
+<p><p>This function powers up the analog circuitry inside the analog core.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Allow at least a 500us delay before sampling after calling this API. If you enable multiple ADCs, you can delay after they all have begun powering up.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420ADC_disableConverter8uint32_t">
+<span id="_CPPv320ADC_disableConverter8uint32_t"></span><span id="_CPPv220ADC_disableConverter8uint32_t"></span><span id="ADC_disableConverter__uint32_t"></span><span class="target" id="group__adc__api_1gb0798961790f177fa5d11da0efc5c1f4"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disableConverter</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420ADC_disableConverter8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Powers down the analog-to-digital converter module.</p>
+<p><p>This function powers down the analog circuitry inside the analog core.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412ADC_forceSOC8uint32_t13ADC_SOCNumber">
+<span id="_CPPv312ADC_forceSOC8uint32_t13ADC_SOCNumber"></span><span id="_CPPv212ADC_forceSOC8uint32_t13ADC_SOCNumber"></span><span id="ADC_forceSOC__uint32_t.ADC_SOCNumber"></span><span class="target" id="group__adc__api_1g4add5cfdea7ce00811dfd4f18a41a875"></span><em class="property">static</em> void <code class="sig-name descname">ADC_forceSOC</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_SOCNumber" title="ADC_SOCNumber">ADC_SOCNumber</a> <em>socNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412ADC_forceSOC8uint32_t13ADC_SOCNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forces a SOC flag to a 1 in the analog-to-digital converter.</p>
+<p><p>This function forces the SOC flag associated with the SOC specified by </p>
+<em>socNumber</em>. This initiates a conversion once that SOC is given priority. This software trigger can be used whether or not the SOC has been configured to accept some other specific trigger.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socNumber</span></code>: is the number of the start-of-conversion.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420ADC_forceMultipleSOC8uint32_t8uint16_t">
+<span id="_CPPv320ADC_forceMultipleSOC8uint32_t8uint16_t"></span><span id="_CPPv220ADC_forceMultipleSOC8uint32_t8uint16_t"></span><span id="ADC_forceMultipleSOC__uint32_t.uint16_t"></span><span class="target" id="group__adc__api_1g07a5d181e115e67ebdb36ae1d321fca1"></span><em class="property">static</em> void <code class="sig-name descname">ADC_forceMultipleSOC</code><span class="sig-paren">(</span>uint32_t <em>base</em>, uint16_t <em>socMask</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420ADC_forceMultipleSOC8uint32_t8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Forces multiple SOC flags to 1 in the analog-to-digital converter.</p>
+<p><p>This function forces the SOCFRC1 flags associated with the SOCs specified by </p>
+<em>socMask</em>. This initiates a conversion once the desired SOCs are given priority. This software trigger can be used whether or not the SOC has been configured to accept some other specific trigger. Valid values for <em>socMask</em> parameter can be any of the individual ADC_FORCE_SOCx values or any of their OR’d combination to trigger multiple SOCs.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socMask</span></code>: is the SOCs to be forced through software</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>To trigger SOC0, SOC1 and SOC2, value (ADC_FORCE_SOC0 | ADC_FORCE_SOC1 | ADC_FORCE_SOC2) should be passed as socMask.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422ADC_getInterruptStatus8uint32_t13ADC_IntNumber">
+<span id="_CPPv322ADC_getInterruptStatus8uint32_t13ADC_IntNumber"></span><span id="_CPPv222ADC_getInterruptStatus8uint32_t13ADC_IntNumber"></span><span id="ADC_getInterruptStatus__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1g26fd2729cef533ca5be548d34055c16c"></span><em class="property">static</em> bool <code class="sig-name descname">ADC_getInterruptStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422ADC_getInterruptStatus8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current ADC interrupt status.</p>
+<p><p>This function returns the interrupt status for the analog-to-digital converter.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> takes a one of the values <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module should be cleared.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><strong>true</strong> if the interrupt flag for the specified interrupt number is set and <strong>false</strong> if it is not. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424ADC_clearInterruptStatus8uint32_t13ADC_IntNumber">
+<span id="_CPPv324ADC_clearInterruptStatus8uint32_t13ADC_IntNumber"></span><span id="_CPPv224ADC_clearInterruptStatus8uint32_t13ADC_IntNumber"></span><span id="ADC_clearInterruptStatus__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1g24af9a9b2b96855614e9a28b0d5c67a3"></span><em class="property">static</em> void <code class="sig-name descname">ADC_clearInterruptStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424ADC_clearInterruptStatus8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears ADC interrupt sources.</p>
+<p><p>This function clears the specified ADC interrupt sources so that they no longer assert. If not in continuous mode, this function must be called before any further interrupt pulses may occur.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> takes a one of the values <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module should be cleared.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430ADC_getInterruptOverflowStatus8uint32_t13ADC_IntNumber">
+<span id="_CPPv330ADC_getInterruptOverflowStatus8uint32_t13ADC_IntNumber"></span><span id="_CPPv230ADC_getInterruptOverflowStatus8uint32_t13ADC_IntNumber"></span><span id="ADC_getInterruptOverflowStatus__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1g6615c51012fa3669cbfb283faf38eaa6"></span><em class="property">static</em> bool <code class="sig-name descname">ADC_getInterruptOverflowStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430ADC_getInterruptOverflowStatus8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current ADC interrupt overflow status.</p>
+<p><p>This function returns the interrupt overflow status for the analog-to-digital converter. An overflow condition is generated irrespective of the continuous mode.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> takes a one of the values <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module should be cleared.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><strong>true</strong> if the interrupt overflow flag for the specified interrupt number is set and <strong>false</strong> if it is not. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv432ADC_clearInterruptOverflowStatus8uint32_t13ADC_IntNumber">
+<span id="_CPPv332ADC_clearInterruptOverflowStatus8uint32_t13ADC_IntNumber"></span><span id="_CPPv232ADC_clearInterruptOverflowStatus8uint32_t13ADC_IntNumber"></span><span id="ADC_clearInterruptOverflowStatus__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1g7766588dcf8f967b1cfabda5bd636c23"></span><em class="property">static</em> void <code class="sig-name descname">ADC_clearInterruptOverflowStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432ADC_clearInterruptOverflowStatus8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears ADC interrupt overflow sources.</p>
+<p><p>This function clears the specified ADC interrupt overflow sources so that they no longer assert. If software tries to clear the overflow in the same cycle that hardware tries to set the overflow, then hardware has priority.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> takes a one of the values <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module should be cleared.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414ADC_readResult8uint32_t13ADC_SOCNumber">
+<span id="_CPPv314ADC_readResult8uint32_t13ADC_SOCNumber"></span><span id="_CPPv214ADC_readResult8uint32_t13ADC_SOCNumber"></span><span id="ADC_readResult__uint32_t.ADC_SOCNumber"></span><span class="target" id="group__adc__api_1gd357423cbf2e0a8caa6110b874d51bc4"></span><em class="property">static</em> uint16_t <code class="sig-name descname">ADC_readResult</code><span class="sig-paren">(</span>uint32_t <em>resultBase</em>, <a class="reference internal" href="#_CPPv413ADC_SOCNumber" title="ADC_SOCNumber">ADC_SOCNumber</a> <em>socNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414ADC_readResult8uint32_t13ADC_SOCNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the conversion result.</p>
+<p><p>This function returns the conversion result that corresponds to the base address passed into </p>
+<em>resultBase</em> and the SOC passed into <em>socNumber</em>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">resultBase</span></code>: is the base address of the ADC results. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socNumber</span></code>: is the number of the start-of-conversion.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>socNumber</em> number is a value <strong>ADC_SOC_NUMBERX</strong> where X is a number from 0 to 15 specifying which SOC’s result is to be read.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Take care that you are using a base address for the result registers (ADCxRESULT_BASE) and not a base address for the control registers.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>Returns the conversion result. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410ADC_isBusy8uint32_t">
+<span id="_CPPv310ADC_isBusy8uint32_t"></span><span id="_CPPv210ADC_isBusy8uint32_t"></span><span id="ADC_isBusy__uint32_t"></span><span class="target" id="group__adc__api_1g3980952994a9e78cc627228ca1ad59c8"></span><em class="property">static</em> bool <code class="sig-name descname">ADC_isBusy</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410ADC_isBusy8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Determines whether the ADC is busy or not.</p>
+<p><p>This function allows the caller to determine whether or not the ADC is busy and can sample another channel.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns <strong>true</strong> if the ADC is sampling or <strong>false</strong> if all samples are complete. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422ADC_setBurstModeConfig8uint32_t11ADC_Trigger8uint16_t">
+<span id="_CPPv322ADC_setBurstModeConfig8uint32_t11ADC_Trigger8uint16_t"></span><span id="_CPPv222ADC_setBurstModeConfig8uint32_t11ADC_Trigger8uint16_t"></span><span id="ADC_setBurstModeConfig__uint32_t.ADC_Trigger.uint16_t"></span><span class="target" id="group__adc__api_1ga18e8b8e8ac3b31d9d7dc757c9989353"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setBurstModeConfig</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv411ADC_Trigger" title="ADC_Trigger">ADC_Trigger</a> <em>trigger</em>, uint16_t <em>burstSize</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422ADC_setBurstModeConfig8uint32_t11ADC_Trigger8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set SOC burst mode.</p>
+<p><p>This function configures the burst trigger and burstSize of an ADC module. Burst mode allows a single trigger to walk through the round-robin SOCs one or more at a time. When burst mode is enabled, the trigger selected by the </p>
+<a class="reference internal" href="#group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"><span class="std std-ref">ADC_setupSOC()</span></a> API will no longer have an effect on the SOCs in round-robin mode. Instead, the source specified through the <em>trigger</em> parameter will cause a burst of <em>burstSize</em> conversions to occur.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trigger</span></code>: the source that will cause the burst conversion sequence. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">burstSize</span></code>: is the number of SOCs converted during a burst sequence.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>trigger</em> parameter takes the same values as the <a class="reference internal" href="#group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"><span class="std std-ref">ADC_setupSOC()</span></a> API The <em>burstSize</em> parameter should be a value between 1 and 16 inclusive.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419ADC_enableBurstMode8uint32_t">
+<span id="_CPPv319ADC_enableBurstMode8uint32_t"></span><span id="_CPPv219ADC_enableBurstMode8uint32_t"></span><span id="ADC_enableBurstMode__uint32_t"></span><span class="target" id="group__adc__api_1g294c36c272454a1f4d4c8ee27fa619b3"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enableBurstMode</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419ADC_enableBurstMode8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables SOC burst mode.</p>
+<p><p>This function enables SOC burst mode operation of the ADC. Burst mode allows a single trigger to walk through the round-robin SOCs one or more at a time. When burst mode is enabled, the trigger selected by the </p>
+<a class="reference internal" href="#group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"><span class="std std-ref">ADC_setupSOC()</span></a> API will no longer have an effect on the SOCs in round-robin mode. Use ADC_setBurstMode() to configure the burst trigger and size.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420ADC_disableBurstMode8uint32_t">
+<span id="_CPPv320ADC_disableBurstMode8uint32_t"></span><span id="_CPPv220ADC_disableBurstMode8uint32_t"></span><span id="ADC_disableBurstMode__uint32_t"></span><span class="target" id="group__adc__api_1g5a602f61cbc3f3a0ead409b26b84b63d"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disableBurstMode</code><span class="sig-paren">(</span>uint32_t <em>base</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420ADC_disableBurstMode8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables SOC burst mode.</p>
+<p><p>This function disables SOC burst mode operation of the ADC. SOCs in round-robin mode will be triggered by the trigger configured using the </p>
+<a class="reference internal" href="#group__adc__api_1gf2cc02364fd46ba6fbdb2db67e3d1ee6"><span class="std std-ref">ADC_setupSOC()</span></a> API.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418ADC_setSOCPriority8uint32_t16ADC_PriorityMode">
+<span id="_CPPv318ADC_setSOCPriority8uint32_t16ADC_PriorityMode"></span><span id="_CPPv218ADC_setSOCPriority8uint32_t16ADC_PriorityMode"></span><span id="ADC_setSOCPriority__uint32_t.ADC_PriorityMode"></span><span class="target" id="group__adc__api_1g9c9825511b02131e9eb64ee5b9cb6d2a"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setSOCPriority</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv416ADC_PriorityMode" title="ADC_PriorityMode">ADC_PriorityMode</a> <em>priMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418ADC_setSOCPriority8uint32_t16ADC_PriorityMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the priority mode of the SOCs.</p>
+<p><p>This function sets the priority mode of the SOCs. There are three main modes that can be passed in the </p>
+<em>priMode</em> parameter<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">priMode</span></code>: is the priority mode of the SOCs.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><ul class="simple">
+<li><p>All SOCs are in round-robin mode. This means no SOC has an inherent higher priority over another. This is selected by passing in the value <strong>ADC_PRI_ALL_ROUND_ROBIN</strong>.</p></li>
+<li><p>All priorities are in high priority mode. This means that the priority of the SOC is determined by its SOC number. This option is selected by passing in the value <strong>ADC_PRI_ALL_HIPRI</strong>.</p></li>
+<li><p>A range of SOCs are assigned high priority, with all others in round robin mode. High priority mode means that an SOC with high priority will interrupt the round robin wheel and insert itself as the next conversion. Passing in the value <strong>ADC_PRI_SOC0_HIPRI</strong> will make SOC0 highest priority, <strong>ADC_PRI_THRU_SOC1_HIPRI</strong> will put SOC0 and SOC 1 in high priority, and so on up to <strong>ADC_PRI_THRU_SOC14_HIPRI</strong> where SOCs 0 through 14 are in high priority.</p></li>
+</ul>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412ADC_setupPPB8uint32_t13ADC_PPBNumber13ADC_SOCNumber">
+<span id="_CPPv312ADC_setupPPB8uint32_t13ADC_PPBNumber13ADC_SOCNumber"></span><span id="_CPPv212ADC_setupPPB8uint32_t13ADC_PPBNumber13ADC_SOCNumber"></span><span id="ADC_setupPPB__uint32_t.ADC_PPBNumber.ADC_SOCNumber"></span><span class="target" id="group__adc__api_1g42bd09827af1f2cf35122ffdc53ae836"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setupPPB</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, <a class="reference internal" href="#_CPPv413ADC_SOCNumber" title="ADC_SOCNumber">ADC_SOCNumber</a> <em>socNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412ADC_setupPPB8uint32_t13ADC_PPBNumber13ADC_SOCNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Configures a post-processing block (PPB) in the ADC.</p>
+<p><p>This function associates a post-processing block with a SOC.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socNumber</span></code>: is the number of the start-of-conversion.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>ppbNumber</em> is a value <strong>ADC_PPB_NUMBERX</strong> where X is a value from 1 to 4 inclusive that identifies a PPB to be configured. The <em>socNumber</em> number is a value <strong>ADC_SOC_NUMBERX</strong> where X is a number from 0 to 15 specifying which SOC is to be configured on the ADC module specified by <em>base</em>.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>You can have more that one PPB associated with the same SOC, but a PPB can only be configured to correspond to one SOC at a time. Also note that when you have multiple PPBs for the same SOC, the calibration offset that actually gets applied will be that of the PPB with the highest number. Since SOC0 is the default for all PPBs, look out for unintentional overwriting of a lower numbered PPB’s offset.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418ADC_enablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t">
+<span id="_CPPv318ADC_enablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="_CPPv218ADC_enablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="ADC_enablePPBEvent__uint32_t.ADC_PPBNumber.uint16_t"></span><span class="target" id="group__adc__api_1g99a46fc45166d8535137d00fb8725ca9"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enablePPBEvent</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, uint16_t <em>evtFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418ADC_enablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables individual ADC PPB event sources.</p>
+<p><p>This function enables the indicated ADC PPB event sources. This will allow the specified events to propagate through the X-BAR to a pin or to an ePWM module. The </p>
+<em>evtFlags</em> parameter can be any of the <strong>ADC_EVT_TRIPHI</strong>, <strong>ADC_EVT_TRIPLO</strong>, or <strong>ADC_EVT_ZERO</strong> values.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evtFlags</span></code>: is a bit mask of the event sources to be enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419ADC_disablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t">
+<span id="_CPPv319ADC_disablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="_CPPv219ADC_disablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="ADC_disablePPBEvent__uint32_t.ADC_PPBNumber.uint16_t"></span><span class="target" id="group__adc__api_1ged09666c453cf0bbdd6dd8abd20070d2"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disablePPBEvent</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, uint16_t <em>evtFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419ADC_disablePPBEvent8uint32_t13ADC_PPBNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables individual ADC PPB event sources.</p>
+<p><p>This function disables the indicated ADC PPB event sources. This will stop the specified events from propagating through the X-BAR to other modules. The </p>
+<em>evtFlags</em> parameter can be any of the <strong>ADC_EVT_TRIPHI</strong>, <strong>ADC_EVT_TRIPLO</strong>, or <strong>ADC_EVT_ZERO</strong> values.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evtFlags</span></code>: is a bit mask of the event sources to be enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427ADC_enablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t">
+<span id="_CPPv327ADC_enablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="_CPPv227ADC_enablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="ADC_enablePPBEventInterrupt__uint32_t.ADC_PPBNumber.uint16_t"></span><span class="target" id="group__adc__api_1g8627c61208d7a0cb205c205bfb0048e8"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enablePPBEventInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, uint16_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427ADC_enablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables individual ADC PPB event interrupt sources.</p>
+<p><p>This function enables the indicated ADC PPB interrupt sources. Only the sources that are enabled can be reflected to the processor interrupt. Disabled sources have no effect on the processor. The </p>
+<em>intFlags</em> parameter can be any of the <strong>ADC_EVT_TRIPHI</strong>, <strong>ADC_EVT_TRIPLO</strong>, or <strong>ADC_EVT_ZERO</strong> values.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is a bit mask of the interrupt sources to be enabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428ADC_disablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t">
+<span id="_CPPv328ADC_disablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="_CPPv228ADC_disablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="ADC_disablePPBEventInterrupt__uint32_t.ADC_PPBNumber.uint16_t"></span><span class="target" id="group__adc__api_1g106b78295be03f88b8ef36974c34c8ab"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disablePPBEventInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, uint16_t <em>intFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428ADC_disablePPBEventInterrupt8uint32_t13ADC_PPBNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables individual ADC PPB event interrupt sources.</p>
+<p><p>This function disables the indicated ADC PPB interrupt sources. Only the sources that are enabled can be reflected to the processor interrupt. Disabled sources have no effect on the processor. The </p>
+<em>intFlags</em> parameter can be any of the <strong>ADC_EVT_TRIPHI</strong>, <strong>ADC_EVT_TRIPLO</strong>, or <strong>ADC_EVT_ZERO</strong> values.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">intFlags</span></code>: is a bit mask of the interrupt source to be disabled.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421ADC_getPPBEventStatus8uint32_t13ADC_PPBNumber">
+<span id="_CPPv321ADC_getPPBEventStatus8uint32_t13ADC_PPBNumber"></span><span id="_CPPv221ADC_getPPBEventStatus8uint32_t13ADC_PPBNumber"></span><span id="ADC_getPPBEventStatus__uint32_t.ADC_PPBNumber"></span><span class="target" id="group__adc__api_1g982d1ccd26da7db752ff166a24beb0d5"></span><em class="property">static</em> uint16_t <code class="sig-name descname">ADC_getPPBEventStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421ADC_getPPBEventStatus8uint32_t13ADC_PPBNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the current ADC event status.</p>
+<p><p>This function returns the event status for the analog-to-digital converter.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the current event status, enumerated as a bit field of <strong>ADC_EVT_TRIPHI</strong>, <strong>ADC_EVT_TRIPLO</strong>, and <strong>ADC_EVT_ZERO</strong>. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423ADC_clearPPBEventStatus8uint32_t13ADC_PPBNumber8uint16_t">
+<span id="_CPPv323ADC_clearPPBEventStatus8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="_CPPv223ADC_clearPPBEventStatus8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="ADC_clearPPBEventStatus__uint32_t.ADC_PPBNumber.uint16_t"></span><span class="target" id="group__adc__api_1gb6250fb68233b81960987f6442405914"></span><em class="property">static</em> void <code class="sig-name descname">ADC_clearPPBEventStatus</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, uint16_t <em>evtFlags</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423ADC_clearPPBEventStatus8uint32_t13ADC_PPBNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clears ADC event flags.</p>
+<p><p>This function clears the indicated ADC PPB event flags. After an event occurs this function must be called to allow additional events to be produced. The </p>
+<em>evtFlags</em> parameter can be any of the <strong>ADC_EVT_TRIPHI</strong>, <strong>ADC_EVT_TRIPLO</strong>, or <strong>ADC_EVT_ZERO</strong> values.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evtFlags</span></code>: is a bit mask of the event source to be cleared.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417ADC_readPPBResult8uint32_t13ADC_PPBNumber">
+<span id="_CPPv317ADC_readPPBResult8uint32_t13ADC_PPBNumber"></span><span id="_CPPv217ADC_readPPBResult8uint32_t13ADC_PPBNumber"></span><span id="ADC_readPPBResult__uint32_t.ADC_PPBNumber"></span><span class="target" id="group__adc__api_1g8e7bfdf2a99bd09b478846db1c75e93c"></span><em class="property">static</em> int32_t <code class="sig-name descname">ADC_readPPBResult</code><span class="sig-paren">(</span>uint32_t <em>resultBase</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417ADC_readPPBResult8uint32_t13ADC_PPBNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads the processed conversion result from the PPB.</p>
+<p><p>This function returns the processed conversion result that corresponds to the base address passed into </p>
+<em>resultBase</em> and the PPB passed into <em>ppbNumber</em>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">resultBase</span></code>: is the base address of the ADC results. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Take care that you are using a base address for the result registers (ADCxRESULT_BASE) and not a base address for the control registers.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>Returns the signed 32-bit conversion result. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424ADC_getPPBDelayTimeStamp8uint32_t13ADC_PPBNumber">
+<span id="_CPPv324ADC_getPPBDelayTimeStamp8uint32_t13ADC_PPBNumber"></span><span id="_CPPv224ADC_getPPBDelayTimeStamp8uint32_t13ADC_PPBNumber"></span><span id="ADC_getPPBDelayTimeStamp__uint32_t.ADC_PPBNumber"></span><span class="target" id="group__adc__api_1gd765539460f52ce5bb722eef64dcabba"></span><em class="property">static</em> uint16_t <code class="sig-name descname">ADC_getPPBDelayTimeStamp</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424ADC_getPPBDelayTimeStamp8uint32_t13ADC_PPBNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reads sample delay time stamp from a PPB.</p>
+<p><p>This function returns the sample delay time stamp. This delay is the number of system clock cycles between the SOC being triggered and when it began converting.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the delay time stamp. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427ADC_setPPBCalibrationOffset8uint32_t13ADC_PPBNumber7int16_t">
+<span id="_CPPv327ADC_setPPBCalibrationOffset8uint32_t13ADC_PPBNumber7int16_t"></span><span id="_CPPv227ADC_setPPBCalibrationOffset8uint32_t13ADC_PPBNumber7int16_t"></span><span id="ADC_setPPBCalibrationOffset__uint32_t.ADC_PPBNumber.int16_t"></span><span class="target" id="group__adc__api_1g0931b65e2ba8f06a7cf65c99875d52ad"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setPPBCalibrationOffset</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, int16_t <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427ADC_setPPBCalibrationOffset8uint32_t13ADC_PPBNumber7int16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the post processing block offset correction.</p>
+<p><p>This function sets the PPB offset correction value. This value can be used to digitally remove any system-level offset inherent in the ADCIN circuit before it is stored in the appropriate result register. The </p>
+<em>offset</em> parameter is <strong>subtracted</strong> from the ADC output and is a signed value from -512 to 511 inclusive. For example, when <em>offset</em> = 1, ADCRESULT = ADC output - 1. When <em>offset</em> = -512, ADCRESULT = ADC output - (-512) or ADC output + 512.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: is the 10-bit signed value subtracted from ADC the output.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Passing a zero in to the <em>offset</em> parameter will effectively disable the calculation, allowing the raw ADC result to be passed unchanged into the result register.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If multiple PPBs are applied to the same SOC, the offset that will be applied will be that of the PPB with the highest number.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425ADC_setPPBReferenceOffset8uint32_t13ADC_PPBNumber8uint16_t">
+<span id="_CPPv325ADC_setPPBReferenceOffset8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="_CPPv225ADC_setPPBReferenceOffset8uint32_t13ADC_PPBNumber8uint16_t"></span><span id="ADC_setPPBReferenceOffset__uint32_t.ADC_PPBNumber.uint16_t"></span><span class="target" id="group__adc__api_1g466649f37aed9ae5cbf2a0ce81ef9898"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setPPBReferenceOffset</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, uint16_t <em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425ADC_setPPBReferenceOffset8uint32_t13ADC_PPBNumber8uint16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the post processing block reference offset.</p>
+<p><p>This function sets the PPB reference offset value. This can be used to either calculate the feedback error or convert a unipolar signal to bipolar by subtracting a reference value. The result will be stored in the appropriate PPB result register which can be read using </p>
+<a class="reference internal" href="#group__adc__api_1g8e7bfdf2a99bd09b478846db1c75e93c"><span class="std std-ref">ADC_readPPBResult()</span></a>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: is the 16-bit unsigned value subtracted from ADC the output.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>Passing a zero in to the <em>offset</em> parameter will effectively disable the calculation and will pass the ADC result to the PPB result register unchanged.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>If in 12-bit mode, you may only pass a 12-bit value into the <em>offset</em> parameter.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427ADC_enablePPBTwosComplement8uint32_t13ADC_PPBNumber">
+<span id="_CPPv327ADC_enablePPBTwosComplement8uint32_t13ADC_PPBNumber"></span><span id="_CPPv227ADC_enablePPBTwosComplement8uint32_t13ADC_PPBNumber"></span><span id="ADC_enablePPBTwosComplement__uint32_t.ADC_PPBNumber"></span><span class="target" id="group__adc__api_1gb2ac52a86c9571fbc5b5ba296d7c3d45"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enablePPBTwosComplement</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427ADC_enablePPBTwosComplement8uint32_t13ADC_PPBNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables two’s complement capability in the PPB.</p>
+<p><p>This function enables two’s complement in the post-processing block specified by the </p>
+<em>ppbNumber</em> parameter. When enabled, a two’s complement will be performed on the output of the offset subtraction before it is stored in the appropriate PPB result register. In other words, the PPB result will be the reference offset value minus the the ADC result value (ADCPPBxRESULT = ADCSOCxOFFREF - ADCRESULTx).<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428ADC_disablePPBTwosComplement8uint32_t13ADC_PPBNumber">
+<span id="_CPPv328ADC_disablePPBTwosComplement8uint32_t13ADC_PPBNumber"></span><span id="_CPPv228ADC_disablePPBTwosComplement8uint32_t13ADC_PPBNumber"></span><span id="ADC_disablePPBTwosComplement__uint32_t.ADC_PPBNumber"></span><span class="target" id="group__adc__api_1gbf6eb4d393ce8367f6adbdc28c769164"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disablePPBTwosComplement</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428ADC_disablePPBTwosComplement8uint32_t13ADC_PPBNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables two’s complement capability in the PPB.</p>
+<p><p>This function disables two’s complement in the post-processing block specified by the </p>
+<em>ppbNumber</em> parameter. When disabled, a two’s complement will <strong>NOT</strong> be performed on the output of the offset subtraction before it is stored in the appropriate PPB result register. In other words, the PPB result will be the ADC result value minus the reference offset value (ADCPPBxRESULT = ADCRESULTx - ADCSOCxOFFREF).<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419ADC_enableInterrupt8uint32_t13ADC_IntNumber">
+<span id="_CPPv319ADC_enableInterrupt8uint32_t13ADC_IntNumber"></span><span id="_CPPv219ADC_enableInterrupt8uint32_t13ADC_IntNumber"></span><span id="ADC_enableInterrupt__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1ge4cfea32380838565c07f025c93d4a57"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enableInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419ADC_enableInterrupt8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables an ADC interrupt source.</p>
+<p><p>This function enables the indicated ADC interrupt source. Only the sources that are enabled can be reflected to the processor interrupt. Disabled sources have no effect on the processor.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> can take the value <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module should be enabled.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420ADC_disableInterrupt8uint32_t13ADC_IntNumber">
+<span id="_CPPv320ADC_disableInterrupt8uint32_t13ADC_IntNumber"></span><span id="_CPPv220ADC_disableInterrupt8uint32_t13ADC_IntNumber"></span><span id="ADC_disableInterrupt__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1g7e1ab04160075d9ac53a1a70c2c1981b"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disableInterrupt</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420ADC_disableInterrupt8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables an ADC interrupt source.</p>
+<p><p>This function disables the indicated ADC interrupt source. Only the sources that are enabled can be reflected to the processor interrupt. Disabled sources have no effect on the processor.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> can take the value <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module should be disabled.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv422ADC_setInterruptSource8uint32_t13ADC_IntNumber13ADC_SOCNumber">
+<span id="_CPPv322ADC_setInterruptSource8uint32_t13ADC_IntNumber13ADC_SOCNumber"></span><span id="_CPPv222ADC_setInterruptSource8uint32_t13ADC_IntNumber13ADC_SOCNumber"></span><span id="ADC_setInterruptSource__uint32_t.ADC_IntNumber.ADC_SOCNumber"></span><span class="target" id="group__adc__api_1gbb8c63959746704955e4ff1a6038c6f2"></span><em class="property">static</em> void <code class="sig-name descname">ADC_setInterruptSource</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em>, <a class="reference internal" href="#_CPPv413ADC_SOCNumber" title="ADC_SOCNumber">ADC_SOCNumber</a> <em>socNumber</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422ADC_setInterruptSource8uint32_t13ADC_IntNumber13ADC_SOCNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the source EOC for an analog-to-digital converter interrupt.</p>
+<p><p>This function sets which conversion is the source of an ADC interrupt.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socNumber</span></code>: is the number of the start-of-conversion.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>socNumber</em> number is a value <strong>ADC_SOC_NUMBERX</strong> where X is a number from 0 to 15 specifying which EOC is to be configured on the ADC module specified by <em>base</em>.</p>
+<p><em>adcIntNum</em> can take the value <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module is being configured.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424ADC_enableContinuousMode8uint32_t13ADC_IntNumber">
+<span id="_CPPv324ADC_enableContinuousMode8uint32_t13ADC_IntNumber"></span><span id="_CPPv224ADC_enableContinuousMode8uint32_t13ADC_IntNumber"></span><span id="ADC_enableContinuousMode__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1g0a66ad057cbcddfd499dd7814c505785"></span><em class="property">static</em> void <code class="sig-name descname">ADC_enableContinuousMode</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424ADC_enableContinuousMode8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enables continuous mode for an ADC interrupt.</p>
+<p><p>This function enables continuous mode for the ADC interrupt passed into </p>
+<em>adcIntNum</em>. This means that pulses will be generated for the specified ADC interrupt whenever an EOC pulse is generated irrespective of whether or not the flag bit is set.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> can take the value <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module is being configured.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425ADC_disableContinuousMode8uint32_t13ADC_IntNumber">
+<span id="_CPPv325ADC_disableContinuousMode8uint32_t13ADC_IntNumber"></span><span id="_CPPv225ADC_disableContinuousMode8uint32_t13ADC_IntNumber"></span><span id="ADC_disableContinuousMode__uint32_t.ADC_IntNumber"></span><span class="target" id="group__adc__api_1ga40e6390fb8fe629d21cc374d3344e32"></span><em class="property">static</em> void <code class="sig-name descname">ADC_disableContinuousMode</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_IntNumber" title="ADC_IntNumber">ADC_IntNumber</a> <em>adcIntNum</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425ADC_disableContinuousMode8uint32_t13ADC_IntNumber" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disables continuous mode for an ADC interrupt.</p>
+<p><p>This function disables continuous mode for the ADC interrupt passed into </p>
+<em>adcIntNum</em>. This means that pulses will not be generated for the specified ADC interrupt until the corresponding interrupt flag for the previous interrupt occurrence has been cleared using <a class="reference internal" href="#group__adc__api_1g24af9a9b2b96855614e9a28b0d5c67a3"><span class="std std-ref">ADC_clearInterruptStatus()</span></a>.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcIntNum</span></code>: is interrupt number within the ADC wrapper.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><em>adcIntNum</em> can take the value <strong>ADC_INT_NUMBER1</strong>, <strong>ADC_INT_NUMBER2</strong>, <strong>ADC_INT_NUMBER3</strong>, or <strong>ADC_INT_NUMBER4</strong> to express which of the four interrupts of the ADC module is being configured.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419ADC_getTemperatureC8uint16_t9float32_t">
+<span id="_CPPv319ADC_getTemperatureC8uint16_t9float32_t"></span><span id="_CPPv219ADC_getTemperatureC8uint16_t9float32_t"></span><span id="ADC_getTemperatureC__uint16_t.float32_t"></span><span class="target" id="group__adc__api_1g04a12bddd40fe6358f9642b69da9039a"></span><em class="property">static</em> int16_t <code class="sig-name descname">ADC_getTemperatureC</code><span class="sig-paren">(</span>uint16_t <em>tempResult</em>, float32_t <em>vref</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419ADC_getTemperatureC8uint16_t9float32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts temperature from sensor reading to degrees C</p>
+<p><p>This function converts temperature from temp sensor reading to degrees C. Temp sensor values in production test are derived with 2.5V reference. The </p>
+<strong>vref</strong> argument in the function is used to scale the temp sensor reading accordingly if temp sensor value is read at a different VREF setting.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tempResult</span></code>: is the raw ADC A conversion result from the temp sensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vref</span></code>: is the reference voltage being used (for example 3.3 for 3.3V).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the temperature sensor reading converted to degrees C. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419ADC_getTemperatureK8uint16_t9float32_t">
+<span id="_CPPv319ADC_getTemperatureK8uint16_t9float32_t"></span><span id="_CPPv219ADC_getTemperatureK8uint16_t9float32_t"></span><span id="ADC_getTemperatureK__uint16_t.float32_t"></span><span class="target" id="group__adc__api_1g21120ea7a0cd97fc257c37001b01becb"></span><em class="property">static</em> int16_t <code class="sig-name descname">ADC_getTemperatureK</code><span class="sig-paren">(</span>uint16_t <em>tempResult</em>, float32_t <em>vref</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419ADC_getTemperatureK8uint16_t9float32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Converts temperature from sensor reading to degrees K</p>
+<p><p>This function converts temperature from temp sensor reading to degrees K. Temp sensor values in production test are derived with 2.5V reference. The </p>
+<strong>vref</strong> argument in the function is used to scale the temp sensor reading accordingly if temp sensor value is read at a different VREF setting.<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tempResult</span></code>: is the raw ADC A conversion result from the temp sensor. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vref</span></code>: is the reference voltage being used (for example 3.3 for 3.3V).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Returns the temperature sensor reading converted to degrees K. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411ADC_setMode8uint32_t14ADC_Resolution14ADC_SignalMode">
+<span id="_CPPv311ADC_setMode8uint32_t14ADC_Resolution14ADC_SignalMode"></span><span id="_CPPv211ADC_setMode8uint32_t14ADC_Resolution14ADC_SignalMode"></span><span id="ADC_setMode__uint32_t.ADC_Resolution.ADC_SignalMode"></span><span class="target" id="group__adc__api_1gfc9152a88cca51f84c94193887f1e3bf"></span>void <code class="sig-name descname">ADC_setMode</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv414ADC_Resolution" title="ADC_Resolution">ADC_Resolution</a> <em>resolution</em>, <a class="reference internal" href="#_CPPv414ADC_SignalMode" title="ADC_SignalMode">ADC_SignalMode</a> <em>signalMode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411ADC_setMode8uint32_t14ADC_Resolution14ADC_SignalMode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420ADC_setPPBTripLimits8uint32_t13ADC_PPBNumber7int32_t7int32_t">
+<span id="_CPPv320ADC_setPPBTripLimits8uint32_t13ADC_PPBNumber7int32_t7int32_t"></span><span id="_CPPv220ADC_setPPBTripLimits8uint32_t13ADC_PPBNumber7int32_t7int32_t"></span><span id="ADC_setPPBTripLimits__uint32_t.ADC_PPBNumber.int32_t.int32_t"></span><span class="target" id="group__adc__api_1gddfed463ad6fc4aafdb4f0d451327bc6"></span>void <code class="sig-name descname">ADC_setPPBTripLimits</code><span class="sig-paren">(</span>uint32_t <em>base</em>, <a class="reference internal" href="#_CPPv413ADC_PPBNumber" title="ADC_PPBNumber">ADC_PPBNumber</a> <em>ppbNumber</em>, int32_t <em>tripHiLimit</em>, int32_t <em>tripLoLimit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420ADC_setPPBTripLimits8uint32_t13ADC_PPBNumber7int32_t7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the windowed trip limits for a PPB.</p>
+<p><p>This function sets the windowed trip limits for a PPB. These values set the digital comparator so that when one of the values is exceeded, either a high or low trip event will occur.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: is the base address of the ADC module. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ppbNumber</span></code>: is the number of the post-processing block. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tripHiLimit</span></code>: is the value is the digital comparator trip high limit. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tripLoLimit</span></code>: is the value is the digital comparator trip low limit.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<p>The <em>ppbNumber</em> is a value <strong>ADC_PPB_NUMBERX</strong> where X is a value from 1 to 4 inclusive that identifies a PPB to be configured.</p>
+<p>If using 16-bit mode, you may pass a 17-bit number into the <em>tripHiLimit</em> and <em>tripLoLimit</em> parameters where the 17th bit is the sign bit (that is a value from -65536 and 65535). In 12-bit mode, only bits 12:0 will be compared against bits 12:0 of the PPB result.</p>
+<p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>On some devices, signed trip values do not work properly. See the silicon errata for details.</p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>None. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>The code for this module is contained in driverlib/adc.c, with driverlib/adc.h containing the API declarations for use by applications.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="asysctl.html" class="btn btn-neutral float-right" title="ASysCtl Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a href="https://www.ti.com/corp/docs/legal/copyright.shtml">2020, Texas Instruments Incorporated</a>, Texas Instruments Incorporated. All rights reserved. <br>
+        <a href="https://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="https://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="https://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="https://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+      <span class="lastupdated">
+        Last updated on May 26, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v3.02.00.00',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+
+        $('body').on("mousewheel", function () {
+            // Remove default behavior
+            event.preventDefault();
+            // Scroll without smoothing
+            var wheelDelta = event.wheelDelta;
+            var currentScrollPosition = window.pageYOffset;
+            window.scrollTo(0, currentScrollPosition - wheelDelta);
+        });
+      });
+  </script>
+   
+
+</body>
+</html>
