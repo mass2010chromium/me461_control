@@ -23,6 +23,8 @@
 #define PI          3.1415926535897932384626433832795
 #define TWOPI       6.283185307179586476925286766559
 #define HALFPI      1.5707963267948966192313216916398
+// The Launchpad's CPU Frequency set to 200 you should not change this value
+#define LAUNCHPAD_CPU_FREQUENCY 200
 
 
 // Interrupt Service Routines predefinition
@@ -243,10 +245,10 @@ void main(void)
     InitCpuTimers();
 
     // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
-    // 200MHz CPU Freq, 1 second Period (in uSeconds)
-    ConfigCpuTimer(&CpuTimer0, 200, 10000);
-    ConfigCpuTimer(&CpuTimer1, 200, 20000);
-    ConfigCpuTimer(&CpuTimer2, 200, 40000);
+    // 200MHz CPU Freq,                       Period (in uSeconds)
+    ConfigCpuTimer(&CpuTimer0, LAUNCHPAD_CPU_FREQUENCY, 10000);
+    ConfigCpuTimer(&CpuTimer1, LAUNCHPAD_CPU_FREQUENCY, 20000);
+    ConfigCpuTimer(&CpuTimer2, LAUNCHPAD_CPU_FREQUENCY, 40000);
 
     // Enable CpuTimer Interrupt bit TIE
     CpuTimer0Regs.TCR.all = 0x4000;
