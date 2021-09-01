@@ -3,6 +3,7 @@ RemoteSystemsTempFiles
 .ccsproject
 .project
 .settings
+.launches
 CPU1_RAM
 CPU2_RAM
 CPU1_FLASH
