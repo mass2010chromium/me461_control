@@ -244,7 +244,7 @@ void main(void)
 
     // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
     // 200MHz CPU Freq, 1 second Period (in uSeconds)
-    ConfigCpuTimer(&CpuTimer0, 200, 10000);
+    ConfigCpuTimer(&CpuTimer0, 200, 1000000);
     ConfigCpuTimer(&CpuTimer1, 200, 20000);
     ConfigCpuTimer(&CpuTimer2, 200, 40000);
 
