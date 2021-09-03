@@ -1,5 +1,7 @@
 RemoteSystemsTempFiles
 .jxbrowser.userdata
+.jxbrowser-data
+.metadata
 .ccsproject
 .project
 .settings
