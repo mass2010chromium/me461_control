@@ -30,7 +30,7 @@ LABSTARTER_LOC = LABSTARTER_LOC_WIN
 
 if MINGW_HACK:
     print("Running on MINGW")
-    repo_root = subprocess.getoutput("/bin/bash -c 'git rev-parse --show-toplevel'").split('\n')[0]
+    repo_root = input()
     print(repo_root)
     print()
 else:
@@ -38,7 +38,9 @@ else:
 if ('fatal: not a git repository' in repo_root) and not MINGW_HACK:
     print("MINGW HACK")
     cwd = os.getcwd().replace('\\', '/') # HACK!!!!
-    subprocess.getoutput(r'"C:\Program Files\Git\git-bash" -c "cd '+cwd+'; python import.py --fix"')
+    subprocess.getoutput(r'"C:\Program Files\Git\git-bash" -c "cd '+cwd+'; git rev-parse --show-toplevel | python import.py --fix"')
+    print("Import complete, enter to finish")
+    input()
     exit(0)
 
 folder_root = os.path.dirname(os.path.abspath(__file__))
@@ -70,13 +72,11 @@ ccs_out.write(b"""<?xml version="1.0" encoding="UTF-8" ?>\n<?ccsproject version=
 root = ccs_project_file.getroot()
 for child in root:
     if child.tag == "origin":
-        child.set("value", repo_root + LABSTARTER_LOC)
+        child.set("value", repo_root.replace("/", "\\") + LABSTARTER_LOC)
 import io
 xml_out = io.BytesIO()
 ccs_project_file.write(ccs_out, encoding='UTF-8')
 ccs_out.close()
-<<<<<<< HEAD
-=======
-print("Import complete")
-input()
->>>>>>> 4b3b4468decc86767a4c0808c842278c0afe20c7
+if not MINGW_HACK:
+    print("Import complete, enter to finish")
+    input()
