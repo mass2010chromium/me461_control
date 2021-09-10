@@ -33,6 +33,17 @@ __interrupt void SWI_isr(void);
 
 void serialRXA(serial_t *s, char data);
 
+// Part 4
+/**
+ * Clamp the input to [-limit, limit].
+ * Returns the clamped value.
+ */
+float saturate(float input, float limit) {
+    if (input > limit) return limit;
+    if (input < -limit) return -limit;
+    return input;
+}
+
 // Count variables
 uint32_t numTimer0calls = 0;
 uint32_t numSWIcalls = 0;
@@ -40,6 +51,14 @@ uint32_t numRXA = 0;
 uint16_t UARTPrint = 0;
 uint16_t LEDdisplaynum = 0;
 
+// Part 5
+float sinvalue = 0;
+float time = 0;
+float ampl = 3.0;
+float frequency = 0.05;
+float offset = 0.25;
+int32_t timeint = 0;
+float satvalue = 0;
 
 void main(void)
 {
@@ -246,7 +265,7 @@ void main(void)
     // 200MHz CPU Freq, 1 second Period (in uSeconds)
     ConfigCpuTimer(&CpuTimer0, 200, 1000000);
     ConfigCpuTimer(&CpuTimer1, 200, 20000);
-    ConfigCpuTimer(&CpuTimer2, 200, 40000);
+    ConfigCpuTimer(&CpuTimer2, 200, 10000);
 
     // Enable CpuTimer Interrupt bit TIE
     CpuTimer0Regs.TCR.all = 0x4000;
@@ -281,7 +300,14 @@ void main(void)
     while(1)
     {
         if (UARTPrint == 1 ) {
-				serial_printf(&SerialA,"Num Timer2:%ld Num SerialRX: %ld\r\n",CpuTimer2.InterruptCount,numRXA);
+            ++timeint;
+			time = timeint*0.25;
+			sinvalue = ampl * sin(2*PI*frequency*time) + offset;
+			satvalue = saturate(sinvalue, 2.65);
+            serial_printf(&SerialA,"timeint: %ld, time: %.2f, sinvalue: %.3f, satvalue: %.2f, \
+Num Timer2:%ld, Num SerialRX: %ld\r\n",
+                    timeint, time, sinvalue, satvalue,
+                    CpuTimer2.InterruptCount,numRXA);
             UARTPrint = 0;
         }
     }

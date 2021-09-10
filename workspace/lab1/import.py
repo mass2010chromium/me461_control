@@ -24,12 +24,15 @@ LABSTARTER_LOC_UNIX="/C2000Ware_3_02_00_00_F28379D/device_support/f2837xd/exampl
 LABSTARTER_LOC = LABSTARTER_LOC_WIN
 
 repo_root = subprocess.getoutput("git rev-parse --show-toplevel")
-#repo_root = "test"
+folder_root = os.path.dirname(os.path.abspath(__file__))
+folder_root = folder_root[len(os.path.dirname(folder_root))+1:]
 
 import xml.etree.ElementTree as ET
 project_file = ET.parse("_project")
 root = project_file.getroot()
 for child in root:
+    if child.tag == "name":
+        child.text = folder_root
     if child.tag == "linkedResources":
         for link in child:
             if link.find("name").text == "c28x_fpu_dsp_library.lib":
