@@ -3,6 +3,11 @@ import os
 import sys
 import subprocess
 
+MINGW_HACK = False
+
+if len(sys.argv) > 1:
+    MINGW_HACK = sys.argv[1] == "--fix"
+
 FPU_LIB_FILE="C2000Ware_3_02_00_00_F28379D/libraries/dsp/FPU/c28/lib/c28x_fpu_dsp_library.lib"
 DRIVER_LIB_FILE="C2000Ware_3_02_00_00_F28379D/driverlib/f2837xd/driverlib/ccs/Debug/driverlib.lib"
 
@@ -23,7 +28,19 @@ LABSTARTER_LOC_UNIX="/C2000Ware_3_02_00_00_F28379D/device_support/f2837xd/exampl
 
 LABSTARTER_LOC = LABSTARTER_LOC_WIN
 
-repo_root = subprocess.getoutput("git rev-parse --show-toplevel")
+if MINGW_HACK:
+    print("Running on MINGW")
+    repo_root = subprocess.getoutput("/bin/bash -c 'git rev-parse --show-toplevel'").split('\n')[0]
+    print(repo_root)
+    print()
+else:
+    repo_root = subprocess.getoutput("git rev-parse --show-toplevel")
+if ('fatal: not a git repository' in repo_root) and not MINGW_HACK:
+    print("MINGW HACK")
+    cwd = os.getcwd().replace('\\', '/') # HACK!!!!
+    subprocess.getoutput(r'"C:\Program Files\Git\git-bash" -c "cd '+cwd+'; python import.py --fix"')
+    exit(0)
+
 folder_root = os.path.dirname(os.path.abspath(__file__))
 folder_root = folder_root[len(os.path.dirname(folder_root))+1:]
 
@@ -58,3 +75,8 @@ import io
 xml_out = io.BytesIO()
 ccs_project_file.write(ccs_out, encoding='UTF-8')
 ccs_out.close()
+<<<<<<< HEAD
+=======
+print("Import complete")
+input()
+>>>>>>> 4b3b4468decc86767a4c0808c842278c0afe20c7
