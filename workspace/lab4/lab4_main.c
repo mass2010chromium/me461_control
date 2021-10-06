@@ -31,8 +31,8 @@ void main(void) {
 
 	// LED1 and PWM Pin
     initGPIO(A, 22, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0); // Red LED on LaunchPad
-    // Set mux 5 for pwm
-    //setupPWM(12, &pwm12, 5000);
+
+    initGPIO(A, 16, 5, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // Buzzer
 
     EALLOW;
     setupPWM(5, &pwm5, 50000); // 1ms clock
@@ -46,14 +46,31 @@ void main(void) {
 
     setupADCChannel(d, 0, 0, 99, 0x0D);
     setupADCChannel(d, 1, 1, 99, 0x0D);
-    setupADC(d, 99, 1, 0x0D);  // 0x0D: trigger on PWM5
+    setupADC(d, 1);  // 0x0D: trigger on PWM5 SoCA
+
+    setupPWM(8, &pwm8, 5000); // 0.1ms clock
+    pwm8.tbctl->bit.CTRMODE = 3;
+    pwm8.etsel->bit.SOCAEN = 0;         // Disable Start of Conversion on A group
+    pwm8.etsel->bit.SOCASEL = 0b010;    // Fire SoCA when counter == prd
+    pwm8.etps->bit.SOCAPRD = 0b01;      // Generate pulse on first event
+    pwm8.etsel->bit.SOCAEN = 1;         // Enable SoC A
+    *(pwm8.tbctr) = 0;
+    pwm8.tbctl->bit.CTRMODE = 0;
+
+    setupADCChannel(b, 0, 4, 99, 0x13);
+    setupADC(b, 0);  // 0x0D: trigger on PWM8 SoCA
 
     setupADCChannel(a, 0, 2, 99, 0x0D);
     setupADCChannel(a, 1, 3, 99, 0x0D);
-    setupADC(a, 99, 1, 0x0D);  // 0x0D: trigger on PWM5
+    setupADC(a, 1);  // 0x0D: trigger on PWM5 SoCA
 
     setupDAC(a, &dacA);
     setupDAC(b, &dacB);
+
+    setupPWM(9, &pwm9, ((uint16_t)(((50000000/4)/2)/440.00)));
+    pwm9.tbctl->bit.CLKDIV = 0b010;     // Divide by 4
+    pwm9.aqctla->bit.CAU = 0b00;        // Disable CMPA
+    pwm9.aqctla->bit.ZRO = 0b11;        // Toggle on zero
     EDIS;
 
     initGPIO(C, 94, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // LED2
@@ -121,6 +138,7 @@ void main(void) {
     PieVectTable.SCID_TX_INT = &TXDINT_data_sent;
     PieVectTable.ADCD1_INT = &ADCD_ISR;
     PieVectTable.ADCA1_INT = &ADCA_ISR;
+    PieVectTable.ADCB1_INT = &ADCB_ISR;
 
     PieVectTable.EMIF_ERROR_INT = &SWI_isr;
     EDIS;    // This is needed to disable write to EALLOW protected registers
@@ -148,7 +166,7 @@ void main(void) {
     // Enable CPU int1 which is connected to CPU-Timer 0, CPU int13
     // which is connected to CPU-Timer 1, and CPU int 14, which is connected
     // to CPU-Timer 2:  int 12 is for the SWI.  
-    IER |= M_INT1;  // ADCA1 ADCD1 TINT0
+    IER |= M_INT1;  // ADCA1 ADCB1 ADCD1 TINT0
     IER |= M_INT8;  // SCIC SCID
     IER |= M_INT9;  // SCIA
     IER |= M_INT12;
@@ -161,6 +179,8 @@ void main(void) {
     //PieCtrlRegs.PIEIER1.bit.INTx6 = 1;
     // Enable ADCA1 in the PIE: Group 1 interrupt 1
     PieCtrlRegs.PIEIER1.bit.INTx1 = 1;
+    // Enable ADCB1 in the PIE: Group 1 interrupt 2
+    PieCtrlRegs.PIEIER1.bit.INTx2 = 1;
 	// Enable SWI in the PIE: Group 12 interrupt 9
     PieCtrlRegs.PIEIER12.bit.INTx9 = 1;
 	
@@ -168,12 +188,15 @@ void main(void) {
     EINT;  // Enable Global interrupt INTM
     ERTM;  // Enable Global realtime interrupt DBGM
 
+    active_filter = average_filter;
+    filter_size = 5;
+
     // IDLE loop. Just sit and loop forever (optional):
     while(1)
     {
         //switchStates = ReadSwitches();
         if (UARTPrint == 1 ) {
-            serial_printf(&SerialA,"Num adc:%ld Voltage: %d M %d\r\n", adcD_count, adcA0, adcA1);
+            serial_printf(&SerialA,"Num adc:%ld Voltage: %.2f M %.2f\r\n", adcA_count, adcA0F, adcA1F);
             //serial_printf(&SerialA,"Switch states: %d\r\n",switchStates);
             //sliding_window_print(&SerialA, adcD_buffer);
             UARTPrint = 0;

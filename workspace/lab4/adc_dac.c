@@ -41,8 +41,7 @@ void powerup_ADCs() {
  * Short routine for writing a voltage to the DAC output (0-3V).
  */
 void setDAC(DAC* dac, float voltage) {
-    const float scaling = 4095.0/3.0;
     if (voltage > 3.0) voltage = 3.0;
     else if (voltage < 0.0) voltage = 0.0;
-    dac->dacvals->bit.DACVALS = voltage * scaling;
+    dac->dacvals->bit.DACVALS = voltage * VOLT_TO_ADC;
 }

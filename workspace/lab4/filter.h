@@ -39,6 +39,8 @@ typedef struct {
 typedef struct { SlidingWindow w; float _data1[size]; float _data2[size]; } __ ## name ## _ ## T; \
 __ ## name ## _ ## T name = { {0, size} };
 
+#define windowsize(name) (sizeof(name._data1) / sizeof(float))
+
 /**
  * Push a new number to the end of the sliding window.
  * @param w : Sliding window OBJECT!! NOT POINTER!
@@ -74,7 +76,9 @@ typedef struct {
 #define sliding_window_init(name, size) \
 typedef struct { SlidingWindow w; float _data1[size]; float _data2[size]; } __ ## name ## _ ## T; \
 __ ## name ## _ ## T name = { { 0 } }; \
-uint16_t __ ## name ## _size = (size);
+const uint16_t __ ## name ## _size = (size);
+
+#define windowsize(name) __ ## name ## _size
 
 /**
  * Push a new number to the end of the sliding window.
@@ -85,7 +89,7 @@ uint16_t __ ## name ## _size = (size);
     SlidingWindow* window = (SlidingWindow*)(&(w));\
     window->data[ __ ## w ## _ ## size + window->pos] = (num);\
     ++window->pos;\
-    if (window->pos == __ ## w ## _ ## size ) {\
+    if (window->pos == __ ## w ## _size ) {\
         memcpy(window->data, window->data + __ ## w ## _ ## size, __ ## w ## _ ## size * sizeof(float));\
         window->pos = 0;\
     }\
@@ -108,13 +112,17 @@ uint16_t __ ## name ## _size = (size);
 
 #endif /* MACRO_WINDOW */
 
+
 /**
  * Apply a linear filter to a sliding window.
  * @param coeffs : Filter coefficients.
  * @param size : Size of the filter array. Window size should be at least this big.
  * @param window : Pointer to sliding window object.
+ * @param window_size : Size of the sliding window
  * @return result of applying the filter.
  */
-float filter(float* coeffs, int16_t size, void* window);
+float filter(float* coeffs, int16_t size, void* window, int16_t window_size);
+
+#define arraysize(arr) (sizeof(arr)/sizeof((arr)[0]))
 
 #endif /* FILTER_H_ */

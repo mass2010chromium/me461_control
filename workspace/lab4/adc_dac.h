@@ -39,11 +39,8 @@ Adc ## adc_id ## Regs.ADCSOC ## channel ## CTL.bit.TRIGSEL = (trigger); /* sampl
  * REQUIRES EALLOW!
  *
  * @param adc_id: [a, b, c, d] (no quotes)
- * @param period : Sampling period (50MHz) minus one
- * @param trigger : Source to trigger on (by default makes all channels trigger on the same source).
  */
-#define setupADC(adc_id, period, size, trigger) \
-Adc ## adc_id ## Regs.ADCINTSEL1N2.bit.INT1SEL = 0x3; /* set to SOC3, the last converted, and it will set INT1 flag ADCD1 */\
+#define setupADC(adc_id, size) \
 Adc ## adc_id ## Regs.ADCINTSEL1N2.bit.INT1E = 1; /* enable INT1 flag */\
 Adc ## adc_id ## Regs.ADCINTFLGCLR.bit.ADCINT1 = 1; /* make sure INT1 flag is cleared */\
 Adc ## adc_id ## Regs.ADCINTSEL1N2.bit.INT1SEL = (size); //set to SOC1, the last converted, and it will set INT1 flag ADCD1
@@ -60,6 +57,9 @@ Dac ## dac_id ## Regs.DACOUTEN.bit.DACOUTEN = 1; /* Enable DAC output */\
 Dac ## dac_id ## Regs.DACCTL.bit.LOADMODE = 1;   /* Load on next sysclk */\
 Dac ## dac_id ## Regs.DACCTL.bit.DACREFSEL = 1;  /* Use ADC VREF as reference voltage */\
 (dac_struct)->dacvals = & Dac ## dac_id ## Regs.DACVALS;
+
+#define ADC_TO_VOLT (3.0/4095.0)
+#define VOLT_TO_ADC (4095.0/3.0)
 
 /**
  * Routine for powering up all four ADCs.

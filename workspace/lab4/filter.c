@@ -46,13 +46,13 @@ void _sliding_window_print(serial_t* serial, void* window) {
  * @param window : Pointer to sliding window object.
  * @return result of applying the filter.
  */
-float filter(float* coeffs, int16_t size, void* window) {
+float filter(float* coeffs, int16_t size, void* window, int16_t window_size) {
     SlidingWindow* w = (SlidingWindow*) window;
-    float* window_start = w->data + w->pos;
+    float* window_start = w->data + w->pos + (window_size - size);
     int16_t i;
     float result = 0;
     for (i = 0; i < size; ++i) {
-        result += coeffs[i] + window_start[i];
+        result += coeffs[i] * window_start[i];
     }
     return result;
 }

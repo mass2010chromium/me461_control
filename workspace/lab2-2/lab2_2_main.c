@@ -257,7 +257,7 @@ void main(void)
     // 200MHz CPU Freq, 1 second Period (in uSeconds)
 //    ConfigCpuTimer(&CpuTimer0, 200, 1000000);
 //    ConfigCpuTimer(&CpuTimer1, 200, 20000);
-    ConfigCpuTimer(&CpuTimer2, 200, 250000);
+    ConfigCpuTimer(&CpuTimer2, 200, 1000);
 
     // Enable CpuTimer Interrupt bit TIE
     CpuTimer0Regs.TCR.all = 0x4000;
@@ -362,16 +362,18 @@ __interrupt void cpu_timer2_isr(void)
     x1 = 9*x2;
     x2 = 34*x3;
 
-    switchStates = ReadSwitches();
 	
-	// Blink LaunchPad Blue LED
-    GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
-    if ((switchStates & 0x6) != 0x6) {
-        ++numTimer2calls;
+    if (CpuTimer2.InterruptCount % 100 == 0) {
+        switchStates = ReadSwitches();
+        // Blink LaunchPad Blue LED
+        GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+        if ((switchStates & 0x6) != 0x6) {
+            ++numTimer2calls;
+        }
+        SetLEDRowsOnOff(numTimer2calls);
+        UARTPrint = 1;
     }
     CpuTimer2.InterruptCount++;
-    UARTPrint = 1;
-    SetLEDRowsOnOff(numTimer2calls);
 }
 
 

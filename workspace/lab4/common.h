@@ -34,6 +34,13 @@ GPIO_SetupPinOptions(n, type, flags);
 #define initGPIO(x, n, mux, type, flags, init) \
 setupGPIO(x, n, mux, type, flags); \
 GPIOSET(x, n, init);
+
+
+void play_note(PWM* pwm, float frequency) {
+    uint16_t note = ((uint16_t)(((50000000/4)/2)/frequency));
+    *(pwm->prd) = note;
+}
+
 /**
  * Lowest 5 significant bits of the input are used to set the state of the 5 LED rows.
  */
