@@ -17,6 +17,8 @@
 #include <limits.h>
 #include "F28x_Project.h"
 
+#define MACRO_WINDOW
+
 #ifndef MACRO_WINDOW
 #include "F2837xD/f28379dSerial.h"
 /*

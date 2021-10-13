@@ -19,7 +19,7 @@
 
 #include "interrupt_handlers.h"
 
-void main(void) {
+void main() {
     // PLL, WatchDog, enable Peripheral Clocks
     // This example function is found in the F2837xD_SysCtrl.c file.
     InitSysCtrl();
@@ -72,6 +72,8 @@ void main(void) {
     pwm9.aqctla->bit.CAU = 0b00;        // Disable CMPA
     pwm9.aqctla->bit.ZRO = 0b11;        // Toggle on zero
     EDIS;
+
+    initGPIO(B, 52, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // Scope output
 
     initGPIO(C, 94, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // LED2
     initGPIO(C, 95, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // LED3
@@ -176,9 +178,9 @@ void main(void) {
     // Enable TINT0 in the PIE: Group 1 interrupt 7
     PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
     // Enable ADCD1 in the PIE: Group 1 interrupt 6
-    //PieCtrlRegs.PIEIER1.bit.INTx6 = 1;
+    // PieCtrlRegs.PIEIER1.bit.INTx6 = 1;
     // Enable ADCA1 in the PIE: Group 1 interrupt 1
-    PieCtrlRegs.PIEIER1.bit.INTx1 = 1;
+    // PieCtrlRegs.PIEIER1.bit.INTx1 = 1;
     // Enable ADCB1 in the PIE: Group 1 interrupt 2
     PieCtrlRegs.PIEIER1.bit.INTx2 = 1;
 	// Enable SWI in the PIE: Group 12 interrupt 9
