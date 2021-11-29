@@ -52,8 +52,10 @@ PAGE 1 : /* Data Memory */
    RAMD01           : origin = 0x00B000, length = 0x001000
 
 
-   //RAMGS015      : origin = 0x00C000, length = 0x00FFF8
-   RAMGS115      : origin = 0x00D000, length = 0x00EFF8
+   RAMGS_CPU1      : origin = 0x00D000, length = 0x007000
+//   RAMGS_CPU2      : origin = 0x014000, length = 0x007FF8
+//   RAMGS015      : origin = 0x00C000, length = 0x00FFF8
+   //RAMGS115      : origin = 0x00D000, length = 0x00EFF8
 
 
 //   RAMGS11     : origin = 0x017000, length = 0x000FF8   /* Uncomment for F28374D, F28376D devices */
@@ -76,22 +78,23 @@ SECTIONS
    codestart           : > BEGIN       PAGE = 0, ALIGN(8)
    /* Allocate uninitalized data sections: */
    .stack              : > RAMD01       PAGE = 1
-   .my_arrs			: > RAMGS115		PAGE = 1
-   .my_vars			: > RAMGS115		PAGE = 1   
+   .my_arrs			: > RAMGS_CPU1		PAGE = 1
+   .my_vars			: > RAMGS_CPU1		PAGE = 1
    .switch             : > FLASHA | FLASHB | FLASHC | FLASHD | FLASHE |
                             FLASHF | FLASHG | FLASHH | FLASHI | FLASHJ |
                             FLASHK | FLASHL | FLASHM | FLASHN PAGE = 0, ALIGN(8)
    .reset              : > RESET,      PAGE = 0, TYPE = DSECT /* not used, */
+   .mycpu2tocpu1		: > CPU2TOCPU1RAM, PAGE = 1
 
 #if defined(__TI_EABI__)
    .init_array         : > FLASHA | FLASHB | FLASHC | FLASHD | FLASHE |
                             FLASHF | FLASHG | FLASHH | FLASHI | FLASHJ |
                             FLASHK | FLASHL | FLASHM | FLASHN,       PAGE = 0,       ALIGN(8)
-   .bss                : > RAMGS115,       PAGE = 1
+   .bss                : > RAMGS_CPU1,       PAGE = 1
    .bss:output         : > RAMLS05,       PAGE = 0
-   .bss:cio            : > RAMGS115,       PAGE = 1
-   .data               : > RAMGS115,       PAGE = 1
-   .sysmem             : > RAMGS115,       PAGE = 1
+   .bss:cio            : > RAMGS_CPU1,       PAGE = 1
+   .data               : > RAMGS_CPU1,       PAGE = 1
+   .sysmem             : > RAMGS_CPU1,       PAGE = 1
    /* Initalized sections go in Flash */
    .const              : > FLASHA | FLASHB | FLASHC | FLASHD | FLASHE |
                             FLASHF | FLASHG | FLASHH | FLASHI | FLASHJ |
@@ -100,9 +103,9 @@ SECTIONS
    .pinit              : > FLASHA | FLASHB | FLASHC | FLASHD | FLASHE |
                             FLASHF | FLASHG | FLASHH | FLASHI | FLASHJ |
                             FLASHK | FLASHL | FLASHM | FLASHN,       PAGE = 0,       ALIGN(8)
-   .ebss               : >> RAMGS115,    PAGE = 1
-   .esysmem            : > RAMGS115,       PAGE = 1
-   .cio                : > RAMGS115,       PAGE = 1
+   .ebss               : >> RAMGS_CPU1,    PAGE = 1
+   .esysmem            : > RAMGS_CPU1,       PAGE = 1
+   .cio                : > RAMGS_CPU1,       PAGE = 1
    /* Initalized sections go in Flash */
    .econst             : >> FLASHA | FLASHB | FLASHC | FLASHD | FLASHE |
                             FLASHF | FLASHG | FLASHH | FLASHI | FLASHJ |
@@ -117,13 +120,13 @@ SECTIONS
    ramgs1           : > RAMGS1,     PAGE = 1
 */
 
-	FFT_buffer_1 : >> RAMGS115, ALIGN = FFT_ALIGN
+	FFT_buffer_1 : >> RAMGS_CPU1, ALIGN = FFT_ALIGN
 
-	FFT_buffer_2 : >> RAMGS115
-	FPUmathTables : >> RAMGS115
+	FFT_buffer_2 : >> RAMGS_CPU1
+	FPUmathTables : >> RAMGS_CPU1
 
-	FPUfftTables : >> RAMGS115
-	FpuRegsFile : >> RAMGS115
+	FPUfftTables : >> RAMGS_CPU1
+	FpuRegsFile : >> RAMGS_CPU1
 
 
 #ifdef __TI_COMPILER_VERSION__
