@@ -56,6 +56,7 @@ __interrupt void CPU2toCPU1IPC0(void);
 
 float *cpu2tocpu1; //float pointer for the location CPU2 will give data to CPU1
 float *cpu1tocpu2; //float pointer for the location CPU1 will give data to CPU2
+char *commandtoCPU2;
 
 
 void main(void)
@@ -65,6 +66,12 @@ void main(void)
     // PLL, WatchDog, enable Peripheral Clocks
     // This example function is found in the F2837xD_SysCtrl.c file.
     InitSysCtrl();
+    commandtoCPU2 = (char*) 0x3FFFC;  // in RAM that CPU1 can R/W but CPU2 can only read.
+    //location of cpu2tocpu1 ram
+    cpu2tocpu1 = (float*) 0x3F800;
+    cpu1tocpu2 = (float*) 0x3FC00;
+
+    commandtoCPU2[0] = 'W';  // W for CPU2 wait
 
     //     Comment this when use CCS for debugging
 //            #ifdef _FLASH
@@ -331,10 +338,6 @@ void main(void)
     //IPC
     PieCtrlRegs.PIEIER1.bit.INTx13 = 1;
 
-    //location of cpu2tocpu1 ram
-    cpu2tocpu1 = (float*) 0x3F800;
-    cpu1tocpu2 = (float*) 0x3FC00;
-
     // SCIC setup for CPU2
     GPIO_SetupPinMux(139, GPIO_MUX_CPU1, 6);
     GPIO_SetupPinOptions(139, GPIO_INPUT, GPIO_PULLUP);
@@ -393,6 +396,12 @@ void main(void)
             DevCfgRegs.CPUSEL5.bit.SCI_C = 1;  //SCI C connected to CPU2
     EDIS;
 
+    commandtoCPU2[0] = 'G';  // G for CPU2 Go
+
+    ScicRegs.SCIFFRX.bit.RXFFINTCLR = 1;
+    SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP8;
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
     // Enable global Interrupts and higher priority real-time debug events
     EINT;  // Enable Global interrupt INTM
     ERTM;  // Enable Global realtime interrupt DBGM

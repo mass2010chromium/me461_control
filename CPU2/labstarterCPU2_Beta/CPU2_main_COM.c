@@ -39,6 +39,7 @@ uint32_t numTimer0calls = 0;
 uint32_t numSWIcalls = 0;
 float *cpu2tocpu1;
 float *cpu1tocpu2;
+char *commandfromCPU1;
 uint32_t numRXC = 0;
 uint16_t UARTPrint = 0;
 uint32_t numCPU1COMs = 0;
@@ -61,7 +62,14 @@ void main(void)
 
     GpioDataRegs.GPCSET.bit.GPIO67 = 1;
 
+    commandfromCPU1 = (char*) 0x3FFFC;  // in RAM that CPU1 can R/W but CPU2 can only read.
+    //location of cpu2tocpu1 ram
+    cpu2tocpu1 = (float*) 0x3F800;
+    cpu1tocpu2 = (float*) 0x3FC00;
 
+    while (commandfromCPU1[0] != 'G') {
+        DELAY_US(10000);
+    }
     // Initialize the PIE vector table with pointers to the shell Interrupt
     // Service Routines (ISR).
     // This will populate the entire table, even if the interrupt
@@ -115,9 +123,6 @@ void main(void)
     PieCtrlRegs.PIEIER12.bit.INTx9 = 1;
     //IPC0
     PieCtrlRegs.PIEIER1.bit.INTx13 = 1;
-
-    cpu2tocpu1 = (float*) 0x3F800;
-    cpu1tocpu2 = (float*) 0x3FC00;
 
 
     // Enable global Interrupts and higher priority real-time debug events

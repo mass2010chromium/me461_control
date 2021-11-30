@@ -27,7 +27,7 @@ serial_t SerialC;
 uint16_t init_serial(serial_t *s, uint32_t baud, void (*got_func)(serial_t *s, char data))
 {
     volatile struct SCI_REGS *sci;
-//    uint32_t clk;
+    uint32_t clk;
 
 //			if using Serial A these lines move to CPU1
 //    if (s == &SerialA) {
