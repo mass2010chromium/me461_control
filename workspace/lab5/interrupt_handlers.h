@@ -88,9 +88,11 @@ __interrupt void cpu_timer0_isr(void)
  * I am tired so I will re-read this later
  * http://blog.tkjelectronics.dk/2012/09/a-practical-approach-to-kalman-filter-and-how-to-implement-it/
  */
-#define CONTROL_TARGET 0.7
+#define CONTROL_TARGET 1.365
 float angle_filtered = CONTROL_TARGET;
 float angle_raw = CONTROL_TARGET;
+float control_target = CONTROL_TARGET;
+float Kp = 8;
 float bias_est = 0.0f;
 float p00 = 0.0f;
 float p01 = 0.0f;
@@ -98,17 +100,32 @@ float p10 = 0.0f;
 float p11 = 0.0f;
 float motor_I = 0.0f;
 
-#define dt (1 / 1000.0)
+#define dt (1 / 4000.0)
 #define Q_ANGLE 0.001
 #define Q_BIAS 0.003
 #define R_MEASURE 0.3
 
+void __MPU9250_recv(SPI* spi);
+
+void dan_int(SPI* spi) {
+
+    recv[0] = spi_b.regs->SPIRXBUF;
+    recv[0] = spi_b.regs->SPIRXBUF;
+    recv[0] = spi_b.regs->SPIRXBUF;
+    GPIO_SET(A, 16, 1);
+
+    SPI_start(&spi_b, 16, 0, __MPU9250_recv);   // maybe dangerous...
+
+    GPIO_SET(B, 52, 0);
+    SPI_ACK(spi);
+    MPU9250_set_read_accel_gyro(&imu);
+}
+
 // cpu_timer1_isr - CPU Timer1 ISR
-__interrupt void cpu_timer1_isr(void)
+__interrupt void cpu_timer1_isr()
 {
     CpuTimer1.InterruptCount++;
     if (imu.status == MPU9250_IDLE) {
-
         MPU9250_update_stats(&imu);
 
         // lol kalman filter
@@ -132,15 +149,11 @@ __interrupt void cpu_timer1_isr(void)
         p10 -= k1 * p00;
         p01 -= k0 * p01;
         p00 -= k0 * p00;
+        GPIO_SET(B, 52, 1);
 
-        SPI_start(&spi_b, 16, 0, SPI_no_callback);    // Setting for MPU9250, blocking mode
+        SPI_start(&spi_b, 16, 16, dan_int);   // Setting for DAN28027
 
-        imu.IO_mode = MPU9250_BLOCKING; // For now...
-
-        MPU9250_set_read_accel_gyro(&imu);
-
-        SPI_start(&spi_b, 16, 16, manual_SPIB_ISR);   // Setting for DAN28027
-        float err = angle_filtered - CONTROL_TARGET;
+        float err = angle_filtered - control_target;
         motor_I -= 0.0002 * err;
 //        motor_I *= 0.9995;
         if (motor_I > 1) {
@@ -149,7 +162,7 @@ __interrupt void cpu_timer1_isr(void)
         else if (motor_I < -1) {
             motor_I = -1;
         }
-        float motor_command = motor_I - err - rate*0.1;
+        float motor_command = motor_I - Kp*err - rate*0.1;
         if (motor_command > 1) {
             motor_command = 1;
         }
@@ -161,6 +174,7 @@ __interrupt void cpu_timer1_isr(void)
         data[1] = ((int) (motor_command * 1500)) + 1500;
         data[2] = 1500 - ((int) (motor_command * 1500));
 
+        GPIO_SET(A, 16, 0);
         SPI_write(&spi_b, 9, 3, data, recv);
     }
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;

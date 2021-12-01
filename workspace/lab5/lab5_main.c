@@ -36,7 +36,7 @@ void main() {
         initGPIO(DISPLAY_LEDS[i], 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0);
     }
 
-    initGPIO(16, 5, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // Buzzer
+    initGPIO(16, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0);  // Buzzer
 
     setupDAC(a, &dacA);
     setupDAC(b, &dacB);
@@ -106,7 +106,7 @@ void main() {
     // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
     // 200MHz CPU Freq, 1 second Period (in uSeconds)
     ConfigCpuTimer(&CpuTimer0, 200, 20000);     // 20ms clock
-    ConfigCpuTimer(&CpuTimer1, 200, 1000);      // 1ms clock
+    ConfigCpuTimer(&CpuTimer1, 200, (1000000*dt));      // 1ms clock
     ConfigCpuTimer(&CpuTimer2, 200, 10000);    // 10ms clock
 
     // Enable CpuTimer Interrupt bit TIE
@@ -121,7 +121,10 @@ void main() {
     GPIO_SetupPinMux(63, GPIO_MUX_CPU1, 15);
     GPIO_SetupPinMux(64, GPIO_MUX_CPU1, 15);
     GPIO_SetupPinMux(65, GPIO_MUX_CPU1, 15);
-    SPI_setup(&spi_b, &SpibRegs, 65, 63, 64, 1000000, &PieVectTable.SPIB_RX_INT);
+    SPI_setup(&spi_b, &SpibRegs, 65, 63, 64, 1000000);
+    EALLOW;
+    PieVectTable.SPIB_RX_INT = SPIB_ISR;
+    EDIS;
     SPI_start(&spi_b, 16, 0, SPI_no_callback);    // Setting for MPU9250, blocking mode
 
     imu.IO_mode = MPU9250_BLOCKING;
@@ -136,7 +139,7 @@ void main() {
     MPU9250_set_write(&imu, 0x17, 0x00);
     MPU9250_set_write(&imu, 0x18, 0x00); // End offsets
     MPU9250_set_write(&imu, 0x19, 0x13); // sample rate divide
-    MPU9250_set_write(&imu, 0x1A, 0x02); // More config (DLPF_CFG = 0b010: 92Hz bandwidth, 3.9ms delay)
+    MPU9250_set_write(&imu, 0x1A, 0x02); // More config (FIFO_MODE = 0: discard old data; DLPF_CFG = 0b010: 92Hz bandwidth, 3.9ms delay)
     MPU9250_set_write(&imu, 0x1B, 0x00); // gyro config (250 dps, Fchoice = ~0b00 = 0b11)
     MPU9250_set_write(&imu, 0x1C, 0x08); // accel config (scale: 4g)
     MPU9250_set_write(&imu, 0x1D, 0x06); // accel config 2 (Low pass filter: 5Hz bandwidth, 66.96ms delay)
@@ -177,7 +180,7 @@ void main() {
     MPU9250_calibrate(&imu, 1000);
 
     PieCtrlRegs.PIEIFR6.bit.INTx3 = 0;  // Clear interrupt manually? to avoid spurious interrupt
-    SPI_start(&spi_b, 16, 0, MPU9250_SPIB_ISR);    // Setting for MPU9250, blocking mode
+    //SPI_start(&spi_b, 16, 0, MPU9250_SPIB_ISR);    // Setting for MPU9250, async mode
     imu.IO_mode = MPU9250_ASYNC;
 
     // Enable CPU int1 which is connected to CPU-Timer 0, CPU int13
@@ -213,7 +216,7 @@ void main() {
     while(1)
     {
         //switchStates = ReadSwitches();
-        if (UARTPrint == 1 ) {
+        if (UARTPrint == 1) {
             //serial_printf(&SerialA,"Num adc:%ld Voltage: %.2f M %.2f\r\n", adcA_count, adcA0F, adcA1F);
             //serial_printf(&SerialA,"Switch states: %d\r\n",switchStates);
             //serial_printf(&SerialA,"ADC: %.4f %.4f\r\n", (recv[1] & 0x0fff) * (3.3 / 4095),

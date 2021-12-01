@@ -41,7 +41,8 @@ while True:
     with buf_lock:
         tmp = np.array(buf)
         tmp2 = np.array(buf2)
-    plt.plot(range(len(tmp)), tmp, label="filt")
-    plt.plot(range(len(tmp2)), tmp2, label="raw")
+    plt.plot(range(len(tmp)), tmp, label="angle")
+    plt.plot(range(len(tmp2)), tmp2, label="linear")
+    #plt.plot(tmp, tmp2, label="pos")
     plt.legend()
     plt.pause(0.25)

@@ -14,29 +14,30 @@ void MPU9250_set_scaling(MPU9250* imu, int dps, int gs) {
 }
 
 inline void __MPU9250_read_SPI(volatile struct SPI_REGS* regs, volatile uint16_t* write_head, uint16_t packet_size) {
-
     uint16_t i;
     uint16_t read_data = regs->SPIRXBUF;
     *(write_head++) = read_data & 0xff;
-    for (i = 1; i != packet_size; ++i) {
+    for (i = 1; i < packet_size; ++i) {
         read_data = regs->SPIRXBUF;
         *(write_head++) = read_data >> 8;
         *(write_head++) = read_data & 0xff;
     }
 }
 
-inline void __MPU9250_recv(SPI* spi, MPU9250* _imu) {
+void __MPU9250_recv(SPI* spi) {
+    MPU9250* _imu = (MPU9250*) spi->arg;
     volatile struct SPI_REGS* regs = spi->regs;
 
     uint16_t packet_size = *_imu->packet_sizes_head;
-
-    if (_imu->packets_head[0] & 0x8000) {    // READ operation
-        uint16_t* write_head = &_imu->registers[((*_imu->packets_head) >> 8) & 0x7F];
-        __MPU9250_read_SPI(regs, write_head, packet_size);
-    }
-    else {
-        while (packet_size--) {
-            uint16_t unused = regs->SPIRXBUF;
+    if (packet_size > 0) { // LOL WTF HACK
+        if (_imu->packets_head[0] & 0x8000) {    // READ operation
+            uint16_t* write_head = &_imu->registers[((*_imu->packets_head) >> 8) & 0x7F];
+            __MPU9250_read_SPI(regs, write_head, packet_size);
+        }
+        else {
+            while (packet_size--) {
+                uint16_t unused = regs->SPIRXBUF;
+            }
         }
     }
     SPI_ACK(spi);
@@ -50,17 +51,17 @@ inline void __MPU9250_recv(SPI* spi, MPU9250* _imu) {
     MPU9250_write_async(_imu);
 }
 
-__interrupt void MPU9250_SPIB_ISR () { \
-    SPI* spi = &(spi_b); \
-    volatile struct SPI_REGS* regs = spi->regs; \
-    uint16_t num_recv = regs->SPIFFRX.bit.RXFFST; \
-    setGPIO(spi->chipselect, 1);        /* TODO: parametrize */ \
-    spi->recv_count = num_recv; \
-    ++spi->read_count; \
-\
-    __MPU9250_recv(spi, spi->arg); \
-    PieCtrlRegs.PIEACK.all = PIEACK_GROUP6; /* Acknowledge INT6 PIE interrupt */ \
-}
+//__interrupt void MPU9250_SPIB_ISR () { \
+//    SPI* spi = &(spi_b); \
+//    volatile struct SPI_REGS* regs = spi->regs; \
+//    uint16_t num_recv = regs->SPIFFRX.bit.RXFFST; \
+//    setGPIO(spi->chipselect, 1);        /* TODO: parametrize */ \
+//    spi->recv_count = num_recv; \
+//    ++spi->read_count; \
+//\
+//    __MPU9250_recv(spi, spi->arg); \
+//    PieCtrlRegs.PIEACK.all = PIEACK_GROUP6; /* Acknowledge INT6 PIE interrupt */ \
+//}
 
 void MPU9250_write_async(MPU9250* imu) {
     SPI* spi = imu->channel;

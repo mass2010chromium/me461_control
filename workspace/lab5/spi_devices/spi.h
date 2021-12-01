@@ -25,11 +25,11 @@ typedef struct {
     uint16_t output;         // Output from F28379D
     uint16_t input;          // Input to F28379D
     uint16_t chipselect;
-    uint32_t write_count;
-    uint32_t read_count;
-    uint16_t recv_count;
-    volatile PINT* isr_handle;
-    void* arg;
+    volatile uint32_t write_count;
+    volatile uint32_t read_count;
+    volatile uint16_t recv_count;
+    volatile void (*isr_callback)(void*);
+    volatile void* arg;
     volatile struct SPI_REGS* regs;
 } SPI;
 
@@ -42,7 +42,7 @@ typedef struct {
  * bitrate: Bitrate (bit/s)
  */
 void SPI_setup(SPI* spi, volatile struct SPI_REGS* regs, uint16_t clock, uint16_t output, uint16_t input,
-                  uint32_t bitrate, volatile PINT* isr_handle);
+                  uint32_t bitrate);
 
 /**
  * Start spi communication.
@@ -52,11 +52,11 @@ void SPI_setup(SPI* spi, volatile struct SPI_REGS* regs, uint16_t clock, uint16_
  * wordsize: how much to transmit per write to TXBUF
  * transfer_delay: SPI clock cycles to delay after each word is written
  */
-void SPI_start(SPI* spi, uint16_t wordsize, uint16_t transfer_delay, PINT callback);
+void SPI_start(SPI* spi, uint16_t wordsize, uint16_t transfer_delay, void(*callback)(void*));
 
 void SPI_write(SPI* spi, uint16_t chipselect, uint16_t count, uint16_t* buf, void* arg);
 
-__interrupt void SPI_no_callback();
+void SPI_no_callback(SPI* spi);
 
 extern SPI spi_a;
 extern SPI spi_b;
@@ -68,6 +68,8 @@ do { \
     regs->SPIFFRX.bit.RXFFOVFCLR = 1; /* Clear Overflow flag just in case of an overflow */ \
     regs->SPIFFRX.bit.RXFFINTCLR = 1; /* Clear RX FIFO Interrupt flag so next interrupt will happen */ \
 } while(0) \
+
+__interrupt void SPIB_ISR();
 
 #define SPI_ISR(name, spi_struct, callback) \
 __interrupt void name () { \

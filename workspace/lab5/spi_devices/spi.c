@@ -22,12 +22,11 @@ SPI spi_c;
  * bitrate: Bitrate (bit/s)
  */
 void SPI_setup(SPI* spi, volatile struct SPI_REGS* regs, uint16_t clock, uint16_t output, uint16_t input,
-                  uint32_t bitrate, volatile PINT* isr_handle) {
+                  uint32_t bitrate) {
     const uint32_t SPI_CLOCKRATE = 50000000;    // cycles/s
     spi->clock = clock;
     spi->output = output;
     spi->input = input;
-    spi->isr_handle = isr_handle;
     EALLOW;
     GPIO_SetupPinOptions(clock, GPIO_OUTPUT, GPIO_PUSHPULL | GPIO_ASYNC | GPIO_PULLUP);
     GPIO_SetupPinOptions(output, GPIO_OUTPUT, GPIO_PUSHPULL | GPIO_ASYNC | GPIO_PULLUP);
@@ -61,11 +60,8 @@ void SPI_setup(SPI* spi, volatile struct SPI_REGS* regs, uint16_t clock, uint16_
  * wordsize: how much to transmit per write to TXBUF
  * transfer_delay: SPI clock cycles to delay after each word is written
  */
-void SPI_start(SPI* spi, uint16_t wordsize, uint16_t transfer_delay, PINT callback) {
-
-    EALLOW;
-    *spi->isr_handle = callback;
-    EDIS;
+void SPI_start(SPI* spi, uint16_t wordsize, uint16_t transfer_delay, void(*callback)(void*)) {
+    spi->isr_callback = callback;
 
     volatile struct SPI_REGS* regs = spi->regs;
     regs->SPICCR.bit.SPICHAR = wordsize-1;
@@ -93,14 +89,24 @@ void SPI_write(SPI* spi, uint16_t chipselect, uint16_t count, uint16_t* buf, voi
     spi->recv_count = 0;
     spi->chipselect = chipselect;
 
+    // if (arg != spi->arg)
     spi->arg = arg;
     spi->write_count++;
     setGPIO(chipselect, 0);             // TODO: parametrize
-    regs->SPIFFRX.bit.RXFFIL = count; // Issue the SPIB_RX_INT when two values are in the RX FIFO
+    regs->SPIFFRX.bit.RXFFIL = count; // Issue the SPIB_RX_INT when n values are in the RX FIFO
     uint16_t i;
     for (i = 0; i < count; ++i) {
         regs->SPITXBUF = buf[i];
     }
 }
 
-__interrupt void SPI_no_callback() {};
+__interrupt void SPIB_ISR() {
+    uint16_t num_recv = spi_b.regs->SPIFFRX.bit.RXFFST;
+    setGPIO(spi_b.chipselect, 1);        /* TODO: parametrize */
+    spi_b.recv_count = num_recv;
+    ++spi_b.read_count;
+    spi_b.isr_callback(&spi_b);
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP6;
+}
+
+void SPI_no_callback(SPI* spi) {};

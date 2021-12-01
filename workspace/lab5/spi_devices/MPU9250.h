@@ -29,7 +29,7 @@
 
 typedef struct {
     SPI* channel;
-    uint16_t chipselect;
+    volatile uint16_t chipselect;
     volatile uint16_t status;    // 0 for idle, 1 for communicating
     volatile uint16_t IO_mode;
     float accel_scaling;
@@ -45,10 +45,10 @@ typedef struct {
     int16_t gyro_off_z;
     uint16_t registers[MPU9250_NUMREGS];
     uint16_t flags[MPU9250_NUMREGS+2];
-    uint16_t* packet_sizes_head;
-    uint16_t* packets_head;
-    uint16_t packet_sizes[MPU9250_NUMREGS+2];
-    uint16_t packets[MPU9250_NUMREGS+2];
+    volatile uint16_t* packet_sizes_head;
+    volatile uint16_t* packets_head;
+    volatile uint16_t packet_sizes[MPU9250_NUMREGS+2];
+    volatile uint16_t packets[MPU9250_NUMREGS+2];
 } MPU9250;
 
 void MPU9250_set_scaling(MPU9250* imu, int dps, int gs);
