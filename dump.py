@@ -1,6 +1,7 @@
 import serial
 
-ser = serial.Serial('COM4', 115200, timeout=1)
+#ser = serial.Serial('COM4', 115200, timeout=1)
+ser = serial.Serial('COM5', 1500000, timeout=1)
 
 def update_func():
     while True:

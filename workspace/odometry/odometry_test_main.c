@@ -29,7 +29,7 @@ void main() {
     initGPIO(31, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0); // Blue LED on LaunchPad
     initGPIO(34, 0, GPIO_OUTPUT, GPIO_PUSHPULL, 0); // Red LED on LaunchPad
 
-    int i = 0;
+    uint32_t i = 0;
     for (; i < 16; ++i) {
         // const int DISPLAY_LEDS[16] = {22, 94, 95, 97, 111, 130, 131, 25, 26, 27,
         //                                  60, 61, 157, 158, 159, 160};
@@ -130,8 +130,9 @@ void main() {
     CpuTimer2Regs.TCR.all = 0x4000;
 
 //    init_serial(&SerialA,115200,serialRXA);
-    init_serial(&SerialA,230400,serialRXA);
-//    init_serial(&SerialC,115200,serialRXC);
+//    init_serial(&SerialA,230400,serialRXA);
+//    init_serial(&SerialC,230400,serialRXC);
+    init_serial(&SerialC,115200,serialRXC);
 //    init_serial(&SerialD,115200,serialRXD);
 
     GPIO_SetupPinMux(63, GPIO_MUX_CPU1, 15);
@@ -227,6 +228,7 @@ void main() {
 
     DAN_init(&dan, 9, &spi_b);
     Robot_init(&robot, &eQEP1, &eQEP2, &imu, &dan);
+    robot.cmd = commands;
     SPI_start(&spi_b, 16, 16);   // Setting for DAN28027
 //    DELAY_US(1000000);
     // Enable global Interrupts and higher priority real-time debug events
@@ -239,7 +241,10 @@ void main() {
 
     // IDLE loop. Just sit and loop forever (optional):
     serial_printf(&SerialA,"\r\n");
+    serial_printf(&SerialC,"henlo\r\n");
     i = 0;
+    char buf[25];
+    buf[24] = '\n';
     while(1)
     {
         //switchStates = ReadSwitches();
@@ -249,12 +254,14 @@ void main() {
             //serial_printf(&SerialA,"ADC: %.4f %.4f\r\n", (recv[1] & 0x0fff) * (3.3 / 4095),
             //                                              (recv[2] & 0x0fff) * (3.3 / 4095));
             //serial_printf(&SerialA,"%f %f\r\n", robot.angle_filtered, robot.angle_raw);
-            char buf[16];
-            serialize_float(buf+12, (float) i);
-            serialize_float(buf, robot.innovation);
-            serialize_float(buf+4, (robot.t_right - robot.t_left) * (1 / RAD_PER_FOOT / ROBOT_DIAMETER));
+            serialize_u32(buf+20, i);
+            serialize_float(buf, robot.x_pos);
+            serialize_float(buf+4, robot.y_pos);
             serialize_float(buf+8, robot.angle_filtered);
-            serial_send(&SerialA,buf,16);
+            //serialize_float(buf+12, (robot.t_right - robot.t_left) * (1 / RAD_PER_FOOT / ROBOT_DIAMETER));
+            serialize_float(buf+12, robot.v_forward);
+            serialize_float(buf+16, robot.angular_velocity);
+            serial_send(&SerialC,buf,25);
             //serial_printf(&SerialA,"L %f R %f vL %f vR %f IL %f\r\n", left_angle, right_angle, v_left, v_right, I_left);
             //SetLEDRowsOnOff(i);
             ++i;

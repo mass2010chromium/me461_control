@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import serial
 import struct
 
-ser = serial.Serial('COM4', 230400, timeout=10)
+ser = serial.Serial('COM7', 230400, timeout=10)
 
 plt.figure(1)
 plt.ion()

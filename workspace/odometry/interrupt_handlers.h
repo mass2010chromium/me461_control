@@ -37,9 +37,37 @@ uint16_t UARTPrint = 0;
 uint16_t LEDdisplaynum = 0;
 int16_t switchStates = 0;
 
+volatile RobotCommand commands[2] = {0};
+volatile char recv_buf[8];
+volatile int16_t recv_state = 0;
+
 // This function is called each time a char is received over UARTA.
 void serialRXA(serial_t *s, char data) {
     numRXA ++;
+}
+
+void serialRXC(serial_t *s, char data) {
+    if (recv_state == -1 && data == '\n') {
+        recv_state = 0;
+        return;
+    }
+    if (recv_state == 8) {
+        if (data != '\n') {
+            recv_state = -1;
+            return;
+        }
+        RobotCommand* current = robot.cmd;
+        int16_t index = current - commands;
+        int16_t new_index = index ^ 1;
+        RobotCommand* fill = &commands[new_index];
+        fill->cmd_vel = deserialize_float(recv_buf);
+        fill->cmd_omega = deserialize_float(recv_buf + 4);
+        fill->age = 0;
+        robot.cmd = fill;
+        recv_state = 0;
+    }
+    recv_buf[recv_state] = data;
+    ++recv_state;
 }
 
 // SWI_isr,  Using this interrupt as a Software started interrupt

@@ -60,11 +60,27 @@ int16_t ReadSwitches() {
     return GPIO_GET(A, 4) | (GPIO_GET(A, 5)<<1) | (GPIO_GET(A, 6)<<2) | (GPIO_GET(A, 7)<<3);
 }
 
+inline void serialize_u32(char* buf, uint32_t num) {
+    buf[0] = __byte(&num, 0);
+    buf[1] = __byte(&num, 1);
+    buf[2] = __byte(&num, 2);
+    buf[3] = __byte(&num, 3);
+}
+
 inline void serialize_float(char* buf, float num) {
     buf[0] = __byte(&num, 0);
     buf[1] = __byte(&num, 1);
     buf[2] = __byte(&num, 2);
     buf[3] = __byte(&num, 3);
+}
+
+inline float deserialize_float(char* buf) {
+    float num;
+    __byte(&num, 0) = buf[0];
+    __byte(&num, 1) = buf[1];
+    __byte(&num, 2) = buf[2];
+    __byte(&num, 3) = buf[3];
+    return num;
 }
 
 /**
